@@ -17,19 +17,19 @@ export default function LandingPage() {
       {/* <h1>Landing Page</h1> */}
       <Carousel autoplay>
     <div>
-          <img src="../../../screenshots/carousel1.png" alt="carousel1" style={contentStyle} />
+          <img src="../../../screenshots/carousel1s.png" alt="carousel1" style={{width: '100%', height: '100%'}} />
           {/* <h3 style={contentStyle}>1</h3> */}
     </div>
         <div>
-          <img src="../../../screenshots/carousel2.png" alt="carousel2" style={contentStyle} />
+          <img src="../../../screenshots/carousel2s.png" alt="carousel2" style={{width: '100%', height: '100%'}} />
       {/* <h3 style={contentStyle}>2</h3> */}
     </div>
         <div>
-        <img src="../../../screenshots/carousel3.png" alt="carousel3" style={contentStyle} />
+        <img src="../../../screenshots/carousel3s.png" alt="carousel3" style={{width: '100%', height: '100%'}} />
       {/* <h3 style={contentStyle}>3</h3> */}
     </div>
         <div>
-        <img src="../../../screenshots/carousel4.png" alt="carousel4" style={contentStyle} />
+        <img src="../../../screenshots/carousel4s.png" alt="carousel4" style={{width: '100%', height: '100%'}} />
       {/* <h3 style={contentStyle}>4</h3> */}
     </div>
   </Carousel>
