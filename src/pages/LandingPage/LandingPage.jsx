@@ -17,19 +17,19 @@ export default function LandingPage() {
       {/* <h1>Landing Page</h1> */}
       <Carousel autoplay>
     <div>
-          <img src="../../../screenshots/carousel1.jpg" alt="carousel1" style={contentStyle} />
+          <img src="../../../screenshots/carousel1.png" alt="carousel1" style={contentStyle} />
           {/* <h3 style={contentStyle}>1</h3> */}
     </div>
         <div>
-          <img src="../../../screenshots/carousel2.jpg" alt="carousel2" style={contentStyle} />
+          <img src="../../../screenshots/carousel2.png" alt="carousel2" style={contentStyle} />
       {/* <h3 style={contentStyle}>2</h3> */}
     </div>
         <div>
-        <img src="../../../screenshots/carousel3.jpg" alt="carousel3" style={contentStyle} />
+        <img src="../../../screenshots/carousel3.png" alt="carousel3" style={contentStyle} />
       {/* <h3 style={contentStyle}>3</h3> */}
     </div>
         <div>
-        <img src="../../../screenshots/carousel4.jpg" alt="carousel4" style={contentStyle} />
+        <img src="../../../screenshots/carousel4.png" alt="carousel4" style={contentStyle} />
       {/* <h3 style={contentStyle}>4</h3> */}
     </div>
   </Carousel>
