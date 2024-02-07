@@ -13,7 +13,7 @@ import UserPreferencePage from "../UserPage/UserPreferencePage/UserPreferencePag
 import { getUser } from "../../utilities/usersService";
 
 function App() {
-  const [user, setUser] = useState(getUser());
+  const [user, setUser] = useState(null);
 
   return (
     <>
