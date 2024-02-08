@@ -60,7 +60,6 @@ export default function PaintforhirePage() {
 
   return (
     <>
-      <NavbarOut />
 
       <Flex gap="middle" wrap="wrap">
         <Layout style={layoutStyle}>

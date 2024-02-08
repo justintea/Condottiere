@@ -1,6 +1,7 @@
 import "../../App.css";
 import { useState } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
+import NavbarOut from "../../components/0Navbar/NavbarOut/NavbarOut";
 import LandingPage from "../0LandingPage/LandingPage";
 import PaintforhirePage from "../1ServicesPage/1PaintforhirePage";
 import MasterclassPage from "../1ServicesPage/2MasterclassPage";
@@ -45,7 +46,8 @@ function App() {
           </Routes>
         </>
       ) : (
-        <>
+          <>
+                  <NavbarOut />
           <Routes>
             <Route path="/" element={<LandingPage />} />
               <Route path="login" element={<AuthPage user={user} setUser={setUser} />} />
