@@ -52,10 +52,6 @@ export default function NavbarOut() {
         items={items}
       />
 
-
-
-
-
       <div className="auth-buttons">
         <Link to="/login">
           <Button style={{ backgroundColor: "#01628f" }} type="primary">Log In</Button>
