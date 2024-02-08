@@ -9,8 +9,8 @@ import TablebookingPage from "../1ServicesPage/3TablebookingPage";
 import AuthPage from "../2AuthPage/AuthPage";
 import SignupPage from "../2SignupPage/SignupPage";
 
-import UserPage from "../UserPage/UserPage";
-// import UserPage from "../3UserPage/0UserPage";
+// import UserPage from "../UserPage/UserPage";
+import UserPage from "../3UserPage/0UserPage";
 
 import UserInfoPage from "../3UserPage/UserInfoPage/UserInfoPage";
 
@@ -21,7 +21,7 @@ import DashboardPage from "../UserPage/DashboardPage/DashboardPage";
 import TrackingPage from "../UserPage/TrackingPage/TrackingPage";
 import EditPage from "../UserPage/EditPage/EditPage";
 import GoalsPage from "../UserPage/GoalsPage/GoalsPage";
-// import CartconfirmationPage from "../3UserPage/CartconfirmationPage/CartconfirmationPage";
+import CartconfirmationPage from "../3UserPage/CartconfirmationPage/CartconfirmationPage";
 
 
 function App() {
@@ -43,9 +43,11 @@ function App() {
           {/* <Route path="/" element={Navigate('/user/info')} /> */}
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
             <Route path="info" element={<UserInfoPage />} />
-            <Route path="paintservices" element={<PaintforhirePage user={user} />} />
-            <Route path="paintclasses" element={<MasterclassPage user={user} />} />
-            <Route path="painttables" element={<TablebookingPage user={user} />} />
+              <Route path="paintservices" element={<PaintforhirePage user={user} />} />
+              <Route path="paintclasses" element={<MasterclassPage user={user} />} />
+              <Route path="painttables" element={<TablebookingPage user={user} />} />
+              <Route path="cart" element={<CartconfirmationPage user={user} />} />
+              
             {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
 
 

@@ -11,7 +11,7 @@ export default function UserPage1({ user, setUser }) {
   //? use effect to load all data... but this is the overhang, not the page itself
   
   return (<>
-    <NavbarIn />
+    <NavbarIn user={user} setUser={setUser} />
     <Outlet />
   
     {/* i think what happens here: this loads, takes in all the data,

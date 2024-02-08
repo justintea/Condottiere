@@ -11,7 +11,10 @@ export default function LoginForm({ setUser , data1PaintSvcs }) {
     try {
       const user = await usersService.logIn(values);
       setUser(user);
-      Navigate("/user/info", { state: { data1PaintSvcs } } );        //* pass the prelogin form data into postlogin environment
+      console.log(data1PaintSvcs);
+      Navigate("/user/info", { state: { data1PaintSvcs } });        //* pass the prelogin form data into postlogin environment
+      console.log(user);
+      console.log(data1PaintSvcs);
     } catch {
       //? User-error validation #1
       setError(

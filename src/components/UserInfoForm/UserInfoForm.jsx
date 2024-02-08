@@ -1,27 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import './UserInfoForm.css'
 import { List } from 'antd';
-import { ShoppingCartOutlined, CalendarOutlined , HomeOutlined, LockOutlined  } from "@ant-design/icons";
+import { ShoppingOutlined, ShoppingCartOutlined, CalendarOutlined , HomeOutlined, LockOutlined  } from "@ant-design/icons";
+import { useNavigate } from 'react-router-dom';
 //? tentative render
 // import CartconfirmationPage from '../../pages/3UserPage/CartconfirmationPage/CartconfirmationPage';
 
 
-export default function UserInfoForm( { user, data1PaintSvcs}) {   
+export default function UserInfoForm({ user, data1PaintSvcs }) {   
+
+  const Navigate = useNavigate();
 
   const preferlist = [
+    {
+      title: "Shopping cart",
+      description: "Check out and pay",
+      icon: <ShoppingOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
+      route: "/cart", 
+      // content: xxx, //to do AJAX GET from a db
+    },
     {
       title: "Visit our store",
       description: "Continue shopping",
       icon: <ShoppingCartOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
-      
       // content: xxx, //to do AJAX GET from a db
-    },
+      route: "/cart", 
 
+    },
     {
       title: "Past purchases",
       description: "A history of your past transactions with us",
       icon: <CalendarOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
-      
+      route: "/cart", 
+
       // content: xxx, //to do AJAX GET from a db
     },
     {
@@ -30,6 +41,8 @@ export default function UserInfoForm( { user, data1PaintSvcs}) {
         "For our delivery purposes",
       icon: <HomeOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
       // content: xxx, //to do AJAX GET from a db
+      route: "/cart", 
+
     },
     {
       title: "Password",
@@ -37,6 +50,8 @@ export default function UserInfoForm( { user, data1PaintSvcs}) {
         "Change your password",
       icon: <LockOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
       // content: xxx, //to do AJAX GET from a db
+      route: "/cart", 
+
     },
     // {
     //   title: '',
@@ -47,7 +62,9 @@ export default function UserInfoForm( { user, data1PaintSvcs}) {
   ];
 
 
-
+  const handleClick = (route) => {
+    Navigate(route);
+}
 
 
 
@@ -58,12 +75,13 @@ export default function UserInfoForm( { user, data1PaintSvcs}) {
         itemLayout="horizontal"
         dataSource={preferlist}
         renderItem={(item) => (
-          <List.Item className='preferlistitem' >
+          <List.Item className='preferlistitem' onClick={() => handleClick()} >
 
             <List.Item.Meta
               avatar={item.icon}
               title={item.title}
               description={item.description}
+              route={item.route}
             />
 
             {/* // this part to render value */}

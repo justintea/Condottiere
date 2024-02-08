@@ -31,9 +31,6 @@ export default function PaintforhireForm({ user, setUser }) {
 
     //? if i remove code below, i can see my LocalStorage data. if i comment-in, localStorage data disappears for some reason
     //? if user is null, navigate or link to Login
-    // if (user === null) {
-    //   navigate('/login');
-    //   console.log(localStorage);
 
     //? try to code here
     if (user === null) {
