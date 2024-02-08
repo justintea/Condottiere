@@ -39,5 +39,6 @@
 
 ## ERD & Trello 🛣
 - [Entity Relation Diagram](https://lucid.app/lucidchart/bbe2fd71-8562-464d-a4a5-bd8dd2a56ed9/edit?viewport_loc=473%2C583%2C1375%2C997%2C0_0&invitationId=inv_7a122726-765d-4887-ae2a-78cf38e28ed5/)
+- [Trello Kanban](https://trello.com/b/nCO9OSE1/condottiere/)
 
 ## Icebox Features 🧊
