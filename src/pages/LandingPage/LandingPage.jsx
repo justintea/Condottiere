@@ -44,7 +44,7 @@ export default function LandingPage() {
     <Col span={8}>
     <Card
     hoverable
-    style={{ width: 240 }}
+    style={{ width: 400, height: 650 }}
     cover={<img alt="example" src="../../../screenshots/card1.png" />}
   >
     <Meta title="Paint-for-hire" description="Fast, reliable, affordable" />
@@ -53,7 +53,7 @@ export default function LandingPage() {
     <Col span={8}>
     <Card
     hoverable
-    style={{ width: 240 }}
+    style={{ width: 400, height: 650}}
     cover={<img alt="example" src="../../../screenshots/card2.png" />}
   >
     <Meta title="Painting classes" description="Learn from the best, do it yourself" />
@@ -62,7 +62,7 @@ export default function LandingPage() {
     <Col span={8}>
     <Card
     hoverable
-    style={{ width: 240 }}
+    style={{ width: 400, height: 650}}
     cover={<img alt="example" src="../../../screenshots/card3.png" />}
   >
     <Meta title="Table bookings" description="A table & paint supplies at your fingertips" />
