@@ -8,11 +8,9 @@ import MasterclassPage from "../1ServicesPage/2MasterclassPage";
 import TablebookingPage from "../1ServicesPage/3TablebookingPage";
 import AuthPage from "../2AuthPage/AuthPage";
 import SignupPage from "../2SignupPage/SignupPage";
-
-// import UserPage from "../UserPage/UserPage";
 import UserPage from "../3UserPage/0UserPage";
-
 import UserInfoPage from "../3UserPage/UserInfoPage/UserInfoPage";
+// import UserPage from "../UserPage/UserPage";
 
 import UserPreferencePage from "../UserPage/UserPreferencePage/UserPreferencePage";
 import { getUser } from "../../utilities/usersService";
@@ -67,23 +65,11 @@ function App() {
           <NavbarOut />
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route
-              path="login"
-              element={<AuthPage user={user} setUser={setUser} />}
-            />
-            <Route path="signup" element={<SignupPage setUser={setUser} />} />
-            <Route
-              path="paintservices"
-              element={<PaintforhirePage user={user} />}
-            />
-            <Route
-              path="paintclasses"
-              element={<MasterclassPage user={user} />}
-            />
-            <Route
-              path="painttables"
-              element={<TablebookingPage user={user} />}
-            />
+            <Route path="login"     element={<AuthPage user={user} setUser={setUser} />}      />
+            <Route path="signup" element={<SignupPage setUser={setUser} />}     />
+            <Route path="paintservices"   element={<PaintforhirePage user={user} />}      />
+            <Route path="paintclasses"    element={<MasterclassPage user={user} />}       />
+            <Route path="painttables"     element={<TablebookingPage user={user} />}      />
           </Routes>
         </>
       )}
