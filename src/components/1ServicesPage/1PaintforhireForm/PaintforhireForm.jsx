@@ -1,9 +1,41 @@
 import { Button, Form, Input } from "antd";
+import { useState, useEffect } from "react";
+import { Route, Routes, Link } from "react-router-dom";
+import AuthPage from "../../../pages/2AuthPage/AuthPage";
 
-export default function PaintforhireForm() {
+export default function PaintforhireForm({ user , setUser }) {
+  const [data1PaintSvcs, setData1PaintSvcs] = useState([]);
+
+  useEffect(() => {
+    localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
+  }, [data1PaintSvcs]);
+
   const onFinish = (values) => {
     console.log("Success:", values);
+    setData1PaintSvcs(values);
+    console.log(data1PaintSvcs);
+    console.log(localStorage);
+
+    localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
+    console.log(user);
+    // if ( user === null || undefined) {
+    //   <Link to="/login">
+    {
+      /* <Route path="login" element={<Navigate to="/login" />} /> */
+    }
+    {
+      /* <Route path="login" element={<AuthPage user={user} setUser={setUser} />} /> */
+    }
+
+    {
+      /* </Link> */
+    }
   };
+
+  // const onFinish = (values) => {
+  //   console.log("Success:", values);
+  // };
+
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
@@ -21,7 +53,6 @@ export default function PaintforhireForm() {
         style={{
           maxWidth: 350,
         }}
-        
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete="off"
@@ -30,7 +61,7 @@ export default function PaintforhireForm() {
           label="Number of models"
           name="numberofModel"
           rules={[
-            { 
+            {
               required: true,
               message:
                 "Please input the number of models you require painting.",
@@ -73,15 +104,19 @@ export default function PaintforhireForm() {
             span: 16,
           }}
         >
-          <Button
-            style={{ backgroundColor: "#01628f" }}
-            type="primary"
-            htmlType="submit"
-          >
-            Add to cart
-          </Button>
+          <Link to="/login">
+            <Button
+              style={{ backgroundColor: "#01628f" }}
+              type="primary"
+              htmlType="submit"
+            >
+              Add to cart
+            </Button>
+          </Link>
         </Form.Item>
       </Form>
+
+
     </>
   );
 }

@@ -48,11 +48,11 @@ function App() {
         <>
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="login" element={<AuthPage setUser={setUser} />} />
+              <Route path="login" element={<AuthPage user={user} setUser={setUser} />} />
               <Route path="signup" element={<SignupPage setUser={setUser} />} />
-              <Route path="/paintservices" element={<PaintforhirePage />} />
-              <Route path="/paintclasses" element={<MasterclassPage />} />
-              <Route path="/painttables" element={<TablebookingPage />} />
+              <Route path="/paintservices" element={<PaintforhirePage user={user} />} />
+              <Route path="/paintclasses" element={<MasterclassPage user={user} />} />
+              <Route path="/painttables" element={<TablebookingPage user={user} />} />
 
           </Routes>
         </>

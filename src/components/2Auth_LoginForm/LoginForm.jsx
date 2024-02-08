@@ -1,7 +1,7 @@
 import { Button, Checkbox, Form, Input } from "antd";
 import * as usersService from "../../utilities/usersService";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function LoginForm({ setUser }) {
   const [error, setError] = useState("");
@@ -98,7 +98,12 @@ export default function LoginForm({ setUser }) {
             &nbsp;{error}
           </p>
         </Form.Item>
+        <p style={{ textAlign: 'center'}}>New to Condotierre?  <Link to="/signup" style={{ color: '#478e80'}}>Sign up here</Link> </p>
+
       </Form>
+
+      {/* <p style={{ textAlign: 'center'}}>New to Condotierre?  <Link to="/signup">Sign up here</Link> </p> */}
+
     </>
   );
 }
