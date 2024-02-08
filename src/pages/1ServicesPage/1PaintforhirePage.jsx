@@ -53,7 +53,7 @@ const layoutStyle = {
   maxWidth: "calc(100% )",
 };
 
-export default function PaintforhirePage() {
+export default function PaintforhirePage({ user, setUser }) {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
@@ -104,7 +104,7 @@ export default function PaintforhirePage() {
               Need a few models painted for your D&D, Kill Team, Blood Bowl games? Or do you have an army of Imperial Stormtroopers or Ultramarines units you need to field asap? Either way, we've got your back, with our painters-for-hire service.   <br></br>
               </p>
 
-              <PaintforhireForm />
+              <PaintforhireForm user={user} setUser={setUser} />
 
             </Sider>
           </Layout>

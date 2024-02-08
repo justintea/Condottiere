@@ -1,10 +1,12 @@
 import { Button, Form, Input } from "antd";
 import { useState, useEffect } from "react";
-import { Route, Routes, Link } from "react-router-dom";
-import AuthPage from "../../../pages/2AuthPage/AuthPage";
+import { Route, Routes, Link, useNavigate } from "react-router-dom";
 
-export default function PaintforhireForm({ user , setUser }) {
+export default function PaintforhireForm({ user, setUser }) {
   const [data1PaintSvcs, setData1PaintSvcs] = useState([]);
+
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
@@ -12,25 +14,34 @@ export default function PaintforhireForm({ user , setUser }) {
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    setData1PaintSvcs(values);
+    let data1svc = values;
+    setData1PaintSvcs(data1svc);
+    
+    //*state of prelogin Form is passed properly, in cases needed
     console.log(data1PaintSvcs);
-    console.log(localStorage);
-
+    
+    
     localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
-    console.log(user);
-    // if ( user === null || undefined) {
-    //   <Link to="/login">
-    {
-      /* <Route path="login" element={<Navigate to="/login" />} /> */
-    }
-    {
-      /* <Route path="login" element={<AuthPage user={user} setUser={setUser} />} /> */
-    }
+    console.log(localStorage);
+    //* below: store, transport, parse, access your Local Storage data like this
+    // const localStorageData = localStorage.getItem('data1Key');
+    // const parsedData = JSON.parse(localStorageData);
+    // const sizeofModelValue = parsedData?.sizeofModel;
+    // console.log(sizeofModelValue);
 
-    {
-      /* </Link> */
-    }
-  };
+    console.log(user);
+
+    //? if i remove code below, i can see my LocalStorage data. if i comment-in, localStorage data disappears for some reason
+    //? if user is null, navigate or link to Login
+  
+    // if (user === null) {
+    //   navigate('/login');
+    //   console.log(localStorage);
+
+    //? try to code here
+  }
+
+
 
   // const onFinish = (values) => {
   //   console.log("Success:", values);
@@ -104,15 +115,24 @@ export default function PaintforhireForm({ user , setUser }) {
             span: 16,
           }}
         >
-          <Link to="/login">
-            <Button
-              style={{ backgroundColor: "#01628f" }}
-              type="primary"
-              htmlType="submit"
-            >
-              Add to cart
-            </Button>
-          </Link>
+          {/* <Link to="/login">
+              <Button
+                style={{ backgroundColor: "#01628f" }}
+                type="primary"
+                htmlType="submit"
+              >
+                Add to cart
+              </Button>
+          </Link> */}
+          
+              <Button
+                style={{ backgroundColor: "#01628f" }}
+                type="primary"
+                htmlType="submit"
+              >
+                Add to cart
+              </Button>
+          
         </Form.Item>
       </Form>
 

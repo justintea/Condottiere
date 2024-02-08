@@ -18,9 +18,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       colorPrimaryTextHover: '#478e80',
         },
     Input: {
-      colorPrimaryHover: '#478e80',
+      colorPrimaryHover: '#03594c',
+      activeBg:'#d2e0dd',
+      colorPrimary: '#03594c',
+      activeShadow: '#478e80',
         },
- 
+    Menu: {
+      horizontalItemHoverColor: '#478e80',
+      horizontalItemSelectedColor: '#478e80',
+    }
   }
 }}>
         <App />
