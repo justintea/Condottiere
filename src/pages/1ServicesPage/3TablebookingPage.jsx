@@ -1,4 +1,4 @@
-
+import NavbarOut from "../../components/0Navbar/NavbarOut/NavbarOut"
 import { Layout, Flex } from 'antd';
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -39,7 +39,7 @@ export default function PaintforhirePage() {
 
   return (
   <>
-    
+          <NavbarOut />
    <Flex gap="middle" wrap="wrap">
    <Layout style={layoutStyle}>
       <Header style={headerStyle}>Header</Header>
