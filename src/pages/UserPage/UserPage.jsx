@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import NavbarIn from "../../components/Navbar/NavbarIn/NavbarIn";
+import NavbarIn from "../../components/0Navbar/NavbarIn/NavbarIn";
 import { useEffect, useState } from "react";
 import { getLogs } from "../../utilities/logsService";
 import { getGoals } from "../../utilities/goalsService";

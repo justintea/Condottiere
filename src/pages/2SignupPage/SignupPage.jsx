@@ -1,5 +1,5 @@
-import SignupForm from "../../components/Auth_SignupForm/SignupForm";
-import NavbarOut from "../../components/Navbar/NavbarOut/NavbarOut";
+import SignupForm from "../../components/2Auth_SignupForm/SignupForm";
+import NavbarOut from "../../components/0Navbar/NavbarOut/NavbarOut";
 
 export default function SignupPage({ setUser }) {
   return (
