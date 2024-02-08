@@ -2,18 +2,21 @@ import React, { useEffect, useState } from 'react';
 import './UserInfoForm.css'
 import { List } from 'antd';
 import { ShoppingCartOutlined, CalendarOutlined , HomeOutlined, LockOutlined  } from "@ant-design/icons";
+//? tentative render
+// import CartconfirmationPage from '../../pages/3UserPage/CartconfirmationPage/CartconfirmationPage';
 
 
-export default function UserInfoForm() {   
+export default function UserInfoForm( { user, data1PaintSvcs}) {   
 
   const preferlist = [
     {
       title: "Visit our store",
       description: "Continue shopping",
-      icon: <ShoppingCartOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
+      icon: <ShoppingCartOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
       
       // content: xxx, //to do AJAX GET from a db
     },
+
     {
       title: "Past purchases",
       description: "A history of your past transactions with us",
@@ -50,6 +53,7 @@ export default function UserInfoForm() {
 
   return (
     <>
+      {/* <CartconfirmationPage user={user}  data1PaintSvcs={data1PaintSvcs}/> */}
       <List 
         itemLayout="horizontal"
         dataSource={preferlist}

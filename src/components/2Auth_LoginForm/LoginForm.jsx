@@ -3,15 +3,15 @@ import * as usersService from "../../utilities/usersService";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function LoginForm({ setUser }) {
+export default function LoginForm({ setUser , data1PaintSvcs }) {
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
 
   const onFinish = async (values) => {
     try {
       const user = await usersService.logIn(values);
       setUser(user);
-      navigate("/");
+      Navigate("/user/info", { state: { data1PaintSvcs } } );        //* pass the prelogin form data into postlogin environment
     } catch {
       //? User-error validation #1
       setError(

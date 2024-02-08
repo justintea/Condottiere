@@ -20,7 +20,6 @@ export default function PaintforhireForm({ user, setUser }) {
     //*state of prelogin Form is passed properly, in cases needed
     console.log(data1PaintSvcs);
     
-    
     localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
     console.log(localStorage);
     //* below: store, transport, parse, access your Local Storage data like this
@@ -28,17 +27,21 @@ export default function PaintforhireForm({ user, setUser }) {
     // const parsedData = JSON.parse(localStorageData);
     // const sizeofModelValue = parsedData?.sizeofModel;
     // console.log(sizeofModelValue);
-
     console.log(user);
 
     //? if i remove code below, i can see my LocalStorage data. if i comment-in, localStorage data disappears for some reason
     //? if user is null, navigate or link to Login
-  
     // if (user === null) {
     //   navigate('/login');
     //   console.log(localStorage);
 
     //? try to code here
+    if (user === null) {
+      navigate('/login', { state: {data1PaintSvcs} });
+      console.log(data1PaintSvcs);
+    } 
+    
+      
   }
 
 
