@@ -80,7 +80,7 @@ export default function LoginForm({ setUser }) {
             span: 16,
           }}
         >
-          <Checkbox>Remember me</Checkbox>
+          <Checkbox >Remember me</Checkbox>
         </Form.Item>
 
         <Form.Item
@@ -89,7 +89,7 @@ export default function LoginForm({ setUser }) {
             span: 16,
           }}
         >
-          <Button type="primary" htmlType="submit">
+          <Button style={{ backgroundColor: "#01628f" }} type="primary" htmlType="submit">
             Login
           </Button>
 

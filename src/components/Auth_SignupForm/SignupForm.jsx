@@ -46,7 +46,7 @@ export default function SignupForm({ setUser }) {
 
   return (
     <>
-      <h3> Sign Up - Join GA-SEI48's fastest-growing personal finance app!</h3>
+      <h3> Sign Up - Bring your tabletop adventures to life today!</h3>
       <Form
         name="basic"
         labelCol={{
@@ -182,7 +182,7 @@ export default function SignupForm({ setUser }) {
             span: 16,
           }}
         >
-          <Button type="primary" htmlType="submit">
+          <Button style={{ backgroundColor: "#01628f" }} type="primary" htmlType="submit">
             {/* <Button type="primary" htmlType="submit" disabled={disable} > */}
             {/* <Button type="primary" htmlType="submit" disabled={disable} onChange={handleChange}> */}
             Submit

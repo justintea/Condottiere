@@ -21,10 +21,12 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  font-family: 'Palatino Linotype', 'Times New Roman';
 }
 
 .brand:hover {
-  color:#1677ff;
+  /* color:#1677ff; */
+  color: #478e80;
 }
 
 .menu {
@@ -53,4 +55,10 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  /* color: #043a5b ; */
+}
+
+.auth-buttons:hover {
+  /* color:#1677ff; */
+  color: #478e80;
 }
