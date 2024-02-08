@@ -33,13 +33,16 @@ function App() {
             <Route path="/" element={<Navigate to="/user/info" />}        />
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
             <Route path="info" element={<UserInfoPage />} />
+            <Route path="paintservices" element={<PaintforhirePage user={user} />} />
+            <Route path="paintclasses" element={<MasterclassPage user={user} />} />
+            <Route path="painttables" element={<TablebookingPage user={user} />} />
+            {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
 
-
-              <Route index element={<DashboardPage />} />
+              {/* <Route index element={<DashboardPage />} />
               <Route path="dashboard" element={<DashboardPage />} />
               <Route path="tracking" element={<TrackingPage />} />
               <Route path="edit" element={<EditPage />} />
-              <Route path="goals" element={<GoalsPage />} />
+              <Route path="goals" element={<GoalsPage />} /> */}
             </Route>
           </Routes>
         </>

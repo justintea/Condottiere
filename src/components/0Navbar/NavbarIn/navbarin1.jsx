@@ -1,5 +1,6 @@
 import "../Navbar.css";
 import { SettingOutlined } from "@ant-design/icons";
+import { PoweroffOutlined } from "@ant-design/icons";
 import { Layout, Button, Menu } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 const { Header } = Layout;
@@ -11,29 +12,37 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
 
   const items = [
     {
-      key: "paintservices",
+      key: "dashboard",
       label: (
-        <Link to="/paintservices" className="link">
-          Paint-for-Hire
+        <Link to="/user/dashboard" className="link">
+          Dashboard
         </Link>
       ),
     },
     {
-      key: "paintclasses",
+      key: "tracking",
       label: (
-        <Link to="/paintclasses" className="link">
-          Masterclasses
+        <Link to="/user/tracking" className="link">
+          Tracking
         </Link>
       ),
     },
     {
-      key: "painttables",
+      key: "goals",
       label: (
-        <Link to="/painttables" className="link">
-          Paint tables
+        <Link to="/user/goals" className="link">
+          Goals
         </Link>
       ),
-    }
+    },
+    {
+      key: "edit",
+      label: (
+        <Link to="/user/edit" className="link">
+          Edit
+        </Link>
+      ),
+    },
   ];
 
   //* J 24/1 0330: temporary addition - logout button
@@ -70,16 +79,16 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
           Welcome back,{" "}
           {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
         </h3>
-
-        <Link to="/user/info">
+        <Link to="/login" onClick={handleLogOut}>
+          <Button
+            icon={<PoweroffOutlined />}
+            style={{ marginRight: "5px" }}
+          ></Button>
+        </Link>
+        <Link to="/user/preferences">
           {/*  */}
           <Button icon={<SettingOutlined />}></Button>
         </Link>
-
-        <Link to="/login" onClick={handleLogOut}>
-          <Button>Log Out</Button>
-        </Link>
-
       </div>
     </Header>
   );

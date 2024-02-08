@@ -10,14 +10,14 @@ export default function UserInfoForm() {
     {
       title: "Visit our store",
       description: "Continue shopping",
-      icon: <ShoppingCartOutlined style={{ fontSize: "200%" }} />,
+      icon: <ShoppingCartOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
       
       // content: xxx, //to do AJAX GET from a db
     },
     {
       title: "Past purchases",
       description: "A history of your past transactions with us",
-      icon: <CalendarOutlined style={{ fontSize: "200%" }} />,
+      icon: <CalendarOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
       
       // content: xxx, //to do AJAX GET from a db
     },
@@ -25,14 +25,14 @@ export default function UserInfoForm() {
       title: "Address",
       description:
         "For our delivery purposes",
-      icon: <HomeOutlined style={{ fontSize: "200%" }} />,
+      icon: <HomeOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
       // content: xxx, //to do AJAX GET from a db
     },
     {
       title: "Password",
       description:
         "Change your password",
-      icon: <LockOutlined style={{ fontSize: "200%" }} />,
+      icon: <LockOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
       // content: xxx, //to do AJAX GET from a db
     },
     // {

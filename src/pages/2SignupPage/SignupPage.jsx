@@ -4,7 +4,6 @@ import NavbarOut from "../../components/0Navbar/NavbarOut/NavbarOut";
 export default function SignupPage({ setUser }) {
   return (
     <>
-      <NavbarOut />
       <SignupForm setUser={setUser}  />
     </>
   );

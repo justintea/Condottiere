@@ -3,11 +3,29 @@ import ReactDOM from "react-dom/client";
 import App from "./pages/App/App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { Footer } from "antd/es/layout/layout.js";
+import { ConfigProvider } from "antd";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+    <ConfigProvider theme={{
+  components: {
+    Button: {
+      colorPrimaryBorderHover: 'red',
+      colorPrimaryHover: '#478e80',
+      colorPrimary: 'red',
+      colorPrimaryActive: '#478e80',
+      colorPrimaryTextHover: '#478e80',
+        },
+    Input: {
+      colorPrimaryHover: '#478e80',
+        },
+ 
+  }
+}}>
+        <App />
+        </ConfigProvider>
+
     </BrowserRouter>
     <Footer
         style={{
@@ -16,7 +34,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         backgroundColor: "#03594c",
         color: "white"
       }}
-      
       >
         © {new Date().getFullYear()} by <a href="https://github.com/justintea/Condottiere" target="_blank" rel="noopener noreferrer" style={{ color: "white" }}>Justin Teh</a>
       </Footer>

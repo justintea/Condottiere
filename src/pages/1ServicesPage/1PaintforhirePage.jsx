@@ -1,19 +1,19 @@
-import NavbarOut from "../../components/0Navbar/NavbarOut/NavbarOut";
 import PaintforhireForm from "../../components/1ServicesPage/1PaintforhireForm/PaintforhireForm";
 import { Layout, Flex } from "antd";
 const { Sider, Content } = Layout;
 import { Carousel } from "antd";
 import { Divider } from "antd";
+import { Outlet, useOutletContext } from "react-router-dom";
 
-const carouselcontentStyle = {
-  padding: 0,
-  margin: 5,
-  height: "300px",
-  color: "#fff",
-  lineHeight: "300px",
-  textAlign: "center",
-  background: "#364d79",
-};
+// const carouselcontentStyle = {
+//   padding: 0,
+//   margin: 5,
+//   height: "300px",
+//   color: "#fff",
+//   lineHeight: "300px",
+//   textAlign: "center",
+//   background: "#364d79",
+// };
 // const headerStyle = {
 //   textAlign: 'center',
 //   color: '#fff',
@@ -57,6 +57,9 @@ export default function PaintforhirePage() {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
+
+  useOutletContext();
+
 
   return (
     <>

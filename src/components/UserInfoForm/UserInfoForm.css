@@ -1,4 +1,10 @@
-.preferlistitem:hover {
-  color:#478e80;
-  /* background-color: #1677ff;  */
-}
+
+.UserInfoIcons:hover {
+color: #478e80;}
+
+li.ant-list-item.preferlistitem:hover {
+color: #478e80;}
+
+
+
+

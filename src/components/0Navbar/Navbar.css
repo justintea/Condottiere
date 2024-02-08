@@ -37,18 +37,173 @@
   margin-left: 20px;
 }
 
+.ant-menu-title-content-selected {
+  color: #478e80;
+} 
+
+.ant-menu-title-content:focus-within {
+  color: #478e80;
+  border-bottom-color: #478e80;
+} 
+/*line is still blue  */
+
+
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item.ant-menu-item-only-child::after {
+  border-bottom-color: transparent; /* Initial color of the line */
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item.ant-menu-item-only-child:hover::after {
+  border-bottom-color: #478e80; 
+}
+
+
+//* testing
+.ant-menu-item-selected {
+  color: #478e80;
+  border-bottom-color: #478e80;
+} 
+
+/* 
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child:target {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+}
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child:target {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+}
+
+
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child:focus-visible {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+}
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child:focus-within {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+}
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child:focus {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+}
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child:active {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+}
+.ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child:target {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+} */
+
+/* .ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-only-child {
+  border-bottom-color: #478e80;
+
+  border-bottom: #478e80;
+
+} */
+
+
+
+
+
+/* .ant-menu-title-content:hover {
+  color: #478e80;
+  border-bottom: #478e80;
+}  */
+/* 
+.ant-menu-title-content::after {
+  transition: border-bottom-color 0.3s ease;
+
+  border-bottom: #478e80;
+  border-bottom-color: #478e80;
+}  */
+
+/* .ant-menu-overflow-item.ant-menu-item.ant-menu-item-only-child:hover {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+}
+ */
+
+
+/* .ant-menu-overflow-item.ant-menu-item.ant-menu-item-only-child:hover::after {
+  transition: border-bottom-color 0.3s ease;
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+} */
+
+/* .ant-menu-overflow-item.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child:focus-visible {
+  border-bottom-color: #478e80;
+  border-bottom: #478e80;
+} */
+
+
+
+/* 
+.ant-menu-item:hover::after {
+  background-color: #478e80;
+  border-bottom: #478e80;
+  border-bottom-color: #478e80;
+
+
+}  */
+
+ /* .ant-menu-title-content:focus-within {
+  color: #478e80;
+  border-bottom: #478e80;
+} */
+
+
+/* .ant-menu-item-selected:hover {
+  color: #478e80;
+}
+
+#rc-menu-uuid-18079-2-paintservices:target {
+  color: #478e80;
+
+}  */
+
+
+
+
+/* li.ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child:active {
+  color: #478e80;
+} */
+/* .ant-menu-title-content:hover {
+  color: #478e80;
+} */ 
+
+/* .ant-menu-content:hover {
+  color: #478e80;
+} */ 
+
+/* li.ant-menu-overflow-item.ant-menu-item.ant-menu-item-only-child:hover {
+  color: #478e80;
+}
+
+li.ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child:hover {
+  color: #478e80;
+}
+
+li.ant-menu-overflow-item.ant-menu-item.ant-menu-item-active.ant-menu-item-selected.ant-menu-item-only-child:active {
+  color: #478e80;
+} */
+ /* .ant-menu-title-content:hover {
+  color: #478e80;
+} */
+
+
+/*
+.ant-menu-title-content:focus-visible {
+  color: #478e80;
+} */
+/* class="ant-menu-overflow-item ant-menu-item ant-menu-item-active ant-menu-item-selected ant-menu-item-only-child" */
+
+
 .app-name {
   font-size: 1.5rem;
   font-weight: bold;
 }
-
-.logout-button {
-  /* J: can't seem to edit margin, did it in React
-  margin-left: auto;
-  display: flex;
-  align-items: center; */
-}
-
 
 .auth-buttons {
   margin-left: auto;
@@ -61,4 +216,14 @@
 .auth-buttons:hover {
   /* color:#1677ff; */
   color: #478e80;
+}
+
+.ant-btn-default:hover {
+  /* background: #yourColor; */
+  border-color: #478e80;
+}
+
+.ant-btn-primary:hover {
+  /* background: #yourColor; */
+  border-color: #478e80;
 }
