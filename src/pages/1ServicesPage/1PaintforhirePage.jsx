@@ -74,7 +74,7 @@ export default function PaintforhirePage({ user, setUser }) {
                 <div>
                   {/* <h3 style={carouselcontentStyle}>1</h3> */}
                   <img
-                    src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc1.png"
+                    src="../../../public/paintsvc1.png"
                     alt="paintsvc1"
                     style={{ width: "100%", height: "100%" }}
                   />
