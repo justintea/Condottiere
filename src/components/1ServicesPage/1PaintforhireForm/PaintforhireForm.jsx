@@ -34,9 +34,7 @@ export default function PaintforhireForm({ user, setUser }) {
     // const parsedData = JSON.parse(localStorageData);
     // const sizeofModelValue = parsedData?.sizeofModel;
     // console.log(sizeofModelValue);
-    
     Navigate('/login');      //* pass transported data      
-    
     //? try 1
     // navigate('/login', { state: { values } });
     // let preloginTransportedLocalStorage = { ...localStorage };              //* rewrite Localstorage data bc you cant just pass it
@@ -47,9 +45,13 @@ export default function PaintforhireForm({ user, setUser }) {
     //? try 3
     // Navigate('/login', { state: { values} });      //* pass transported data
     // console.log(values);
-            // let preloginTransportedLocalStorage = { ...localStorage };              //* rewrite Localstorage data bc you cant just pass it
+    // let preloginTransportedLocalStorage = { ...localStorage };              //* rewrite Localstorage data bc you cant just pass it
+    } else {
+      // console.log(); 
+      console.log('data state', data1PaintSvcs);        //? why does it not pass?
+      console.log('values', values);
 
-    } 
+    }
     
       
   }
@@ -152,4 +154,26 @@ export default function PaintforhireForm({ user, setUser }) {
 
     </>
   );
+}
+
+
+
+
+const onFinish = (values) => {
+  console.log("Success:", values);
+  let data1svc = values;
+  setData1PaintSvcs(data1svc);
+  
+  // console.log(data1PaintSvcs);
+  // console.log(user);
+
+  if (user === null) {
+  //* final 
+  localStorage.setItem("data1Key", JSON.stringify(values));
+  console.log(localStorage);
+  Navigate('/login');      //* pass transported data      
+  } else {
+    console.log('data state', data1PaintSvcs);        //? why does it not pass?
+    console.log('values', values);
+  }
 }

@@ -13,7 +13,7 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
     {
       key: "paintservices",
       label: (
-        <Link to="/paintservices" className="link">
+        <Link to="/user/paintservices" className="link">
           Paint-for-Hire
         </Link>
       ),
@@ -21,7 +21,7 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
     {
       key: "paintclasses",
       label: (
-        <Link to="/paintclasses" className="link">
+        <Link to="/user/paintclasses" className="link">
           Masterclasses
         </Link>
       ),
@@ -29,7 +29,7 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
     {
       key: "painttables",
       label: (
-        <Link to="/painttables" className="link">
+        <Link to="/user/painttables" className="link">
           Paint tables
         </Link>
       ),

@@ -40,15 +40,14 @@ function App() {
           <Routes>
           {/* <Route path="/" element={Navigate('/user/info')} /> */}
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
-            <Route path="info" element={<UserInfoPage />} />
+              
+              <Route path="info" element={<UserInfoPage />} />
               <Route path="paintservices" element={<PaintforhirePage user={user} />} />
               <Route path="paintclasses" element={<MasterclassPage user={user} />} />
               <Route path="painttables" element={<TablebookingPage user={user} />} />
               <Route path="cart" element={<CartconfirmationPage user={user} />} />
-              
+          
             {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
-
-
               {/* <Route index element={<DashboardPage />} /> */}
               {/* <Route index element={<DashboardPage />} />
               <Route path="dashboard" element={<DashboardPage />} />
@@ -58,7 +57,6 @@ function App() {
               <Route path="goals" element={<GoalsPage />} /> */}
             </Route>
             </Routes>
-
         </>
       ) : (
         <>
@@ -78,6 +76,22 @@ function App() {
 }
 
 export default App;
+
+//? J: this works (loads, but doesnt route)
+
+{/* <>
+  <Routes>
+    <Route path="user" element={<UserPage user={user} setUser={setUser} />}>
+      <Route path="info" element={<UserInfoPage />} />
+      <Route path="paintservices" element={<PaintforhirePage user={user} />} />
+      <Route path="paintclasses" element={<MasterclassPage user={user} />} />
+      <Route path="painttables" element={<TablebookingPage user={user} />} />
+      <Route path="cart" element={<CartconfirmationPage user={user} />} />
+    </Route>
+  </Routes>
+</>; */}
+  {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
+
 
 //? J: 24/1 0050: initial Return code
 {
