@@ -5,7 +5,7 @@ import { Route, Routes, Link, useNavigate } from "react-router-dom";
 export default function PaintforhireForm({ user, setUser }) {
   const [data1PaintSvcs, setData1PaintSvcs] = useState([]);
 
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
 
 
   useEffect(() => {
@@ -20,22 +20,35 @@ export default function PaintforhireForm({ user, setUser }) {
     //*state of prelogin Form is passed properly, in cases needed
     console.log(data1PaintSvcs);
     
-    localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
+    //? if i remove code below, i can see my LocalStorage data. if i comment-in, localStorage data disappears for some reason
+    //? if user is null, navigate or link to Login
+    console.log(user);
+
+    //? try to code here
+    if (user === null) {
+    //* final 
+    localStorage.setItem("data1Key", JSON.stringify(values));
     console.log(localStorage);
     //* below: store, transport, parse, access your Local Storage data like this
     // const localStorageData = localStorage.getItem('data1Key');
     // const parsedData = JSON.parse(localStorageData);
     // const sizeofModelValue = parsedData?.sizeofModel;
     // console.log(sizeofModelValue);
-    console.log(user);
+    
+    Navigate('/login');      //* pass transported data      
+    
+    //? try 1
+    // navigate('/login', { state: { values } });
+    // let preloginTransportedLocalStorage = { ...localStorage };              //* rewrite Localstorage data bc you cant just pass it
+    //? try 2
+    // let preloginTransportedLocalStorage = JSON.parse(JSON.stringify(localStorage));              //* rewrite Localstorage data bc you cant just pass it
+    // Navigate('/login', { state: { preloginTransportedLocalStorage} });      //* pass transported data
+    // console.log(preloginTransportedLocalStorage);
+    //? try 3
+    // Navigate('/login', { state: { values} });      //* pass transported data
+    // console.log(values);
+            // let preloginTransportedLocalStorage = { ...localStorage };              //* rewrite Localstorage data bc you cant just pass it
 
-    //? if i remove code below, i can see my LocalStorage data. if i comment-in, localStorage data disappears for some reason
-    //? if user is null, navigate or link to Login
-
-    //? try to code here
-    if (user === null) {
-      navigate('/login', { state: {data1PaintSvcs} });
-      console.log(data1PaintSvcs);
     } 
     
       

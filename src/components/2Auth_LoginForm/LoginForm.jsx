@@ -3,18 +3,35 @@ import * as usersService from "../../utilities/usersService";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-export default function LoginForm({ setUser , data1PaintSvcs }) {
+export default function LoginForm({ setUser }) {
   const [error, setError] = useState("");
   const Navigate = useNavigate();
 
+  // const onFinish = async (values) => {
+  //   try {
+  //     const user = await usersService.logIn(values);
+  //     setUser(user);
+  //     console.log(data1PaintSvcs);
+  //     Navigate("/user/info", { state: { data1PaintSvcs } });        //* pass the prelogin form data into postlogin environment
+  //     console.log(user);
+  //     console.log(data1PaintSvcs);
+  //   } catch {
+  //     //? User-error validation #1
+  //     setError(
+  //       "The email and password you specified are invalid. Please try again."
+  //     );
+  //   }
+  // };
   const onFinish = async (values) => {
     try {
       const user = await usersService.logIn(values);
       setUser(user);
-      console.log(data1PaintSvcs);
-      Navigate("/user/info", { state: { data1PaintSvcs } });        //* pass the prelogin form data into postlogin environment
+      // console.log(preloginTransportedLocalStorage);
+      console.log(localStorage);          //* doesnt need to be moved as state. localStorage is a global component...
+      // Navigate("/user/info", { state: { preloginTransportedLocalStorage } });        //* pass the prelogin form data into postlogin environment
+      Navigate("/user/info");        //* no need to pass the prelogin form data into postlogin environment, localStorage is global.
+
       console.log(user);
-      console.log(data1PaintSvcs);
     } catch {
       //? User-error validation #1
       setError(
@@ -22,7 +39,6 @@ export default function LoginForm({ setUser , data1PaintSvcs }) {
       );
     }
   };
-
   // const onFinishFailed = (errorInfo) => {
   //   console.log("Failed:", errorInfo);
   //   setError("The email and password you specified are invalid. Please try again.");

@@ -39,8 +39,8 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
   //* J 24/1 0330: temporary addition - logout button
   function handleLogOut(e) {
     e.preventDefault();
-    setLogs([]);
-    setGoals([]);
+    // setLogs([]);
+    // setGoals([]);
     usersService.logOut();
     setUser(null);
     navigate("/login")

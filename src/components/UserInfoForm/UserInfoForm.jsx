@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 // import CartconfirmationPage from '../../pages/3UserPage/CartconfirmationPage/CartconfirmationPage';
 
 
-export default function UserInfoForm({ user, data1PaintSvcs }) {   
+export default function UserInfoForm({ user, preloginTransportedLocalStorage }) {   
 
   const Navigate = useNavigate();
 
@@ -66,11 +66,19 @@ export default function UserInfoForm({ user, data1PaintSvcs }) {
     Navigate(route);
 }
 
-
+const localStorageData = localStorage.getItem('data1Key');
+    const parsedData = JSON.parse(localStorageData);
+    // const sizeofModelValue = parsedData?.sizeofModel;
+    // console.log(sizeofModelValue);
 
   return (
     <>
       {/* <CartconfirmationPage user={user}  data1PaintSvcs={data1PaintSvcs}/> */}
+ {/* Render the preloginTransportedLocalStorage data */}
+ <div>
+ parsedData = {JSON.stringify(parsedData, null, 2)}
+      </div>
+      
       <List 
         itemLayout="horizontal"
         dataSource={preferlist}
