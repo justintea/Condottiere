@@ -24,8 +24,8 @@ export default function LandingPageOut() {
       <Carousel autoplay>
         <div>
           <img
-            src="../../../public/0LandingpageCarousel/carousel1s.png"
-            
+            // src="../../../public/0LandingpageCarousel/carousel1s.png"
+            src="/0LandingpageCarousel/carousel1s.png"
             alt="carousel1"
             style={{ width: "100%", height: "100%" }}
           />
@@ -33,7 +33,8 @@ export default function LandingPageOut() {
         </div>
         <div>
           <img
-            src="../../../public/0LandingpageCarousel/carousel2s.png"
+            // src="../../../public/0LandingpageCarousel/carousel2s.png"
+            src="/0LandingpageCarousel/carousel2s.png"
             alt="carousel2"
             style={{ width: "100%", height: "100%" }}
           />
@@ -41,7 +42,8 @@ export default function LandingPageOut() {
         </div>
         <div>
           <img
-            src="../../../public/0LandingpageCarousel/carousel3s.png"
+            // src="../../../public/0LandingpageCarousel/carousel3s.png"
+            src="/0LandingpageCarousel/carousel3s.png"
             alt="carousel3"
             style={{ width: "100%", height: "100%" }}
           />
@@ -49,7 +51,8 @@ export default function LandingPageOut() {
         </div>
         <div>
           <img
-            src="../../../public/0LandingpageCarousel/carousel4s.png"
+            // src="../../../public/0LandingpageCarousel/carousel4s.png"
+            src="/0LandingpageCarousel/carousel4s.png"
             alt="carousel4"
             style={{ width: "100%", height: "100%" }}
           />
@@ -65,7 +68,9 @@ export default function LandingPageOut() {
             <Card
               hoverable
               style={{ width: 400, height: 650 }}
-              cover={<img alt="example" src="../../../public/0LandingpageCards/card1.png" />}
+              // cover={<img alt="example" src="../../../public/0LandingpageCards/card1.png" />}
+              cover={<img alt="example" src="/0LandingpageCards/card1.png" />}
+
             >
               <Meta
                 title="Paint-for-hire"
@@ -79,7 +84,8 @@ export default function LandingPageOut() {
             <Card
               hoverable
               style={{ width: 400, height: 650 }}
-              cover={<img alt="example" src="../../../public/0LandingpageCards/card2.png" />}
+              // cover={<img alt="example" src="../../../public/0LandingpageCards/card2.png" />}
+              cover={<img alt="example" src="/0LandingpageCards/card2.png" />}
             >
               <Meta
                 title="Painting classes"
@@ -93,7 +99,8 @@ export default function LandingPageOut() {
             <Card
               hoverable
               style={{ width: 400, height: 650 }}
-              cover={<img alt="example" src="../../../public/0LandingpageCards/card3.png" />}
+              // cover={<img alt="example" src="../../../public/0LandingpageCards/card3.png" />}
+              cover={<img alt="example" src="/0LandingpageCards/card3.png" />}
             >
               <Meta
                 title="Table bookings"

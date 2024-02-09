@@ -4,9 +4,7 @@ import { Route, Routes, Link, useNavigate } from "react-router-dom";
 
 export default function PaintforhireForm({ user, setUser }) {
   const [data1PaintSvcs, setData1PaintSvcs] = useState([]);
-
   const Navigate = useNavigate();
-
 
   useEffect(() => {
     localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
@@ -19,10 +17,7 @@ export default function PaintforhireForm({ user, setUser }) {
     
     //*state of prelogin Form is passed properly, in cases needed
     console.log(data1PaintSvcs);
-    
-    //? if i remove code below, i can see my LocalStorage data. if i comment-in, localStorage data disappears for some reason
-    //? if user is null, navigate or link to Login
-    console.log(user);
+        console.log(user);
 
     //? try to code here
     if (user === null) {

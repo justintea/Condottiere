@@ -24,7 +24,8 @@ export default function LandingPageIn() {
       <Carousel autoplay>
         <div>
           <img
-            src="../../../screenshots/carousel1s.png"
+            // src="../../../screenshots/carousel1s.png"
+            src="/0LandingpageCarousel/carousel1s.png"
             alt="carousel1"
             style={{ width: "100%", height: "100%" }}
           />
@@ -32,7 +33,8 @@ export default function LandingPageIn() {
         </div>
         <div>
           <img
-            src="../../../screenshots/carousel2s.png"
+            // src="../../../screenshots/carousel2s.png"
+            src="/0LandingpageCarousel/carousel2s.png"
             alt="carousel2"
             style={{ width: "100%", height: "100%" }}
           />
@@ -40,7 +42,8 @@ export default function LandingPageIn() {
         </div>
         <div>
           <img
-            src="../../../screenshots/carousel3s.png"
+            // src="../../../screenshots/carousel3s.png"
+            src="/0LandingpageCarousel/carousel3s.png"
             alt="carousel3"
             style={{ width: "100%", height: "100%" }}
           />
@@ -48,7 +51,8 @@ export default function LandingPageIn() {
         </div>
         <div>
           <img
-            src="../../../screenshots/carousel4s.png"
+            // src="../../../screenshots/carousel4s.png"
+            src="/0LandingpageCarousel/carousel4s.png"
             alt="carousel4"
             style={{ width: "100%", height: "100%" }}
           />
@@ -64,7 +68,9 @@ export default function LandingPageIn() {
             <Card
               hoverable
               style={{ width: 400, height: 650 }}
-              cover={<img alt="example" src="../../../screenshots/card1.png" />}
+              // cover={<img alt="example" src="../../../screenshots/card1.png" />}
+              cover={<img alt="example" src="/0LandingpageCards/card1.png" />}
+
             >
               <Meta
                 title="Paint-for-hire"
@@ -78,7 +84,9 @@ export default function LandingPageIn() {
             <Card
               hoverable
               style={{ width: 400, height: 650 }}
-              cover={<img alt="example" src="../../../screenshots/card2.png" />}
+              // cover={<img alt="example" src="../../../screenshots/card2.png" />}
+              cover={<img alt="example" src="/0LandingpageCards/card2.png" />}
+
             >
               <Meta
                 title="Painting classes"
@@ -92,8 +100,10 @@ export default function LandingPageIn() {
             <Card
               hoverable
               style={{ width: 400, height: 650 }}
-              cover={<img alt="example" src="../../../screenshots/card3.png" />}
+              // cover={<img alt="example" src="../../../screenshots/card3.png" />}
+              cover={<img alt="example" src="/0LandingpageCards/card3.png" />}
             >
+              
               <Meta
                 title="Table bookings"
                 description="A table & paint supplies at your fingertips"

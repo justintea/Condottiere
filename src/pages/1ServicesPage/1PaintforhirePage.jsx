@@ -74,21 +74,27 @@ export default function PaintforhirePage({ user, setUser }) {
                 <div>
                   {/* <h3 style={carouselcontentStyle}>1</h3> */}
                   <img
-                    src="../../../public/paintsvc1.png"
+                    // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc1.png"
+                    src="/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc1.png"
+
                     alt="paintsvc1"
                     style={{ width: "100%", height: "100%" }}
                   />
                 </div>
                 <div>
                   <img
-                    src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc2.png"
+                    // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc2.png"
+                    src="/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc2.png"
+
                     alt="paintsvc2"
                     style={{ width: "100%", height: "100%" }}
                   />
                 </div>
                 <div>
                   <img
-                    src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc3.png"
+                    // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc3.png"
+                    src="/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc3.png"
+
                     alt="paintsvc3"
                     style={{ width: "100%", height: "100%" }}
                   />
