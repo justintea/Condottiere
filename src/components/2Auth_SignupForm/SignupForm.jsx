@@ -13,7 +13,7 @@ export default function SignupForm({ setUser }) {
     error: "",
   });
   // const [data, setData] = useState(null);
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
 
 
   //* AUI's onSubmit function
@@ -34,16 +34,16 @@ export default function SignupForm({ setUser }) {
     // console.log(' what is user', user);
     setUser(user);
 
-    navigate("/");
+    if (user !== null) { 
+      Navigate("/user");
+    } 
   };
 
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
 
-  //* Confirm-password validation code
-  // Saw AUI documentation. For AUI, is written within the Form.item. See below.
-
+  //* Confirm-password validation code within Return
   return (
     <>
       <h3> Sign Up - Bring your tabletop adventures to life today!</h3>
@@ -98,35 +98,6 @@ export default function SignupForm({ setUser }) {
         >
           <Input />
         </Form.Item>
-
-        {/*  
-          ORIGINAL AUI FIELDS W/O CONFIRM-PW VALIDATION 
-
-          <Form.Item
-          label="Password"
-          name="password"
-          rules={[
-            {
-              required: true,
-              message: "Please create a password",
-            },
-          ]}
-        >
-          <Input.Password />
-        </Form.Item>
-
-        <Form.Item
-          label="Confirm"
-          name="passwordconfirm"
-          rules={[
-            {
-              required: true,
-              message: "Please confirm your password",
-            },
-          ]}
-        >
-          <Input.Password />
-        </Form.Item> */}
 
         <Form.Item
           name="password"
@@ -183,8 +154,6 @@ export default function SignupForm({ setUser }) {
           }}
         >
           <Button style={{ backgroundColor: "#01628f" }} type="primary" htmlType="submit">
-            {/* <Button type="primary" htmlType="submit" disabled={disable} > */}
-            {/* <Button type="primary" htmlType="submit" disabled={disable} onChange={handleChange}> */}
             Submit
           </Button>
         </Form.Item>
@@ -192,25 +161,3 @@ export default function SignupForm({ setUser }) {
     </>
   );
 }
-
-//* old code
-/* <form>
-        <h2>Signup Form</h2>
-        <label>Name</label>
-        <input required /> 
-        <br />
-
-        <label>Email</label>
-        <input required /> 
-        <br />
-
-        <label>Password</label>
-        <input required /> 
-        <br />
-
-        <label>Confirm</label>
-        <input required /> 
-        <br />
-
-      </form>
-     */
