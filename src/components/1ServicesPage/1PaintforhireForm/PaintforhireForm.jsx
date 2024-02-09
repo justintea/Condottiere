@@ -48,7 +48,7 @@ export default function PaintforhireForm({ user, setUser }) {
     // let preloginTransportedLocalStorage = { ...localStorage };              //* rewrite Localstorage data bc you cant just pass it
     } else {
       // console.log(); 
-      console.log('data state', data1PaintSvcs);        //? why does it not pass?
+      console.log('data state', data1PaintSvcs);        //? why does it not pass? because AntD overwrites. use 'values' state, instead
       console.log('values', values);
 
     }
