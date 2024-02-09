@@ -48,7 +48,7 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
 
   return (
     <Header theme="light" className="navbar">
-      <Link to="/" className="brand">
+      <Link to="" className="brand">
       <img src="../../../screenshots/leonAIbrushedited.png" alt="Logo" style={{ width: 50, height: 50 }} />
           <span className="app-name">Condotierre</span>
 

@@ -15,7 +15,9 @@ const contentStyle = {
 
 };
 
-export default function LandingPage() {
+export default function LandingPageOut() {
+  
+  
   return (
     <>
       {/* <h1>Landing Page</h1> */}
@@ -123,4 +125,3 @@ export default function LandingPage() {
     </>
   );
 }
-
