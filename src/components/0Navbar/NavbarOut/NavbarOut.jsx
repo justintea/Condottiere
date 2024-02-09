@@ -39,7 +39,7 @@ export default function NavbarOut() {
       
       <Link to="/">
         <div className="brand">
-          <img src="../../../screenshots/leonAIbrushedited.png" alt="Logo" style={{ width: 50, height: 50 }} />
+          <img src="../../../public/0NavBarApplogo/leonAIbrushedited.png" alt="Logo" style={{ width: 50, height: 50 }} />
           <span className="app-name" >Condotierre</span>
         </div>
       </Link>
