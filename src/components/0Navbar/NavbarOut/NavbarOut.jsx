@@ -31,7 +31,16 @@ export default function NavbarOut() {
           Paint tables
         </Link>
       ),
+    },
+    {
+      key: "FAQ",
+      label: (
+        <Link to="FAQs" className="link">
+          FAQs
+        </Link>
+      ),
     }
+
   ];
 
   return (
