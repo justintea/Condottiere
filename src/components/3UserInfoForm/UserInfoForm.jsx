@@ -73,8 +73,8 @@ const localStorageData = localStorage.getItem('data1Key');
 
   return (
     <>
-      {/* <CartconfirmationPage user={user}  data1PaintSvcs={data1PaintSvcs}/> */}
- {/* Render the preloginTransportedLocalStorage data */}
+  {/* <CartconfirmationPage user={user}  data1PaintSvcs={data1PaintSvcs}/> */}
+  {/* Render the preloginTransportedLocalStorage data */}
  <div>
  parsedData = {JSON.stringify(parsedData, null, 2)}
       </div>
