@@ -1,10 +1,16 @@
 
 
-export default function CartconfirmationPage({ user, data1PaintSvcs }) {
+export default function CartconfirmationPage({ user }) {
   
+  const localStorageData = localStorage.getItem('data1Key');
+  const parsedData = JSON.parse(localStorageData);
+
   return (<>
     <h2>Shopping Cart </h2>
     <p> to be rendered nicely</p>
+    <div>
+ parsedData = {JSON.stringify(parsedData, null, 2)}
+      </div>
     
   </>);
 }

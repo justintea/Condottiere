@@ -26,12 +26,21 @@ export default function LoginForm({ setUser }) {
     try {
       const user = await usersService.logIn(values);
       setUser(user);
-      // console.log(preloginTransportedLocalStorage);
-      console.log(localStorage);          //* doesnt need to be moved as state. localStorage is a global component...
-      // Navigate("/user/info", { state: { preloginTransportedLocalStorage } });        //* pass the prelogin form data into postlogin environment
-      Navigate("/user/info");        //* no need to pass the prelogin form data into postlogin environment, localStorage is global.
 
-      console.log(user);
+      
+      console.log(localStorage);          //* doesnt need to be moved as state. localStorage is a global component...
+      
+      //? dan logic. declare there, navigation done here. 
+      if (localStorage.data1Key !== null) {//? this works. but localStorage remembers...
+        Navigate("/user/cart");             
+      } else {
+        Navigate("/user/info");           //* no need to pass the prelogin form data into postlogin environment, localStorage is global.  
+
+      }
+        
+
+
+      console.log(user);                  //? please remove in the future 
     } catch {
       //? User-error validation #1
       setError(

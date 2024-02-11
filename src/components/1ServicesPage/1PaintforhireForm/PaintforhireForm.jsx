@@ -6,18 +6,20 @@ export default function PaintforhireForm({ user, setUser }) {
   const [data1PaintSvcs, setData1PaintSvcs] = useState([]);
   const Navigate = useNavigate();
 
-  useEffect(() => {
-    localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
-  }, [data1PaintSvcs]);
+  // useEffect(() => {
+  //   localStorage.setItem("data1Key", JSON.stringify(data1PaintSvcs));
+  // }, [data1PaintSvcs]);
+
+
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    let data1svc = values;
-    setData1PaintSvcs(data1svc);
+    // let data1svc = values;
+    setData1PaintSvcs(values);
     
     //*state of prelogin Form is passed properly, in cases needed
     console.log(data1PaintSvcs);
-        console.log(user);
+    console.log(user);
 
     //? try to code here
     if (user === null) {

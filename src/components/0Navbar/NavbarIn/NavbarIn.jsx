@@ -1,5 +1,5 @@
 import "../Navbar.css";
-import { SettingOutlined } from "@ant-design/icons";
+import { SettingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Layout, Button, Menu } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 const { Header } = Layout;
@@ -64,14 +64,19 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
         items={items}
       />
 
-      {/* J 24/1 0330: temporary addition - logout button */}
-      <div className="logout-buttons"></div>
+      {/* J 24/1 0330: temporary addition - logout button
+      <div className="logout-buttons"></div> */}
 
       <div className="auth-buttons">
         <h3>
           Welcome back,{" "}
           {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
         </h3>
+
+        <Link to="/user/cart">
+          {/*  */}
+          <Button icon={<ShoppingCartOutlined />}></Button>
+        </Link>
 
         <Link to="/user/info">
           {/*  */}

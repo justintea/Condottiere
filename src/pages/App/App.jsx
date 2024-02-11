@@ -42,14 +42,23 @@ function App() {
           <Routes>
           {/* <Route path="/" element={Navigate('/user/info')} /> */}
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
-              
+
+              //? i have a save point alr. if have info in localstorage/data1key OR sth, go to Cartconfirmation. if 'null', go to landing page OR User information
+              //? localstorage is used to pass user info. 
+              //? i think i will use either state, or 'values'
+              {/* if ( local !== null ) { <Route path="cart" element={<CartconfirmationPage user={user} />}  }
+              else { */}
+              //? rmb what dan said. here is just path declaration... i can declare here and write the logici in Loginform...?
+
               <Route path="" element={<LandingPageIn />} />
               <Route path="info" element={<UserInfoPage />} />
               <Route path="paintservices" element={<PaintforhirePage user={user} />} />
               <Route path="paintclasses" element={<MasterclassPage user={user} />} />
               <Route path="painttables" element={<TablebookingPage user={user} />} />
               <Route path="cart" element={<CartconfirmationPage user={user} />} />
-          
+              
+
+
               {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
               {/* <Route index element={<DashboardPage />} /> */}
               {/* <Route index element={<DashboardPage />} />
@@ -80,21 +89,30 @@ function App() {
 
 export default App;
 
-//? J: this works (loads, but doesnt route)
+//? J: 11/2 17230: savepoint, i want to route to Cart confirmation page
+// {/* <Routes>
+//           {/* <Route path="/" element={Navigate('/user/info')} /> */}
+//             <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
 
-{/* <>
-  <Routes>
-    <Route path="user" element={<UserPage user={user} setUser={setUser} />}>
-      <Route path="info" element={<UserInfoPage />} />
-      <Route path="paintservices" element={<PaintforhirePage user={user} />} />
-      <Route path="paintclasses" element={<MasterclassPage user={user} />} />
-      <Route path="painttables" element={<TablebookingPage user={user} />} />
-      <Route path="cart" element={<CartconfirmationPage user={user} />} />
-    </Route>
-  </Routes>
-</>; */}
-  {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
 
+
+//               <Route path="" element={<LandingPageIn />} />
+//               <Route path="info" element={<UserInfoPage />} />
+//               <Route path="paintservices" element={<PaintforhirePage user={user} />} />
+//               <Route path="paintclasses" element={<MasterclassPage user={user} />} />
+//               <Route path="painttables" element={<TablebookingPage user={user} />} />
+//               <Route path="cart" element={<CartconfirmationPage user={user} />} />
+          
+//               {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
+//               {/* <Route index element={<DashboardPage />} /> */}
+//               {/* <Route index element={<DashboardPage />} />
+//               <Route path="dashboard" element={<DashboardPage />} />
+//               <Route path="tracking" element={<TrackingPage />} />
+//               <Route path="edit" element={<EditPage />} />
+//               <Route path="goals" element={<GoalsPage />} />
+//               <Route path="goals" element={<GoalsPage />} /> */}
+//             </Route>
+//             </Routes> */}
 
 //? J: 24/1 0050: initial Return code
 {
