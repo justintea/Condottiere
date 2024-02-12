@@ -27,10 +27,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       horizontalItemHoverColor: '#478e80',
       horizontalItemSelectedColor: '#478e80',
         },
-    // Table: {
-    //   controlItemBgHover: '#478e80',
-
-    // },
+    
   }
 }}>
         <App />

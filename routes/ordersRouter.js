@@ -9,4 +9,4 @@ router.post("/", ordersController.create);
 
 // router.delete("/:logId", logsController.deleteOne)
 
-module.exports = router
+module.exports = router;

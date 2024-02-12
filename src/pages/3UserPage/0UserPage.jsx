@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function UserPage1({ user, setUser }) {
   
   //? declare states
-  const [order, setOrder] = useState([]);
+  const [orders, setOrders] = useState([]);
   
   //? use effect to load all data... but this is the overhang, not the page itself
   
@@ -16,7 +16,7 @@ export default function UserPage1({ user, setUser }) {
 
   return (<>
     <NavbarIn user={user} setUser={setUser} />
-    <Outlet />
+    <Outlet context={{ orders, setOrders }} />
   
     {/* i think what happens here: this loads, takes in all the data,
     'allows a parent route to render its child route elements',

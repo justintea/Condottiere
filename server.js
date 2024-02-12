@@ -8,24 +8,29 @@ const logger = require("morgan");
 
 //* router requires
 const usersRouter = require("./routes/usersRouter")
-const logsRouter = require("./routes/logsRouter")
-const goalsRouter = require("./routes/goalsRouter")
-const userpreferencesRouter = require("./routes/userpreferencesRouter")
+const ordersRouter = require("./routes/ordersRouter")
+// const logsRouter = require("./routes/logsRouter")
+// const goalsRouter = require("./routes/goalsRouter")
+// const userpreferencesRouter = require("./routes/userpreferencesRouter")
 
 const app = express();
 
 //* middleware block
 app.use(logger("dev"));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "dist")));
-
 //* Middleware to verify token and assign user object of payload to req.user.
 app.use(require('./config/checkToken'));
+
+
+app.use(express.static(path.join(__dirname, "dist")));
+
 app.use("/api/users", usersRouter);
-app.use("/api/goals", goalsRouter);
-app.use("/api/logs", logsRouter);
-//? J 25/1 0245: trying this path
-app.use("/api/userpreferences", userpreferencesRouter);
+app.use("/api/orders", ordersRouter);
+
+// app.use("/api/goals", goalsRouter);
+// app.use("/api/logs", logsRouter);
+// //? J 25/1 0245: trying this path
+// app.use("/api/userpreferences", userpreferencesRouter);
 
 
 //* routes block

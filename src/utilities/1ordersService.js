@@ -1,18 +1,22 @@
 import * as ordersAPI from "./1ordersAPI";
 
-export async function createOrder(cartData) {
-  console.log(cartData);
+export async function createOrder(cartData, user) {
+  // export async function createOrder(cartData) {
+  console.log('cartData at ordersService.js createOrder: ',cartData);
   const body = {
-    id: cartData.id,
-    userId: cartData.userId,
+    //* ========test=======
+    id: user.id,
+    userId: user.userId,
+    //*====================
     dateTime: new Date(),         // probably need time, but next time
-    items: cartData.map(item => ({
+    items: cartData.map((item) => ({
       title: item.title,
       details: item.details,
-      price: item.details.price,
+      // price: item.details.price,
     })),
   };
   
+  console.log('createOrder body: ',body);
   const newOrder = await ordersAPI.createOrder(body);
 
   return newOrder; 
