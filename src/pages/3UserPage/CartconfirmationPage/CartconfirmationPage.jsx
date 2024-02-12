@@ -1,6 +1,7 @@
 import { Divider } from "antd";
 import { Avatar, List } from 'antd';
-import { Button, Checkbox, Form, Input } from 'antd';
+import { Button, Form } from 'antd';
+import { useState } from "react";
 
 const onFinish = (values) => {
   console.log('Success:', values);
@@ -13,35 +14,44 @@ const onFinishFailed = (errorInfo) => {
 
 export default function CartconfirmationPage({ user }) {
   
+  // const [cartData, setcartData] = useState();
+
   const localStorageData = localStorage.getItem('data1Key');
   const parsedData = JSON.parse(localStorageData);
 
   //* need to transform 
+  // const precartData = [];
   const cartData = [];
   //* Function to transform my ParsedData into a form the initial AntD List would take 
   for (const [key, value] of Object.entries(parsedData)) {
       if (!isObjectWithNull(value)) {
+        // precartData.push({
         cartData.push({
-          title: key,
+            title: key,
           details: value
         });
     }
+    // setcartData(precartData);
   }
   
+  // setcartData(precartData);
+  console.log(`this is parsedData: ${parsedData}`);
+  console.log(`this is parsedData stringed: ${JSON.stringify(parsedData)}`);
   console.log(`this is cartData: ${cartData}`);
   console.log(`this is cartData details: ${cartData.details}`);
   console.log(`this is cartData stringed: ${JSON.stringify(cartData)}`);
-  // console.log(`this is cartData stringed parsed: ${JSON.parse(JSON.stringify(cartData))}`);
   
-  console.log(`this is cartData details stringed: ${JSON.stringify(cartData.details)}`);
-  // console.log(`this is cartData details stringed: ${JSON.stringify(cartData.details.value)}`);
-
   function pricingCalculator(service, values) {
   
     //? takes in service
     //? takes in a values detail object 
     //? returns the price of service 
-
+    //! for loop
+    //! look at first value of first key, 
+    //! if = 'Painting services', [nested logic ]
+    //! if = 'Masterclass Booking', [nested logic ]
+    //! if = 'Paint Table Booking', [nested logic ]
+    
 
 }
 
@@ -162,7 +172,7 @@ const onFinishFailed = (errorInfo) => {
               <div style={{ color: 'black'}}>
       {Object.keys(cartData[0].details).map((key, index) => (
         <p key={index}>
-          {key}: {cartData[0].details[key]}
+          {key}: <strong>{cartData[0].details[key]}</strong>
         </p>
       ))}
     </div>
