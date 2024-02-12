@@ -31,14 +31,12 @@ export default function LoginForm({ setUser }) {
       console.log(localStorage);          //* doesnt need to be moved as state. localStorage is a global component...
       
       //? dan logic. declare there, navigation done here. 
-      if (localStorage.data1Key !== null) {//? this works. but localStorage remembers...
+      if (localStorage.data1Key !== null && localStorage.data1Key !== undefined) {//? this works. but localStorage remembers...
         Navigate("/user/cart");             
       } else {
         Navigate("/user/info");           //* no need to pass the prelogin form data into postlogin environment, localStorage is global.  
-
       }
-        
-
+    
 
       console.log(user);                  //? please remove in the future 
     } catch {
