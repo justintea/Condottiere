@@ -1,4 +1,4 @@
-import { getToken } from "./usersService";
+import { getToken } from "./0usersService";
 const token = getToken();
 const baseURL = "/api/orders";
 
@@ -18,15 +18,15 @@ export async function createOrder(body) {
   if (!response.ok) throw new Error("Network response (inbound) was not ok.");
 }
 
-export async function getOrders() {
-  const options = {
-    method: 'GET',
-    headers,
-  };
+// export async function getOrders() {
+//   const options = {
+//     method: 'GET',
+//     headers,
+//   };
 
-  const response = await fetch(baseURL, options);
-  if (!response.ok) throw new Error("Network response (inbound) was not ok.");
-}
+//   const response = await fetch(baseURL, options);
+//   if (!response.ok) throw new Error("Network response (inbound) was not ok.");
+// }
 
 
 

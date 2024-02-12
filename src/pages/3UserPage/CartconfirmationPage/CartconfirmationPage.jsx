@@ -74,8 +74,9 @@ export default function CartconfirmationPage() {
     );
   }
 
-  const onFinish = async (valuesConfirmed) => {
-    console.log("Cart Submission Success:", valuesConfirmed);
+  const onFinish = async () => {
+    // console.log("Cart Submission Success:", valuesConfirmed);
+    console.log("Cart Submission Success:", cartData);
     //? i need a state. done - line 15
     //? and a await async, then reference utilities Service n API file...
     try { 
