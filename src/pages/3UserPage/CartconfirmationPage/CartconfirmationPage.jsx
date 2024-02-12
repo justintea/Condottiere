@@ -3,13 +3,13 @@ import { Avatar, List } from 'antd';
 import { Button, Form } from 'antd';
 import { useState } from "react";
 
-const onFinish = (values) => {
-  console.log('Success:', values);
+// const onFinish = (values) => {
+//   console.log('Success:', values);
   
-};
-const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
-};
+// };
+// const onFinishFailed = (errorInfo) => {
+//   console.log('Failed:', errorInfo);
+// };
 
 
 export default function CartconfirmationPage({ user }) {
@@ -21,18 +21,31 @@ export default function CartconfirmationPage({ user }) {
 
   //* need to transform 
   // const precartData = [];
-  const cartData = [];
+  const precartData = [];
   //* Function to transform my ParsedData into a form the initial AntD List would take 
   for (const [key, value] of Object.entries(parsedData)) {
       if (!isObjectWithNull(value)) {
         // precartData.push({
-        cartData.push({
+        precartData.push({
             title: key,
           details: value
         });
     }
     // setcartData(precartData);
   }
+  
+  const cartData = precartData.map(item => (
+    {
+      ...item,
+      details: {
+        ...item.details,
+        // price: '$20'
+        price: `$${pricingCalculator(precartData)}`
+
+      }
+
+  }));
+
   
   // setcartData(precartData);
   console.log(`this is parsedData: ${parsedData}`);
@@ -41,10 +54,12 @@ export default function CartconfirmationPage({ user }) {
   console.log(`this is cartData details: ${cartData.details}`);
   console.log(`this is cartData stringed: ${JSON.stringify(cartData)}`);
   
-  function pricingCalculator(service, values) {
+  function pricingCalculator(array) {
   
-    //? takes in service
-    //? takes in a values detail object 
+    //? takes in array
+    //? looks at what service is in 'title'
+    //? looks into the 'details' object
+    //? and given the service's pricing logic
     //? returns the price of service 
     //! for loop
     //! look at first value of first key, 
@@ -52,7 +67,12 @@ export default function CartconfirmationPage({ user }) {
     //! if = 'Masterclass Booking', [nested logic ]
     //! if = 'Paint Table Booking', [nested logic ]
     
-
+    // const prices = {
+    // }
+    
+    
+    
+    return '20';
 }
 
 
