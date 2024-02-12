@@ -29,6 +29,19 @@ export default function CartconfirmationPage({ user }) {
   
   console.log(transformedData);
 
+  function pricingCalculator(service, values) {
+  
+    //? takes in service
+    //? takes in a values detail object 
+    //? returns the price of service 
+
+
+}
+
+
+
+
+
 //* Helper function to check if the embedded value is null 
 function isObjectWithNull(obj) {
   return (
@@ -88,7 +101,7 @@ const onFinishFailed = (errorInfo) => {
              // * Renders the service title and details properly
              title={<h2>{item.title}</h2>}
              description={JSON.stringify(item.details)}
-   
+
            />
    
            <Button> Delete </Button>
