@@ -11,7 +11,6 @@ export async function createOrder(cartData) {
       details: item.details,
       price: item.details.price,
     })),
-    // totalAmount: calculateTotalAmount(cartData),
   };
   
   const newOrder = await ordersAPI.createOrder(body);
@@ -19,30 +18,17 @@ export async function createOrder(cartData) {
   return newOrder; 
 }
 
-// function calculateTotalAmount(cartData) {
-//   let totalAmount = 0;
+// export async function getOrders() {
+//   const data = await ordersAPI.getOrders();
+//   console.log(data);
+//   const orders = formatDateFromFetch([...data]);
 
-//   for (const item of cartData) {
-//     // Assuming each item in cartData has a 'details' object with a 'price' property
-//     const price = parseFloat(item.details.price.replace('$', '')); // Extract numeric value from price string
-//     totalAmount += price;
-//   }
-
-//   return totalAmount.toFixed(2); // Return the total amount rounded to two decimal places
+//   return orders;
 // }
 
-
-export async function getOrders() {
-  const data = await ordersAPI.getOrders();
-  console.log(data);
-  const orders = formatDateFromFetch([...data]);
-
-  return orders;
-}
-
-export function formatDateFromFetch(logs) {
-  for (const log of logs) {
-    log.date = format(log.date, "d MMM yyyy");
-  }
-  return logs;
-}
+// export function formatDateFromFetch(logs) {
+//   for (const log of logs) {
+//     log.date = format(log.date, "d MMM yyyy");
+//   }
+//   return logs;
+// }
