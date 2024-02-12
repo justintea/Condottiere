@@ -57,7 +57,6 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
   return (
     <Header theme="light" className="navbar">
       <Link to="" className="brand">
-        {/* <img src="../../../public/0NavBarApplogo/leonAIbrushedited.png" alt="Logo" style={{ width: 50, height: 50 }} /> */}
         <img src="/0NavBarApplogo/leonAIbrushedited.png" alt="Logo" style={{ width: 50, height: 50 }} />
 
           <span className="app-name">Condotierre</span>
@@ -82,12 +81,10 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
         </h3>
 
         <Link to="/user/cart">
-          {/*  */}
           <Button icon={<ShoppingCartOutlined />}></Button>
         </Link>
 
         <Link to="/user/info">
-          {/*  */}
           <Button icon={<SettingOutlined />}></Button>
         </Link>
 

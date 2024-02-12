@@ -1,7 +1,6 @@
 import "../Navbar.css";
-
+import { Link, useLocation } from "react-router-dom";
 import { Layout, Button, Menu } from "antd";
-import { Link , useLocation } from "react-router-dom";
 const { Header } = Layout;
 
 export default function NavbarOut() {
@@ -48,9 +47,7 @@ export default function NavbarOut() {
       
       <Link to="/">
         <div className="brand">
-          {/* <img src="../../../public/0NavBarApplogo/leonAIbrushedited.png" alt="Logo" style={{ width: 50, height: 50 }} /> */}
           <img src="/0NavBarApplogo/leonAIbrushedited.png" alt="Logo" style={{ width: 50, height: 50 }} />
-
           <span className="app-name" >Condotierre</span>
         </div>
       </Link>

@@ -1,6 +1,6 @@
 import "../../App.css";
 import { useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import NavbarOut from "../../components/0Navbar/NavbarOut/NavbarOut";
 import LandingPageOut from "../0LandingPage/LandingPageOut";
 import PaintforhirePage from "../1ServicesPage/1PaintforhirePage";
@@ -11,11 +11,10 @@ import SignupPage from "../2SignupPage/SignupPage";
 import UserPage from "../3UserPage/0UserPage";
 import UserInfoPage from "../3UserPage/UserInfoPage/UserInfoPage";
 import LandingPageIn from "../0LandingPage/LandingPageIn";
-
-import FAQPage from "../1ServicesPage/4FAQPage";
-
 import CartconfirmationPage from "../3UserPage/CartconfirmationPage/CartconfirmationPage";
 
+
+import FAQPage from "../1ServicesPage/4FAQPage";
 
 import { getUser } from "../../utilities/usersService";
 
@@ -23,30 +22,13 @@ import { getUser } from "../../utilities/usersService";
 
 function App() {
   const [user, setUser] = useState(null);
-  const Navigate = useNavigate();
-
-
-
-                  
-            // (if data1PaintSvcs === null) {<Route path="/" element={<Navigate to="/user/info" />} />}
-            // else {<Route path="cart" element={<CartconfirmationPage user={user} />} />}
-            // <Route path="user" element={<UserPage user={user} setUser={setUser} />}     />
-          
+  
   return (
     <>
       {user ? (
         <>
           <Routes>
-          {/* <Route path="/" element={Navigate('/user/info')} /> */}
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
-
-              //? i have a save point alr. if have info in localstorage/data1key OR sth, go to Cartconfirmation. if 'null', go to landing page OR User information
-              //? localstorage is used to pass user info. 
-              //? i think i will use either state, or 'values'
-              {/* if ( local !== null ) { <Route path="cart" element={<CartconfirmationPage user={user} />}  }
-              else { */}
-              //? rmb what dan said. here is just path declaration... i can declare here and write the logici in Loginform...?
-
               <Route path="" element={<LandingPageIn />} />
               <Route path="info" element={<UserInfoPage />} />
               <Route path="paintservices" element={<PaintforhirePage user={user} />} />
@@ -54,7 +36,6 @@ function App() {
               <Route path="painttables" element={<TablebookingPage user={user} />} />
               <Route path="cart" element={<CartconfirmationPage user={user} />} />
               <Route path="faqs"     element={<FAQPage user={user} />}      />
-
 
 
               {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
@@ -78,10 +59,7 @@ function App() {
             <Route path="paintservices"   element={<PaintforhirePage user={user} />}      />
             <Route path="paintclasses"    element={<MasterclassPage user={user} />}       />
             <Route path="painttables"     element={<TablebookingPage user={user} />}      />
-            <Route path="faqs"     element={<FAQPage user={user} />}      />
-          
-              
-            
+            <Route path="faqs"     element={<FAQPage user={user} />}      />  
             </Routes>
         </>
       )}

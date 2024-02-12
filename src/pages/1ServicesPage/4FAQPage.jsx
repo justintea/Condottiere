@@ -179,12 +179,8 @@ const classpriceData = [
 
 export default function FAQPage() {
 
-//   const text = `
-//   A dog is a type of domesticated animal.
-//   Known for its loyalty and faithfulness,
-//   it can be found as a welcome guest in many households across the world.
-// `;
 
+//* Data for your FAQs and tables 
 const items = [
   {
     key: '1',
@@ -245,17 +241,8 @@ const items = [
 //     background: rgba(224, 248, 232, 1);
 //   }
 // `
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+//* Accordian onChange  
 const onChange = (key) => {
   console.log(key);
   };
@@ -264,7 +251,6 @@ const onChange = (key) => {
     <>
     <Divider orientation="left" style={{margin: "0px" }}> <h2 style={{ fontFamily: 'Palatino Linotype'}}>Frequently Asked Questions</h2> </Divider>
 
-    {/* <Collapse items={items} defaultActiveKey={['1']} onChange={onChange} style={{ maxWidth: '60%', margin: '0 0 3% 5%'}} /> */}
       <Collapse defaultActiveKey={['1']} onChange={onChange} accordion={ true }  style={{ maxWidth: '60%', margin: '0 0 3% 5%'}} >
     
       {items.map(item => (
