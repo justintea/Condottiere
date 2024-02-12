@@ -1,0 +1,8 @@
+
+.ant-table-tbody > tr:hover, tr:active 
+{
+  background-color: #478e80;
+  color: black;
+} 
+
+/* the active state keeps disappearing. fix later. */

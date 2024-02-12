@@ -1,6 +1,7 @@
 import { Collapse } from 'antd';
 import { Divider } from "antd";
 import { Table } from 'antd';
+import './4FAQPage.css';
 
 const paintsvcpriceColumns = [
   {
@@ -176,7 +177,6 @@ const classpriceData = [
 ];
 
 
-
 export default function FAQPage() {
 
 //   const text = `
@@ -192,7 +192,8 @@ const items = [
     answer: <p>The pricing for Condottierre painting services is as follows: 
     <br />
     <Divider>Painting services pricing</Divider>
-      <Table columns={paintsvcpriceColumns} dataSource={paintsvcpriceData} pagination={false} size="middle" />
+      <Table columns={paintsvcpriceColumns} dataSource={paintsvcpriceData} pagination={false} size="middle" rowClassName="custom-row-hover"
+ />
       <br />
       <Divider>Size & complexity guidelines</Divider>
       <Table columns={paintsvcSizencomColumns} dataSource={paintsvcSizencomData} pagination={false} size="middle" />
