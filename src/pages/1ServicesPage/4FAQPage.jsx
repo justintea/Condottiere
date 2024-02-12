@@ -192,8 +192,7 @@ const items = [
     answer: <p>The pricing for Condottierre painting services is as follows: 
     <br />
     <Divider>Painting services pricing</Divider>
-      <Table columns={paintsvcpriceColumns} dataSource={paintsvcpriceData} pagination={false} size="middle" rowClassName="custom-row-hover"
- />
+      <Table columns={paintsvcpriceColumns} dataSource={paintsvcpriceData} pagination={false} size="middle" />
       <br />
       <Divider>Size & complexity guidelines</Divider>
       <Table columns={paintsvcSizencomColumns} dataSource={paintsvcSizencomData} pagination={false} size="middle" />
@@ -266,7 +265,7 @@ const onChange = (key) => {
     <Divider orientation="left" style={{margin: "0px" }}> <h2 style={{ fontFamily: 'Palatino Linotype'}}>Frequently Asked Questions</h2> </Divider>
 
     {/* <Collapse items={items} defaultActiveKey={['1']} onChange={onChange} style={{ maxWidth: '60%', margin: '0 0 3% 5%'}} /> */}
-      <Collapse defaultActiveKey={['1']} onChange={onChange} style={{ maxWidth: '60%', margin: '0 0 3% 5%'}} >
+      <Collapse defaultActiveKey={['1']} onChange={onChange} accordion={ true }  style={{ maxWidth: '60%', margin: '0 0 3% 5%'}} >
     
       {items.map(item => (
         <Collapse.Panel
