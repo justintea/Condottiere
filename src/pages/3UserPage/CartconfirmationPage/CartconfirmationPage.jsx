@@ -68,11 +68,18 @@ function isObjectWithNull(obj) {
 }
 
 const onFinish = (valuesConfirmed) => {
-  console.log('Success:', valuesConfirmed);
+  console.log('Cart Submission Success:', valuesConfirmed);
 };
 const onFinishFailed = (errorInfo) => {
-  console.log('Failed:', errorInfo);
+  console.log('Cart Submission Failed:', errorInfo);
 };
+
+const handleDeleteCartItem = () => {
+  console.log('Delete cart item requested');  
+
+}
+  
+  
   
 //* try 3
 // const RenderKeyValuePairs = ({ cartData }) => (
@@ -180,7 +187,7 @@ const onFinishFailed = (errorInfo) => {
              //! end point of List meta
           />
   
-          <Button> Delete </Button>
+          <Button onClick={handleDeleteCartItem}> Delete </Button>
       </List.Item> )
       
       
