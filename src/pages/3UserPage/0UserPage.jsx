@@ -7,9 +7,13 @@ import { useEffect, useState } from "react";
 export default function UserPage1({ user, setUser }) {
   
   //? declare states
-
+  const [order, setOrder] = useState([]);
+  
   //? use effect to load all data... but this is the overhang, not the page itself
   
+
+
+
   return (<>
     <NavbarIn user={user} setUser={setUser} />
     <Outlet />

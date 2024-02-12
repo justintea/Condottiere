@@ -3,7 +3,7 @@ import { SettingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Layout, Button, Menu } from "antd";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 const { Header } = Layout;
-import * as usersService from "../../../utilities/usersService";
+import * as usersService from "../../../utilities/0usersService";
 
 export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals }) {
   let page = useLocation().pathname.split("/")[2];

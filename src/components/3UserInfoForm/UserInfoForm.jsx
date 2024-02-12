@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import './UserInfoForm.css'
 import { List } from 'antd';
 import { ShoppingOutlined, ShoppingCartOutlined, CalendarOutlined , HomeOutlined, LockOutlined  } from "@ant-design/icons";
@@ -7,31 +6,24 @@ import { useNavigate } from 'react-router-dom';
 // import CartconfirmationPage from '../../pages/3UserPage/CartconfirmationPage/CartconfirmationPage';
 
 
-export default function UserInfoForm({ user, preloginTransportedLocalStorage }) {   
+export default function UserInfoForm({ user }) {   
 
   const Navigate = useNavigate();
 
   const preferlist = [
     {
-      title: "Shopping cart",
-      description: "Check out and pay",
-      icon: <ShoppingOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
-      route: "/cart", 
-      // content: xxx, //to do AJAX GET from a db
-    },
-    {
       title: "Visit our store",
       description: "Continue shopping",
-      icon: <ShoppingCartOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
+      icon: <ShoppingOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
       // content: xxx, //to do AJAX GET from a db
-      route: "/cart", 
+      route: "/user/", 
 
     },
     {
       title: "Past purchases",
       description: "A history of your past transactions with us",
       icon: <CalendarOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
-      route: "/cart", 
+      route: "/user/orders", 
 
       // content: xxx, //to do AJAX GET from a db
     },
@@ -68,13 +60,8 @@ export default function UserInfoForm({ user, preloginTransportedLocalStorage }) 
 
 const localStorageData = localStorage.getItem('data1Key');
     const parsedData = JSON.parse(localStorageData);
-    // const sizeofModelValue = parsedData?.sizeofModel;
-    // console.log(sizeofModelValue);
-
   return (
     <>
-  {/* <CartconfirmationPage user={user}  data1PaintSvcs={data1PaintSvcs}/> */}
-  {/* Render the preloginTransportedLocalStorage data */}
  <div>
  parsedData = {JSON.stringify(parsedData, null, 2)}
       </div>
@@ -83,7 +70,7 @@ const localStorageData = localStorage.getItem('data1Key');
         itemLayout="horizontal"
         dataSource={preferlist}
         renderItem={(item) => (
-          <List.Item className='preferlistitem' onClick={() => handleClick()} >
+          <List.Item className='preferlistitem' onClick={() => handleClick(item.route)} >
 
             <List.Item.Meta
               avatar={item.icon}

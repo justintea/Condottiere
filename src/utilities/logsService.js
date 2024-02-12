@@ -1,7 +1,7 @@
 import { currencyToNum, numToCurrency } from "./helper";
 import { format } from "date-fns";
 import * as logsAPI from "./logsAPI";
-import { getUser } from "./usersService";
+import { getUser } from "./0usersService";
 
 export async function getLogs() {
   const data = await logsAPI.getLogs();

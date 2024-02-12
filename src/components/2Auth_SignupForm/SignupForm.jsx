@@ -1,5 +1,5 @@
 import { Button, Form, Input } from "antd";
-import { signUp } from "../../utilities/usersService";
+import { signUp } from "../../utilities/0usersService";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

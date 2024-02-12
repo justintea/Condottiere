@@ -1,4 +1,6 @@
 import { Avatar, List, Divider, Button, Form } from 'antd';
+import { useState } from "react";
+
 
 // const onFinish = (values) => {
 //   console.log('Success:', values);
@@ -9,6 +11,10 @@ import { Avatar, List, Divider, Button, Form } from 'antd';
 // };
 
 export default function CartconfirmationPage() {
+
+  const [order, setOrder] = useState('1');
+
+
   const localStorageData = localStorage.getItem("data1Key");
   const parsedData = JSON.parse(localStorageData);
 
@@ -68,8 +74,18 @@ export default function CartconfirmationPage() {
     );
   }
 
-  const onFinish = (valuesConfirmed) => {
+  const onFinish = async (valuesConfirmed) => {
     console.log("Cart Submission Success:", valuesConfirmed);
+    //? i need a state. done - line 15
+    //? and a await async, then reference utilities Service n API file...
+    try { 
+      await createOrder(cartData); 
+     }
+    catch (error) {
+      window.alert('Something wrong'); 
+    }
+
+
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Cart Submission Failed:", errorInfo);
@@ -86,13 +102,13 @@ export default function CartconfirmationPage() {
       </Divider>
 
       {/* //? tester code - can render your localStorage prelogin form data   */}
-      <p> Test render of prelogin form data </p>
+      {/* <p> Test render of prelogin form data </p>
       <div>
         parsedData = {JSON.stringify(parsedData, null, 2)}
         <br />
         <br />
         cartData = {JSON.stringify(cartData)}
-      </div>
+      </div> */}
       {/* //? end of tester code   */}
 
       <Form
@@ -125,7 +141,7 @@ export default function CartconfirmationPage() {
                   />
                 }
                 // * Renders the service title
-                title={<h2>{item.title}</h2>}
+                title={<h2 style={{ fontFamily: "Times New Roman" }}>{item.title}</h2>}
                 //* Renders the description of each service's details
 
                 description={

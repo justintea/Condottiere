@@ -9,14 +9,14 @@ import TablebookingPage from "../1ServicesPage/3TablebookingPage";
 import AuthPage from "../2AuthPage/AuthPage";
 import SignupPage from "../2SignupPage/SignupPage";
 import UserPage from "../3UserPage/0UserPage";
-import UserInfoPage from "../3UserPage/UserInfoPage/UserInfoPage";
+import UserInfoPage from "../3UserPage/UserInfoPage/1UserInfoPage";
 import LandingPageIn from "../0LandingPage/LandingPageIn";
 import CartconfirmationPage from "../3UserPage/CartconfirmationPage/CartconfirmationPage";
-
+import UserOrderPage from "../3UserPage/UserInfoPage/2UserOrderPage";
 
 import FAQPage from "../1ServicesPage/4FAQPage";
 
-import { getUser } from "../../utilities/usersService";
+import { getUser } from "../../utilities/0usersService";
 
 
 
@@ -35,6 +35,7 @@ function App() {
               <Route path="paintclasses" element={<MasterclassPage user={user} />} />
               <Route path="painttables" element={<TablebookingPage user={user} />} />
               <Route path="cart" element={<CartconfirmationPage user={user} />} />
+              <Route path="orders" element={<UserOrderPage user={user} />} />
               <Route path="faqs"     element={<FAQPage user={user} />}      />
 
 
