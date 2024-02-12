@@ -35,7 +35,7 @@ export default function NavbarOut() {
     {
       key: "FAQ",
       label: (
-        <Link to="FAQs" className="link">
+        <Link to="faqs" className="link">
           FAQs
         </Link>
       ),

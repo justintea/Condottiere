@@ -33,6 +33,14 @@ export default function NavbarIn({ user, setUser, logs, setLogs,goals, setGoals 
           Paint tables
         </Link>
       ),
+    },
+    {
+      key: "FAQs",
+      label: (
+        <Link to="/user/faqs" className="link">
+          FAQs
+        </Link>
+      ),
     }
   ];
 

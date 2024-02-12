@@ -53,7 +53,8 @@ function App() {
               <Route path="paintclasses" element={<MasterclassPage user={user} />} />
               <Route path="painttables" element={<TablebookingPage user={user} />} />
               <Route path="cart" element={<CartconfirmationPage user={user} />} />
-              
+              <Route path="faqs"     element={<FAQPage user={user} />}      />
+
 
 
               {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
