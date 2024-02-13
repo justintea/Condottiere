@@ -178,7 +178,7 @@ export default function PaintforhireForm({ user, setUser }) {
         </Form.Item>
         
       <Form.Item
-        name="SizeComplexity"
+        name="sizeComplexity"
         label="Size & complexity"
         rules={[
           {

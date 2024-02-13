@@ -19,6 +19,7 @@ const create = async (req, res) => {
 
 const index = async (req, res) => {
   const userId = req.user._id;
+  console.log('userId at ordersCtrl', userId);
   try {
     const orders = await Order.find({ userId });
     res.json(orders);

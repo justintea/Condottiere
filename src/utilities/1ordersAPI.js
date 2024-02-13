@@ -32,7 +32,11 @@ export async function getOrders() {
   };
 
   const response = await fetch(baseURL, options);
+  console.log('at getOrders in ordersAPI', response);
   if (!response.ok) throw new Error("Network response (inbound) was not ok.");
+  const json = await response.json();
+  console.log(JSON.stringify(json));
+  return json;
 }
 
 
