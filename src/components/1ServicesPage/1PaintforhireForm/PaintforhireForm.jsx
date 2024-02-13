@@ -188,7 +188,7 @@ export default function PaintforhireForm({ user, setUser }) {
         ]}
       >
         <Select
-          placeholder="Select a option and change input text above"
+          placeholder="Select a option"
           onChange={onSizeComplexityChange}
           allowClear
         >
