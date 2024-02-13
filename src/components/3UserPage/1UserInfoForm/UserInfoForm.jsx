@@ -28,7 +28,7 @@ export default function UserInfoForm({ user }) {
       // content: xxx, //to do AJAX GET from a db
     },
     {
-      title: "Address",
+      title: "Address & contact details",
       description:
         "For our delivery purposes",
       icon: <HomeOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,

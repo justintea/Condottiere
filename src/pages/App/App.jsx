@@ -9,10 +9,10 @@ import TablebookingPage from "../1ServicesPage/3TablebookingPage";
 import AuthPage from "../2AuthPage/AuthPage";
 import SignupPage from "../2SignupPage/SignupPage";
 import UserPage from "../3UserPage/0UserPage";
-import UserInfoPage from "../3UserPage/UserInfoPage/1UserInfoPage";
+import UserInfoPage from "../3UserPage/2UserInfoPage/1UserInfoPage";
 import LandingPageIn from "../0LandingPage/LandingPageIn";
-import CartconfirmationPage from "../3UserPage/CartconfirmationPage/CartconfirmationPage";
-import UserOrderPage from "../3UserPage/UserInfoPage/2UserOrderPage";
+import CartconfirmationPage from "../3UserPage/1CartconfirmationPage/CartconfirmationPage";
+import UserOrderPage from "../3UserPage/2UserInfoPage/2UserOrderPage";
 
 import FAQPage from "../1ServicesPage/4FAQPage";
 
