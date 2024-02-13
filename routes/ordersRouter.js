@@ -3,7 +3,7 @@ const router = express.Router();
 
 const ordersController = require("../controllers/ordersController")
 
-// router.get("/", logsController.index);
+router.get("/", ordersController.index);
 router.post("/", ordersController.create);
 // router.put("/", logsController.updateMany)
 

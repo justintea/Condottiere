@@ -23,13 +23,14 @@ export async function createOrder(cartData, user) {
   return newOrder; 
 }
 
-// export async function getOrders() {
-//   const data = await ordersAPI.getOrders();
-//   console.log(data);
-//   const orders = formatDateFromFetch([...data]);
+export async function getOrders() {
+  const data = await ordersAPI.getOrders();
+  console.log(data);
 
-//   return orders;
-// }
+  // const orders = formatDateFromFetch([...data]);
+
+  return data;
+}
 
 // export function formatDateFromFetch(logs) {
 //   for (const log of logs) {

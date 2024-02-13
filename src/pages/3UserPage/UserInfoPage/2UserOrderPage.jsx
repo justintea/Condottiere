@@ -2,7 +2,7 @@
 import { Outlet, useOutletContext } from "react-router-dom";
   
 export default function UserOrderPage() {
-  useOutletContext();
+  const { orders, setOrders } = useOutletContext();
 
     //? probably a list 
 
@@ -10,6 +10,6 @@ export default function UserOrderPage() {
     <>
       <h2 style={{ fontFamily: "Palatino Linotype" }}> User Orders </h2>
       <p> probably a list 'Orders', mapped into items and rendered here</p>
-
+      <div> {orders} </div>
     </>);
 }

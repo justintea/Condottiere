@@ -7,6 +7,7 @@ const headers = {
   Authorization: `Bearer ${token}`,
 };
 
+//*CREATE ORDER---------------------------------------------
 export async function createOrder(body) {
   const options = {
     method: 'POST',
@@ -23,15 +24,16 @@ export async function createOrder(body) {
   return json;
 }
 
-// export async function getOrders() {
-//   const options = {
-//     method: 'GET',
-//     headers,
-//   };
+//*GET ALL ORDERS-------------------------------------------
+export async function getOrders() {
+  const options = {
+    method: 'GET',
+    headers,
+  };
 
-//   const response = await fetch(baseURL, options);
-//   if (!response.ok) throw new Error("Network response (inbound) was not ok.");
-// }
+  const response = await fetch(baseURL, options);
+  if (!response.ok) throw new Error("Network response (inbound) was not ok.");
+}
 
 
 

@@ -1,23 +1,35 @@
 import { Outlet, useOutletContext } from "react-router-dom";
 import NavbarIn from "../../components/0Navbar/NavbarIn/NavbarIn";
 import { useEffect, useState } from "react";
+import { getOrders } from "../../utilities/1ordersService";
+// import { getGoals } from "../../utilities/goalsService";
+
 
 //* objective: write a new userpage, write links to a cart confirmation page, write a cart confirmation page
 
 export default function UserPage1({ user, setUser }) {
   
   //? declare states
-  // const [orders, setOrders] = useState([]);
-  
+  const [orders, setOrders] = useState(null);
+  const [cart, setCart] = useState(null);
+
   //? use effect to load all data... but this is the overhang, not the page itself
-  
+  useEffect(() => {
+    (async function () {
+      const data = await getOrders();
+      setOrders(data);
+      console.log(data);
 
-
+      // const g = await getGoals();
+      // setGoals(g);
+      // console.log(goals)
+    })();
+  }, []);
 
   return (<>
-    <NavbarIn user={user} setUser={setUser} />
+    <NavbarIn user={user} setUser={setUser} orders={orders} setOrders={setOrders} cart={cart} setCart={setCart} />
     {/* <Outlet context={{ orders, setOrders }} /> */}
-    <Outlet  />
+    <Outlet context={{ orders, setOrders, cart, setCart }}  />
 
   
     {/* i think what happens here: this loads, takes in all the data,
@@ -28,10 +40,7 @@ export default function UserPage1({ user, setUser }) {
     {/* DashboardPage's implementation // Portal Out:
     const {logs, goals} = useOutletContext(); */}
 
-
     {/* <Outlet context={{ logs, setLogs, goals, setGoals }} /> */}
 
-  
-  
   </>);
 }

@@ -13,7 +13,7 @@ import { useOutletContext } from 'react-router-dom';
 
 export default function CartconfirmationPage({ user }) {
 
-  // const { orders, setOrder } = useOutletContext();
+  const { orders, setOrders } = useOutletContext();
 
 
   const localStorageData = localStorage.getItem("data1Key");
@@ -36,7 +36,7 @@ export default function CartconfirmationPage({ user }) {
     details: {
       ...item.details,
       // price: '$20'
-      price: `$${pricingCalculator(precartData)}`,
+      Price: `$${pricingCalculator(precartData)}`,
     },
   }));
 
@@ -46,6 +46,9 @@ export default function CartconfirmationPage({ user }) {
   console.log(`this is cartData details: ${cartData.details}`);
   console.log(`this is cartData stringed: ${JSON.stringify(cartData)}`);
 
+
+  //* depending on service and service details, returns a price. Price is then fed above to add into Cart & Order arrays
+  //* now just hard code
   function pricingCalculator(array) {
     //? takes in array
     //? looks at what service is in 'title'
@@ -64,7 +67,7 @@ export default function CartconfirmationPage({ user }) {
     return "20";
   }
 
-  //* Helper function to check if the embedded value is null
+  //* Helper function to check if the embedded value is null. this helps with the precartData transformation (reject those that are 'null')
   function isObjectWithNull(obj) {
     return (
       typeof obj === "object" &&
@@ -75,18 +78,23 @@ export default function CartconfirmationPage({ user }) {
     );
   }
 
+  //* Confirm your cart, and turn it into an Order
+  //* Specifically this is for Order
+  //? does Cart need to be a Db? or state will do?
+  //* Cart has CRD functionality
+  //* Order has CR functionality 
   const onFinish = async (  ) => {
     // const onFinish = async ( cartData, user ) => {
     // console.log("Cart Submission Success:", valuesConfirmed);
     try { 
       console.log("Cart Submission Success:", cartData);
-      await createOrder(cartData, user); 
+      // await createOrder(cartData, user); 
 
-      // const newOrder = await createOrder(cartData); 
-      // setOrder([...orders, newOrder]);
+      const newOrder = await createOrder(cartData); 
+      setOrders([...orders, newOrder]);
     }
     catch (error) {
-      window.alert('Something wrong: ', error); 
+      window.alert('Something wrong: ', error);
     }
 
 

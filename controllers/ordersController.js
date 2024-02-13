@@ -11,6 +11,19 @@ const create = async (req, res) => {
   try {
     const newOrder = await Order.create(data);
     res.status(201).json(newOrder);
+    console.log('from ordersCtrl create: ', newOrder);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+const index = async (req, res) => {
+  const userId = req.user._id;
+  try {
+    const orders = await Order.find({ userId });
+    res.json(orders);
+    console.log('from ordersCtrl index: ', orders);
+    
   } catch (error) {
     res.status(500).json(error);
   }
@@ -18,7 +31,7 @@ const create = async (req, res) => {
 
 
 module.exports = {
-  // index,
+  index,
   create,
   // updateMany,
   // deleteOne,
