@@ -1,5 +1,5 @@
 // import UserpreferenceForm from "../../../components/UserPreferenceForm/UserpreferenceForm";
-import UserInfoForm from "../../../components/3UserPage/1UserInfoForm/UserInfoForm";
+import UserInfoForm from "../../../components/3UserPage/2UserInfoForm/UserInfoForm";
 import { Outlet, useOutletContext } from "react-router-dom";
   
 export default function UserInfoPage() {
