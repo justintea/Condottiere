@@ -166,7 +166,8 @@ export default function PaintforhireForm({ user, setUser }) {
     >
       <Form.Item
         name="numberOfModels"
-        label="Number of models"
+        label="Number of models   "
+        style={{ width: "85%" , margin: '0 0 5% 8.5%'}}
         rules={[
           {
             required: true,
@@ -174,12 +175,13 @@ export default function PaintforhireForm({ user, setUser }) {
           },
         ]}
       >
-        <Input />
+          <Input  />
         </Form.Item>
         
       <Form.Item
         name="sizeComplexity"
         label="Size & complexity"
+        size='default'
         rules={[
           {
             required: true,
@@ -191,6 +193,7 @@ export default function PaintforhireForm({ user, setUser }) {
           placeholder="Select a option"
           onChange={onSizeComplexityChange}
           allowClear
+          style={{ width: "85%", margin: '0 0 1% 5%' }}
         >
           <Option value="Small">Small</Option>
           <Option value="Normal">Normal</Option>
@@ -212,6 +215,7 @@ export default function PaintforhireForm({ user, setUser }) {
           placeholder="Select a option"
           onChange={onUrgencyChange}
           allowClear
+          style={{ width: "85%", margin: '0 0 1% 5%' }}
         >
           <Option value="Urgent">Urgent</Option>
           <Option value="Normal">Normal</Option>
@@ -221,8 +225,8 @@ export default function PaintforhireForm({ user, setUser }) {
 
       <Form.Item {...tailLayout}>
         <Space>
-          <Button type="primary" htmlType="submit">
-            Submit
+          <Button type="primary" style={{ backgroundColor: "#01628f" , margin: "0  0 0 183%" }} htmlType="submit">
+            Add to Cart
           </Button>
         </Space>
       </Form.Item>

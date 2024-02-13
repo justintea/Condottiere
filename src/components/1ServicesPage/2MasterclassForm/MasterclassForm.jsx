@@ -136,8 +136,8 @@ export default function MasterclassForm({ user, setUser }) {
       <Form.Item {...tailLayout}>
           <Space>
             
-          <Button type="primary" htmlType="submit">
-            Submit
+          <Button type="primary" style={{ backgroundColor: "#01628f",  margin: "0  0 0 125%" }} htmlType="submit">
+            Add to Cart
           </Button>
           
         </Space>
