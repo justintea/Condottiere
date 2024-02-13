@@ -29,8 +29,8 @@ function App() {
         <>
           <Routes>
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
-              <Route path="" element={<LandingPageIn />} />
-              <Route path="info" element={<UserInfoPage />} />
+              <Route path="" element={<LandingPageIn user={user} />} />
+              <Route path="info" element={<UserInfoPage user={user} />} />
               <Route path="paintservices" element={<PaintforhirePage user={user} />} />
               <Route path="paintclasses" element={<MasterclassPage user={user} />} />
               <Route path="painttables" element={<TablebookingPage user={user} />} />

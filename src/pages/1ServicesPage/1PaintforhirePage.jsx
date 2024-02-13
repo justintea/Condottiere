@@ -1,27 +1,8 @@
 import PaintforhireForm from "../../components/1ServicesPage/1PaintforhireForm/PaintforhireForm";
-import { Layout, Flex } from "antd";
+import { Layout, Flex, Carousel, Divider } from "antd";
 const { Sider, Content } = Layout;
-import { Carousel } from "antd";
-import { Divider } from "antd";
 import { Outlet, useOutletContext } from "react-router-dom";
 
-// const carouselcontentStyle = {
-//   padding: 0,
-//   margin: 5,
-//   height: "300px",
-//   color: "#fff",
-//   lineHeight: "300px",
-//   textAlign: "center",
-//   background: "#364d79",
-// };
-// const headerStyle = {
-//   textAlign: 'center',
-//   color: '#fff',
-//   height: 64,
-//   paddingInline: 48,
-//   lineHeight: '64px',
-//   backgroundColor: '#4096ff',
-// };
 const contentStyle = {
   textAlign: "center",
   minHeight: 570,
@@ -31,21 +12,15 @@ const contentStyle = {
   color: "black",
   backgroundColor: "#eae8f4",
 };
+
 const siderStyle = {
   textAlign: "left",
   justifyContent: "top",
   lineHeight: "25px",
-  // color: '#fff',
-  // backgroundColor: '#1677ff',
   color: "black",
   backgroundColor: "white",
-  // backgroundColor: '#478e80',
 };
-// const footerStyle = {
-//   textAlign: 'center',
-//   color: '#fff',
-//   backgroundColor: '#4096ff',
-// };
+
 const layoutStyle = {
   borderRadius: 8,
   overflow: "hidden",
@@ -107,7 +82,7 @@ export default function PaintforhirePage({ user, setUser }) {
 
               {/* <p style={{siderStyle}}> */}
               <p style={{ margin: "0% 0% 10% 7%", padding: "0" }}>
-              Need a few models painted for your D&D, Kill Team, Blood Bowl games? Or do you have an army of Imperial Stormtroopers or Ultramarines units you need to field asap? Either way, we've got your back, with our painters-for-hire service.   <br></br>
+              Need a few models painted for your D&D, Kill Team, Blood Bowl games? Or do you have an army of Imperial Stormtroopers or Ultramarines units you need to field asap? Either way, we've got your back, with our painters-for-hire service.  Prices per model depend on size, complexity, and urgency of your painting needs. See FAQs for more details. 
               </p>
 
               <PaintforhireForm user={user} setUser={setUser} />

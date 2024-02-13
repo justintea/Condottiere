@@ -164,14 +164,14 @@ const classpriceData = [
   },
   {
     key: '3',
-    Classtype: 'Paint-knights-on-a-quest',
+    Classtype: 'Paint-Knight',
     Description: '5 x 1-hour one-on-one dedicated lessons, over 2 months, with painting foundations and a capstone paint project.',
     Price: '$150',
   },
   {
     key: '4',
     Classtype: 'Paint-Champion',
-    Description: '15 x 1-hour one-on-one dedicated lessons, over 6 months, bringing from zero to hero! Painters will be able to learn various paint techniques like highlighting, drybrushing and airguns, paint with speed, and for competitions.',
+    Description: '15 x 1-hour one-on-one dedicated lessons, over 6 months, bringing from zero to hero! Painters will be able to learn various paint techniques like highlighting, drybrushing and airguns, paint with speed, paint for competitions, and finish off with a professional-grade portfolio of more than 5 showcase models.',
     Price: '$400',
   },
 ];
@@ -204,7 +204,7 @@ const items = [
     label: 'What is the pricing for Condottierre masterclasses?',
     answer: <p>The pricing for Condottierre masterclasses is as follows: 
     <br />
-    <Divider>Masterclass pricing</Divider>
+    <Divider>Masterclass package pricing</Divider>
     <Table columns={classpriceColumns} dataSource={classpriceData} pagination={false} size="middle" />
     </p>
  

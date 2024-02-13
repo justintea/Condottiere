@@ -11,7 +11,7 @@ import { useOutletContext } from 'react-router-dom';
 //   console.log('Failed:', errorInfo);
 // };
 
-export default function CartconfirmationPage() {
+export default function CartconfirmationPage({ user }) {
 
   // const { orders, setOrder } = useOutletContext();
 
@@ -75,14 +75,12 @@ export default function CartconfirmationPage() {
     );
   }
 
-  const onFinish = async () => {
+  const onFinish = async (  ) => {
+    // const onFinish = async ( cartData, user ) => {
     // console.log("Cart Submission Success:", valuesConfirmed);
-    //? i need a state. done - line 15
-    //? and a await async, then reference utilities Service n API file...
-
     try { 
       console.log("Cart Submission Success:", cartData);
-      await createOrder(cartData); 
+      await createOrder(cartData, user); 
 
       // const newOrder = await createOrder(cartData); 
       // setOrder([...orders, newOrder]);

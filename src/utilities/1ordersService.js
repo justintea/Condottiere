@@ -2,7 +2,8 @@ import * as ordersAPI from "./1ordersAPI";
 
 export async function createOrder(cartData, user) {
   // export async function createOrder(cartData) {
-  console.log('cartData at ordersService.js createOrder: ',cartData);
+  console.log('cartData at ordersService.js createOrder: ', cartData);
+  
   const body = {
     //* ========test=======
     id: user.id,
