@@ -59,7 +59,7 @@ export default function MasterclassPage({ user, setUser }) {
                 </div>
                 <div>
                   <img
-                    // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc2.png"
+                    // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc3.png"
                     src="/1ServicesPageCarousel/2MasterclassCarousel/masterclass2.jpeg"
 
                     alt="masterclass2"
@@ -69,18 +69,9 @@ export default function MasterclassPage({ user, setUser }) {
                 <div>
                   <img
                     // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc3.png"
-                    src="/1ServicesPageCarousel/2MasterclassCarousel/masterclass3.jpeg"
+                    src="/1ServicesPageCarousel/2MasterclassCarousel/masterclass3.jpg"
 
                     alt="masterclass3"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
-                <div>
-                  <img
-                    // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc3.png"
-                    src="/1ServicesPageCarousel/2MasterclassCarousel/masterclass4.jpg"
-
-                    alt="masterclass4"
                     style={{ width: "100%", height: "100%" }}
                   />
                 </div>

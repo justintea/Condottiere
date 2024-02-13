@@ -81,7 +81,7 @@ export default function CartconfirmationPage({ user }) {
   //* Confirm your cart, and turn it into an Order
   //* Specifically this is for Order
   //? does Cart need to be a Db? or state will do?
-  //* Cart has CRD functionality
+  //* Cart has CRD functionality (or no need DB n use State to manage)
   //* Order has CR functionality 
   const onFinish = async (  ) => {
     // const onFinish = async ( cartData, user ) => {
