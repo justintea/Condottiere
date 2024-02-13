@@ -6,15 +6,18 @@ export async function createOrder(cartData, user) {
   
   const body = {
     //* ========test=======
-    id: user.id,
-    userId: user.userId,
+    // id: user.id,
+    userId: user._id,
     //*====================
     dateTime: new Date(),         // probably need time, but next time
-    items: cartData.map((item) => ({
-      title: item.title,
-      details: item.details,
-      // price: item.details.price,
-    })),
+    items: cartData,
+
+    // items: cartData.map((item) => ({
+    //   title: item.title,
+    //   details: item.details,
+
+    //   // price: item.details.price,
+    // })),
   };
   
   console.log('createOrder body: ',body);

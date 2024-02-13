@@ -165,7 +165,7 @@ export default function PaintforhireForm({ user, setUser }) {
       }}
     >
       <Form.Item
-        name="Number of models"
+        name="numberOfModels"
         label="Number of models"
         rules={[
           {
@@ -178,7 +178,7 @@ export default function PaintforhireForm({ user, setUser }) {
         </Form.Item>
         
       <Form.Item
-        name="Size & complexity"
+        name="SizeComplexity"
         label="Size & complexity"
         rules={[
           {
@@ -199,7 +199,7 @@ export default function PaintforhireForm({ user, setUser }) {
       </Form.Item>
       
       <Form.Item
-        name="Urgency"
+        name="urgencyRequired"
         label="Urgency"
         rules={[
           {

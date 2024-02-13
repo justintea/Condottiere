@@ -193,7 +193,7 @@ const items = [
       <Divider>Size & complexity guidelines</Divider>
       <Table columns={paintsvcSizencomColumns} dataSource={paintsvcSizencomData} pagination={false} size="middle" />
       <br />
-      <Divider>Urgency </Divider>
+      <Divider>Urgency guidelines</Divider>
       <Table columns={paintsvcUrgencyColumns} dataSource={paintsvcUrgencyData} pagination={false} size="middle" />
       <br />
     </p>

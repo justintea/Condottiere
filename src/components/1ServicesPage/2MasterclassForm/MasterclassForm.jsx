@@ -112,7 +112,7 @@ export default function MasterclassForm({ user, setUser }) {
     >
     
       <Form.Item
-        name="Class Type"
+        name="classType"
         label="Class Type"
         rules={[
           {

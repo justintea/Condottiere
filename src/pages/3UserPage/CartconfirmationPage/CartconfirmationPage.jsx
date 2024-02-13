@@ -1,7 +1,7 @@
 import { Avatar, List, Divider, Button, Form } from 'antd';
 import { useState } from "react";
 import { createOrder } from '../../../utilities/1ordersService';
-import { useOutletContext } from 'react-router-dom';
+import { Outlet, useOutletContext } from 'react-router-dom';
 
 // const onFinish = (values) => {
 //   console.log('Success:', values);
@@ -36,7 +36,7 @@ export default function CartconfirmationPage({ user }) {
     details: {
       ...item.details,
       // price: '$20'
-      Price: `$${pricingCalculator(precartData)}`,
+      itemPrice: `$${pricingCalculator(item)}`,
     },
   }));
 
@@ -49,7 +49,7 @@ export default function CartconfirmationPage({ user }) {
 
   //* depending on service and service details, returns a price. Price is then fed above to add into Cart & Order arrays
   //* now just hard code
-  function pricingCalculator(array) {
+  function pricingCalculator(cartObject) {
     //? takes in array
     //? looks at what service is in 'title'
     //? looks into the 'details' object
@@ -86,15 +86,19 @@ export default function CartconfirmationPage({ user }) {
   const onFinish = async (  ) => {
     // const onFinish = async ( cartData, user ) => {
     // console.log("Cart Submission Success:", valuesConfirmed);
+    console.log('user is: ', user);
+    console.log('orders: ', orders);
     try { 
       console.log("Cart Submission Success:", cartData);
       // await createOrder(cartData, user); 
 
-      const newOrder = await createOrder(cartData); 
+      const newOrder = await createOrder(cartData, user); 
+
       setOrders([...orders, newOrder]);
     }
     catch (error) {
       window.alert('Something wrong: ', error);
+      console.log(error);
     }
 
 

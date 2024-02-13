@@ -10,7 +10,7 @@ import { getOrders } from "../../utilities/1ordersService";
 export default function UserPage1({ user, setUser }) {
   
   //? declare states
-  const [orders, setOrders] = useState(null);
+  const [orders, setOrders] = useState([]);
   const [cart, setCart] = useState(null);
 
   //? use effect to load all data... but this is the overhang, not the page itself
@@ -26,11 +26,13 @@ export default function UserPage1({ user, setUser }) {
     })();
   }, []);
 
+  console.log('outlet Orders: ', orders);
+
   return (<>
     <NavbarIn user={user} setUser={setUser} orders={orders} setOrders={setOrders} cart={cart} setCart={setCart} />
     {/* <Outlet context={{ orders, setOrders }} /> */}
     <Outlet context={{ orders, setOrders, cart, setCart }}  />
-
+    
   
     {/* i think what happens here: this loads, takes in all the data,
     'allows a parent route to render its child route elements',
