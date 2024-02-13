@@ -125,10 +125,10 @@ export default function MasterclassForm({ user, setUser }) {
           onChange={onClasstypeChange}
           allowClear
         >
-          <Option value="Masterclass package 1: Hired Tutor">Package 1: Hired Tutor</Option>
-          <Option value="Masterclass package 2: Squire-r-us">Package 2: Squire-r-us</Option>
-          <Option value="Masterclass package 3: Paint-Knight">Package 3: Paint-knights-on-a-quest</Option>
-          <Option value="Masterclass package 4: Paint-Champion">Package 4: Paint-Champion</Option>
+          <Option value="Masterclass package 1: Hired Tutor">Hired Tutor</Option>
+          <Option value="Masterclass package 2: Squire-r-us">Squire-r-us</Option>
+          <Option value="Masterclass package 3: Paint-Knight">Paint-Knight</Option>
+          <Option value="Masterclass package 4: Paint-Champion">Paint-Champion</Option>
     
             </Select>
       </Form.Item>
