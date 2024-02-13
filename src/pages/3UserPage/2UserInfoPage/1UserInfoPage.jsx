@@ -7,7 +7,6 @@ export default function UserInfoPage() {
   return (
     <>
       <h2> User Information </h2>
-      {/* <UserpreferenceForm /> */}
       <UserInfoForm />
 
     </>);
