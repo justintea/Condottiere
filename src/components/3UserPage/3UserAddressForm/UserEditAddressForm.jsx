@@ -21,7 +21,7 @@ const tailLayout = {
 export default function UserEditAddressForm({ user }) {
   
   const { address, setAddress } = useOutletContext(); 
-  
+  console.log(user);
   const [form] = Form.useForm();
   const Navigate = useNavigate();
 
@@ -135,8 +135,8 @@ export default function UserEditAddressForm({ user }) {
           style={{ width: "100%", margin: '0 0 1% 0%' }}
 
         >
-          //? use a countries library next time
-          //? npm install 'countries-list' 
+          {/* //? use a countries library next time
+          //? npm install 'countries-list'  */}
           <Option value="Argentina">Argentina</Option>
           <Option value="Australia">Australia</Option>
           <Option value="Brazil">Brazil</Option>
@@ -156,7 +156,7 @@ export default function UserEditAddressForm({ user }) {
           <Option value="South Africa">South Africa</Option>
           <Option value="Turkey">Turkey</Option>
           <Option value="United States">United States</Option>
-          <Option value="United Kingdom">United States</Option>
+          <Option value="United Kingdom">United Kingdom</Option>
           {/* <Option value=""></Option> */}
           
         </Select>

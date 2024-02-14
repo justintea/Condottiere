@@ -1,6 +1,7 @@
 import * as addressesAPI from "./2addressesAPI";
 
 
+//*CREATE ADDRESS---------------------------------------------
 export async function createAddress(addressData, user) {
   console.log(addressData);
   const body = {
@@ -20,7 +21,8 @@ export async function createAddress(addressData, user) {
 }
 
 
-export async function getAddress() {
+//*GET YOUR ONE ADDRESS----------------------------------------
+export async function getOneAddress() {
   const data = await addressesAPI.getAddress();
   console.log(data);
 
@@ -28,8 +30,8 @@ export async function getAddress() {
 }
 
 
-//? wip: for Superuser. you need to add the ID too 
-export async function updateAddress(addressData, user) {
+//*UPDATE YOUR ONE ADDRESS-------------------------------------
+export async function updateOneAddress(addressData, user) {
   // console.log(goal);
 
   const body = {
@@ -44,4 +46,13 @@ export async function updateAddress(addressData, user) {
 
   const updatedAddress = await addressesAPI.updateAddress(body);
   return updatedAddress;
+}
+
+//* SUPERUSER: GET ALL ADDRESSES----------------------------------------
+//! wip: for Superuser. you need to add the ID too 
+export async function getAllAddresses() {
+  const data = await addressesAPI.getAllAddresses();
+  console.log(data);
+
+  return data;
 }

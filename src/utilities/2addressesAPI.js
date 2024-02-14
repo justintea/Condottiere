@@ -25,7 +25,7 @@ export async function createAddress(body) {
 }
 
 //*GET YOUR ONE ADDRESS----------------------------------------
-export async function getAddress() {
+export async function getOneAddress() {
   const options = {
     method: 'GET',
     headers,
@@ -40,8 +40,8 @@ export async function getAddress() {
 }
 
 //*UPDATE YOUR ONE ADDRESS-------------------------------------
-export async function updateAddress(body) {
-  const id = body.id;       //! check this next time 
+export async function updateOneAddress(body) {
+  const id = body.userId;       //! check this next time 
 
   const options = {
     method: "PUT",
@@ -53,5 +53,20 @@ export async function updateAddress(body) {
 
   if (!response.ok) throw new Error("Network response was not ok.");
   const json = await response.json();
+  return json;
+}
+
+//* SUPERUSER: GET ALL ADDRESSES----------------------------------------
+export async function getAllAddresses() {
+  const options = {
+    method: 'GET',
+    headers,
+  };
+
+  const response = await fetch(baseURL, options);
+  console.log('at getAllAddresses in AddressAPI', response);
+  if (!response.ok) throw new Error("Network response (inbound) was not ok.");
+  const json = await response.json();
+  console.log(JSON.stringify(json));
   return json;
 }
