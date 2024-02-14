@@ -21,6 +21,7 @@ export default function PaintforhireForm({ user, setUser }) {
   };
 
   const [form] = Form.useForm();
+  
   const onSizeComplexityChange = (value) => {
     switch (value) {
       case 'Small':

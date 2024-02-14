@@ -42,6 +42,61 @@ export default function CartconfirmationPage({ user }) {
     },
   }));
 
+  //* for transformation later, for rendering
+  const renderedCartData = [];
+//* a separation of 'proper DB data' from 'front-end rendered data'
+
+function mapNewKeys(details) {
+  const formattedDetails = {};
+
+  for (const [key, value] of Object.entries(details)) {
+    let formattedKey = key;
+    let formattedValue = value;
+
+    switch (key) {
+      case 'numberOfModels':
+        formattedKey = 'Number of models';
+        break;
+      case 'sizeComplexity':
+        formattedKey = 'Size & complexity';
+        break;
+      case 'urgencyRequired':
+        formattedKey = 'Urgency';
+        break;
+      case 'classType':
+        formattedKey = 'Class type';
+        break;
+      case 'dateTime':
+        formattedKey = 'Date';
+        break;
+      case 'itemPrice':
+        formattedKey = 'Item price';
+        break;
+      default:
+    }
+
+    formattedDetails[formattedKey] = formattedValue;
+  }
+
+  return formattedDetails;
+}
+
+cartData.forEach((item) => {
+  const renderedItem = {
+    title: item.title,
+    details: mapNewKeys(item.details),
+  };
+
+  renderedCartData.push(renderedItem);
+  console.log('this is renderedCartData: ', renderedCartData);
+});
+
+
+
+
+
+
+
 
   console.log(`this is parsedData: ${parsedData}`);
   console.log(`this is parsedData stringed: ${JSON.stringify(parsedData)}`);
@@ -104,8 +159,12 @@ export default function CartconfirmationPage({ user }) {
       console.log(error);
     }
 
-
+    
   };
+
+
+
+
   const onFinishFailed = (errorInfo) => {
     console.log("Cart Submission Failed:", errorInfo);
   };
@@ -150,7 +209,7 @@ export default function CartconfirmationPage({ user }) {
       >
         <List
           itemLayout="horizontal"
-          dataSource={cartData}
+          dataSource={renderedCartData}
           renderItem={(item, index) => (
             <List.Item>
               <List.Item.Meta
@@ -160,14 +219,14 @@ export default function CartconfirmationPage({ user }) {
                   />
                 }
                 // * Renders the service title
-                title={<h2 style={{ fontFamily: "Times New Roman" }}>{item.title}</h2>}
+                title={<h2 style={{ fontFamily: "Times New Roman" , margin: '0 0 0 2%'}}>{item.title}</h2>}
                 //* Renders the description of each service's details
 
                 description={
-                  <div style={{ color: "black" }}>
-                    {Object.keys(cartData[0].details).map((key, index) => (
+                  <div style={{ color: "black", margin: '0 0 0 2%'}}>
+                    {Object.keys(renderedCartData[0].details).map((key, index) => (
                       <p key={index}>
-                        {key}: <strong>{cartData[0].details[key]}</strong>
+                        {key}: <strong>{renderedCartData[0].details[key]}</strong>
                       </p>
                     ))}
                   </div>
