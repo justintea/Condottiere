@@ -3,23 +3,17 @@ import { useState } from "react";
 import { createOrder } from '../../../utilities/1ordersService';
 import { Outlet, useOutletContext } from 'react-router-dom';
 
-// const onFinish = (values) => {
-//   console.log('Success:', values);
-  
-// };
-// const onFinishFailed = (errorInfo) => {
-//   console.log('Failed:', errorInfo);
-// };
-
 export default function CartconfirmationPage({ user }) {
 
   const { orders, setOrders } = useOutletContext();
 
-
+  
   const localStorageData = localStorage.getItem("data1Key");
   const parsedData = JSON.parse(localStorageData);
 
-  //* need to transform
+  //* need to transform my localStorage data in a few ways
+  //* Flow: Ant D 'values' -> valuesarray -> localStorage -> parsedData -> precartData -> cartData (goes to Orders & the DB) -> renderedCartData (used for rendering on this page)
+  //* Note: i wrote 'valuesarray' for future use, for the cart to hold data of not just 1 service
   const precartData = [];
   //* Function to transform my ParsedData into a form the initial AntD List would take
    for (const [key, value] of Object.entries(parsedData)) {
@@ -31,6 +25,19 @@ export default function CartconfirmationPage({ user }) {
     }
   }
 
+  //* Helper function to check if the embedded value is null. this helps with the precartData transformation (reject those that are 'null')
+  function isObjectWithNull(obj) {
+    return (
+      typeof obj === "object" &&
+      obj !== null &&
+      Object.keys(obj).length === 1 &&
+      obj.hasOwnProperty("null") &&
+      obj.null === null
+    );
+  }
+
+
+  //* as i recreate the array, I will add in Date & Price, at the cart-level, at the 'details' level for easy access & rendering
   const cartData = precartData.map((item) => ({
     ...item,
     details: {
@@ -42,10 +49,10 @@ export default function CartconfirmationPage({ user }) {
     },
   }));
 
-  //* for transformation later, for rendering
+//* For rendering
   const renderedCartData = [];
 //* a separation of 'proper DB data' from 'front-end rendered data'
-
+//* mapping the keys for more user-friendly view
 function mapNewKeys(details) {
   const formattedDetails = {};
 
@@ -92,12 +99,7 @@ cartData.forEach((item) => {
 });
 
 
-
-
-
-
-
-
+//* my useful test code
   console.log(`this is parsedData: ${parsedData}`);
   console.log(`this is parsedData stringed: ${JSON.stringify(parsedData)}`);
   console.log(`this is cartData: ${cartData}`);
@@ -125,27 +127,17 @@ cartData.forEach((item) => {
     return "20";
   }
 
-  //* Helper function to check if the embedded value is null. this helps with the precartData transformation (reject those that are 'null')
-  function isObjectWithNull(obj) {
-    return (
-      typeof obj === "object" &&
-      obj !== null &&
-      Object.keys(obj).length === 1 &&
-      obj.hasOwnProperty("null") &&
-      obj.null === null
-    );
-  }
 
   //* Confirm your cart, and turn it into an Order
   //* Specifically this is for Order
-  //? does Cart need to be a Db? or state will do?
-  //* Cart has CRD functionality (or no need DB n use State to manage)
   //* Order has CR functionality 
-  const onFinish = async (  ) => {
+  //* Cart has CRD functionality (for implementation speed, I used localStorage, over State or DB )
+  const onFinish = async () => {
     // const onFinish = async ( cartData, user ) => {
     // console.log("Cart Submission Success:", valuesConfirmed);
     console.log('user is: ', user);
     console.log('orders: ', orders);
+    
     try { 
       console.log("Cart Submission Success:", cartData);
       // await createOrder(cartData, user); 
@@ -159,15 +151,12 @@ cartData.forEach((item) => {
       console.log(error);
     }
 
-    
   };
-
-
-
 
   const onFinishFailed = (errorInfo) => {
     console.log("Cart Submission Failed:", errorInfo);
   };
+//? P2 feature. Now easily overwritten by a new Add-to-cart item, handled by LocalStorage
   const handleDeleteCartItem = () => {
     console.log("Delete cart item requested");
   };
@@ -234,6 +223,7 @@ cartData.forEach((item) => {
                 //! end point of List meta
               />
 
+              //* does not work yet, but will incorporate in the future
               <Button onClick={handleDeleteCartItem}> Delete </Button>
             </List.Item>
           )}
