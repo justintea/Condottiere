@@ -2,8 +2,10 @@ const Address = require("../models/address");
 
 const create = async (req, res) => {
   const data = req.body;
-  console.log(req.user._id)
+  console.log('req.user._id: ', req.user._id)
+  console.log('req: ', req);
   const userId = req.user._id;
+
   if (data.userId !== userId) {
     res.status(401).json({ msg: "userID tak match" });
     return

@@ -3,7 +3,9 @@ import * as addressesAPI from "./2addressesAPI";
 
 //*CREATE ADDRESS---------------------------------------------
 export async function createAddress(addressData, user) {
-  console.log(addressData);
+  console.log('addressData is: ', addressData);
+  console.log('user is: ', user);
+
   const body = {
     userId: user._id,
     fullName: addressData.fullName,
@@ -15,7 +17,7 @@ export async function createAddress(addressData, user) {
   };
 
   console.log('createAddress body: ', body);
-  const newAddress = await addressesAPI.createAddress(body);
+  const newAddress = await addressesAPI.createAddress(body, user);
 
   return newAddress;
 }
@@ -32,7 +34,6 @@ export async function getOneAddress() {
 
 //*UPDATE YOUR ONE ADDRESS-------------------------------------
 export async function updateOneAddress(addressData, user) {
-  // console.log(goal);
 
   const body = {
     userId: user._id,
@@ -44,7 +45,8 @@ export async function updateOneAddress(addressData, user) {
     addressAptUnitNum: addressData.addressAptUnitNum,
   };
 
-  const updatedAddress = await addressesAPI.updateAddress(body);
+
+  const updatedAddress = await addressesAPI.updateOneAddress(body);
   return updatedAddress;
 }
 

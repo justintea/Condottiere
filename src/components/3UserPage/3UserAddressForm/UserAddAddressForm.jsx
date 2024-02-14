@@ -1,6 +1,6 @@
 import { Button, Form, Input, Select, Space } from 'antd';
 import { Outlet, useOutletContext, useNavigate } from 'react-router-dom';
-import { updateOneAddress } from '../../../utilities/2addressesService';
+import { createAddress } from '../../../utilities/2addressesService';
 
 const { Option } = Select;
 const layout = {
@@ -18,20 +18,23 @@ const tailLayout = {
   },
 };
 
-export default function UserEditAddressForm({ user }) {
-  
+export default function UserAddAddressForm({ user }) {
   const { address, setAddress } = useOutletContext(); 
+  console.log(user);
   const [form] = Form.useForm();
   const Navigate = useNavigate();
 
+
+
   const onFinish = async (addressData) => {
-  console.log('user is: ', user);
+    console.log('user is: ', user);
     
     try { 
       console.log('Address Submission Success: ', addressData);
-
-      const newAddress = await updateOneAddress(addressData, user); 
-      setAddress(addressData);          //? 15/2 0330: setting global state...
+      console.log(user);
+      const newAddress = await createAddress(addressData, user); 
+      // setAddress(addressData);          //? 15/2 0330: setting global state...
+      setAddress(newAddress);
       console.log(address);
       //? few options to try
       // setAddress(address);
@@ -201,7 +204,7 @@ export default function UserEditAddressForm({ user }) {
     
       <Form.Item {...tailLayout}>
           <Space style={{ margin: '0 0 0 60.5%'}}>
-              <Button type="primary" style={{ backgroundColor: "#01628f" }} htmlType="submit"> Update </Button>
+              <Button type="primary" style={{ backgroundColor: "#01628f" }} htmlType="submit"> Add </Button>
               <Button htmlType="button" onClick={handleCancel}> Cancel </Button>
           </Space>
       </Form.Item>

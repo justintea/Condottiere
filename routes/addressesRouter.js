@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-const addressesController = require("../controllers/addressesController")
+const addressesController = require("../controllers/addressesController");
 
 router.get("/", addressesController.index);
 router.post("/", addressesController.create);
-router.post("/", addressesController.updateOwn);
+router.post("/:userId", addressesController.updateOwn);
 
 module.exports = router;

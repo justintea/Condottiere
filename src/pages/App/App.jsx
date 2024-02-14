@@ -15,6 +15,7 @@ import CartconfirmationPage from "../3UserPage/1CartconfirmationPage/Cartconfirm
 import UserOrderPage from "../3UserPage/2UserInfoPage/2UserOrderPage";
 import FAQPage from "../1ServicesPage/4FAQPage";
 import UserAddressPage from "../3UserPage/2UserInfoPage/3UserAddressPage";
+import UserAddAddressPage from "../3UserPage/2UserInfoPage/4UserAddAddressPage";
 import UserEditAddressPage from "../3UserPage/2UserInfoPage/4UserEditAddressPage";
 
 
@@ -36,6 +37,7 @@ function App() {
                 <Route path="orders" element={<UserOrderPage user={user} />} />
                 <Route path="faqs"     element={<FAQPage user={user} />}      />
                 <Route path="address" element={<UserAddressPage user={user} />} />  
+                <Route path="addaddress" element={<UserAddAddressPage user={user} />} />  
                 <Route path="editaddress" element={<UserEditAddressPage user={user} />} />  
 
               {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
