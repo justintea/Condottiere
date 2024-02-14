@@ -57,7 +57,9 @@ export default function PaintforhireForm({ user, setUser }) {
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    
+    console.log(new Date());
+    console.log(JSON.stringify(new Date()));
+
     //*state of prelogin Form is passed in 'values'
     //* write in manner that groups them in Array of arrays, by the 3 services 
     const paintsvcValuesArray =

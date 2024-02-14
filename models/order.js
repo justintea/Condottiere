@@ -14,6 +14,10 @@ const detailSchema = new Schema({
   sizeComplexity: { type: String },
   urgencyRequired: { type: String },
   classType: { type: String },
+  dateTime: {
+    type: String,
+    required: true,
+  },
   itemPrice: { type: String },
 });
 

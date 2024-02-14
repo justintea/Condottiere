@@ -66,6 +66,10 @@ export default function UserOrderPage() {
   
       // Format keys
       switch (key) {
+        case '_id':
+          formattedKey = 'Order ID';
+          formattedValue = value.slice(-10); // Only the last 5 characters of '_id'
+          break;
         case 'numberOfModels':
           formattedKey = 'Number of models';
           break;
@@ -81,12 +85,7 @@ export default function UserOrderPage() {
         case 'itemPrice':
           formattedKey = 'Item price';
           break;
-        case '_id':
-          formattedKey = 'Order ID';
-          formattedValue = value.slice(-10); // Only the last 5 characters of '_id'
-          break;
         default:
-          // Handle other keys if needed
       }
   
       return (
@@ -110,9 +109,6 @@ export default function UserOrderPage() {
           <h3 style={{ fontFamily: "Times New Roman" }}>{order.items[0].title}</h3>
           {renderSubDetails(order.items[0].details)}
 
-          <p style={{ fontFamily: "Times New Roman" }}>
-            <strong>Item Price:</strong> {order.items[0].details.itemPrice}
-          </p>
         </li>
       ))}
     </ul>
