@@ -1,12 +1,12 @@
 import { Avatar, List, Divider, Button, Form } from 'antd';
 import { useState } from "react";
 import { createOrder } from '../../../utilities/1ordersService';
-import { Outlet, useOutletContext } from 'react-router-dom';
+import { Outlet, useOutletContext, useNavigate } from 'react-router-dom';
 
 export default function CartconfirmationPage({ user }) {
 
   const { orders, setOrders, cart, setCart } = useOutletContext();
-
+  const Navigate = useNavigate();
   
   const localStorageData = localStorage.getItem("data1Key");
   const parsedData = JSON.parse(localStorageData);
@@ -147,6 +147,8 @@ cartData.forEach((item) => {
       const newOrder = await createOrder(cartData, user); 
 
       setOrders([...orders, newOrder]);
+      Navigate('/user/orders');
+
     }
     catch (error) {
       window.alert('Something wrong: ', error);
@@ -178,7 +180,7 @@ cartData.forEach((item) => {
 
   return (
     <>
-      <Divider orientation="left" style={{ margin: "0px" }}>
+      <Divider orientation="left" style={{ margin: "0 0 0 0" }}>
         {" "}
         <h2 style={{ fontFamily: "Palatino Linotype" }}>Shopping Cart</h2>{" "}
       </Divider>
@@ -219,15 +221,15 @@ cartData.forEach((item) => {
               <List.Item.Meta
                 avatar={
                   <Avatar
-                    src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${index}`}
-                  />
+                    src={`https://api.dicebear.com/7.x/miniavs/svg?seed=${8}`}
+                    style={{ margin: '0 0 0 170%' }} />
                 }
                 // * Renders the service title
-                title={<h2 style={{ fontFamily: "Times New Roman" , margin: '0 0 0 2%'}}>{item.title}</h2>}
+                title={<h2 style={{ fontFamily: "Times New Roman" , margin: '0 0 0 11%'}}>{item.title}</h2>}
                 //* Renders the description of each service's details
 
                 description={
-                  <div style={{ color: "black", margin: '0 0 0 2%'}}>
+                  <div style={{ color: "black", margin: '0 0 0 11%'}}>
                     {Object.keys(renderedCartData[0].details).map((key, index) => (
                       <p key={index}>
                         {key}: <strong>{renderedCartData[0].details[key]}</strong>

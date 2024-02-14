@@ -1,4 +1,3 @@
-// import UserpreferenceForm from "../../../components/UserPreferenceForm/UserpreferenceForm";
 import { Outlet, useOutletContext } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -109,8 +108,9 @@ export default function UserOrderPage() {
       <p> You have made <strong>{ orders.length } purchases</strong> with us. Thank you for your continued support! </p>
       
       {/* //? start of experiment 2 */}
+      {/* //? added something cool - reversed the order of Orders, now rendering the latest to the earliest */}
       <ul>
-      {orders.map((order) => (
+      {orders.slice(0).reverse().map((order) => (
         <li key={order._id}>
           <h3 style={{ fontFamily: "Times New Roman" }}>{order.items[0].title}</h3>
           {renderSubDetails(order.items[0].details)}
