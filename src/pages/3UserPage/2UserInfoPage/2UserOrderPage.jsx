@@ -104,14 +104,14 @@ export default function UserOrderPage() {
   
   return (
     <>
-      <h2 style={{ fontFamily: "Palatino Linotype" }}> Your Orders </h2>
-      <p> You have made <strong>{ orders.length } purchases</strong> with us. Thank you for your continued support! </p>
+      <h2 style={{ fontFamily: "Palatino Linotype" , margin: '1% 0 0 5%' }}> Your Orders </h2>
+      <p style={{ margin: '1% 0 0 5%'}}> You have made <strong>{ orders.length } purchases</strong> with us. Thank you for your continued support! </p>
       
       {/* //? start of experiment 2 */}
       {/* //? added something cool - reversed the order of Orders, now rendering the latest to the earliest */}
       <ul>
       {orders.slice(0).reverse().map((order) => (
-        <li key={order._id}>
+        <li key={order._id} style={{ margin: '1.5% 0 0 4%'}}>
           <h3 style={{ fontFamily: "Times New Roman" }}>{order.items[0].title}</h3>
           {renderSubDetails(order.items[0].details)}
 

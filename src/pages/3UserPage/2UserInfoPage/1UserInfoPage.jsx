@@ -6,7 +6,7 @@ export default function UserInfoPage() {
   useOutletContext();
   return (
     <>
-      <h2> User Information </h2>
+      <h2 style={{ fontFamily: "Palatino Linotype" , margin: '1% 0 0 5%' }}> User Information </h2>
       <UserInfoForm />
 
     </>);

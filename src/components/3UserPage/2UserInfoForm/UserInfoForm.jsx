@@ -65,6 +65,7 @@ export default function UserInfoForm({ user }) {
           <List.Item className='preferlistitem' onClick={() => handleClick(item.route)} >
 
             <List.Item.Meta
+              style={{ margin: '0.5% 0 0 5%'}}
               avatar={item.icon}
               title={item.title}
               description={item.description}
