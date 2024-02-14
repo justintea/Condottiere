@@ -163,7 +163,9 @@ cartData.forEach((item) => {
   const onFinishFailed = (errorInfo) => {
     console.log("Cart Submission Failed:", errorInfo);
   };
-//? P2 feature. Now easily overwritten by a new Add-to-cart item, handled by LocalStorage
+  //* Delete Button empties the cart.
+  //* emptyCart is used above in Checkout Button too, so the Cart is emptied with a successful Order
+  //* but my handleDeleteCartItem function is a bit faulty, the delete button has a State issue. should have used State, but needs research on AntD implementation 
   const emptyCart = {
     'Painting Services': { null: null },
     'Masterclass Booking': { null: null },
