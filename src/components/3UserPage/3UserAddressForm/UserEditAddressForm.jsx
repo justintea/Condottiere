@@ -1,4 +1,6 @@
 import { Button, Form, Input, Select, Space } from 'antd';
+import { useNavigate } from 'react-router-dom';
+
 const { Option } = Select;
 const layout = {
   labelCol: {
@@ -21,7 +23,14 @@ export default function UserEditAddressForm() {
 
   const onFinish = (values) => {
     console.log(values);
+
   };
+
+  const Navigate = useNavigate();
+  const handleCancel = () => {
+    Navigate('/user/address');
+
+    }
 
   const onCountryChange = (value) => {
     switch (value) {
@@ -168,10 +177,14 @@ export default function UserEditAddressForm() {
         <Input />
       </Form.Item>
 
-      
+    
       <Form.Item {...tailLayout}>
-          <Button type="primary" style={{ backgroundColor: "#01628f", margin: '0 0 0 80%' }} htmlType="submit"> Update </Button>
+          <Space style={{ margin: '0 0 0 60.5%'}}>
+              <Button type="primary" style={{ backgroundColor: "#01628f" }} htmlType="submit"> Update </Button>
+              <Button htmlType="button" onClick={handleCancel}> Cancel </Button>
+          </Space>
       </Form.Item>
+      
     </Form>
   
   </>);
