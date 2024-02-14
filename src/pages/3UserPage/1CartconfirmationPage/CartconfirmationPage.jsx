@@ -16,6 +16,7 @@ export default function CartconfirmationPage({ user }) {
   //* Note: i wrote 'valuesarray' for future use, for the cart to hold data of not just 1 service
   const precartData = [];
   //* Function to transform my ParsedData into a form the initial AntD List would take
+  //* if a real KVP, then isObjectWithNull = false, then condition = true, then push that KVP into 'precartData' 
    for (const [key, value] of Object.entries(parsedData)) {
     if (!isObjectWithNull(value)) {
       precartData.push({
