@@ -1,11 +1,10 @@
 import * as addressesAPI from "./2addressesAPI";
 
 
-export async function createAddress(addressData) {
+export async function createAddress(addressData, user) {
   console.log(addressData);
   const body = {
-    id: addressData._id,
-    userId: addressData.userId,
+    userId: user._id,
     name: addressData.name,
     description: addressData.description,
     endDate: addressData.endDate,

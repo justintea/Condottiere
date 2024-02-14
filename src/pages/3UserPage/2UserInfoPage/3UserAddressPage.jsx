@@ -83,7 +83,7 @@ export default function UserAddressPage() {
     <>
       <h2 style={{ fontFamily: "Palatino Linotype" }}> Address & Contact details </h2>
       <Flex gap="small" wrap="wrap" justify="flex-end">
-      <Button className='editButton' onClick={handleClick} type="text" style={{ width: '7%', margin: '0 0 0.5% 0' }} hoveredStyle={{ backgroundColor: '#9dc4bc' }}> Edit </Button>
+      <Button className='editButton' onClick={handleClick} type="text" style={{ width: '8%', margin: '0 0 0.5% 0' }} hoveredStyle={{ backgroundColor: '#9dc4bc' }}> Add / Edit </Button>
       </Flex>
       <Descriptions layout="vertical" bordered items={items} />
       <br></br>

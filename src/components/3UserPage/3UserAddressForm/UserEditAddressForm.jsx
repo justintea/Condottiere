@@ -1,5 +1,6 @@
 import { Button, Form, Input, Select, Space } from 'antd';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useOutletContext, useNavigate } from 'react-router-dom';
+import { createAddress } from '../../../utilities/2addressesService';
 
 const { Option } = Select;
 const layout = {
@@ -17,16 +18,36 @@ const tailLayout = {
   },
 };
 
-export default function UserEditAddressForm() {
+export default function UserEditAddressForm({ user }) {
+  
+  const { address, setAddress } = useOutletContext(); 
   
   const [form] = Form.useForm();
+  const Navigate = useNavigate();
 
-  const onFinish = (values) => {
-    console.log('this is values: ', values);
+  const onFinish = async (addressData) => {
+    console.log('user is: ', user);
+    
+    try { 
+      console.log('Address Submission Success: ', addressData);
+
+      const newAddress = await createAddress(addressData, user); 
+      setAddress(addressData);
+      //? few options to try
+      // setAddress(address);
+      
+      console.log('new Address response from API: ', newAddress);
+
+      Navigate('/user/address');
+    }
+    catch (error) {
+      window.alert('Something is wrong: ', error);
+      console.log(error);
+    }
 
   };
 
-  const Navigate = useNavigate();
+ 
   const handleCancel = () => {
     Navigate('/user/address');
 

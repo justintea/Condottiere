@@ -11,6 +11,7 @@ export default function UserPage1({ user, setUser }) {
   //? declare states
   const [orders, setOrders] = useState([]);
   const [cart, setCart] = useState([]);
+  const [address, setAddress] = useState([]);
 
   //? use effect to load all data... but this is the overhang, not the page itself
   useEffect(() => {
@@ -30,7 +31,7 @@ export default function UserPage1({ user, setUser }) {
   return (<>
     <NavbarIn user={user} setUser={setUser} orders={orders} setOrders={setOrders} cart={cart} setCart={setCart} />
     {/* <Outlet context={{ orders, setOrders }} /> */}
-    <Outlet context={{ orders, setOrders, cart, setCart }}  />
+    <Outlet context={{ orders, setOrders, cart, setCart, address, setAddress }}  />
     
   
     {/* i think what happens here: this loads, takes in all the data,

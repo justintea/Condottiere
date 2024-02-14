@@ -154,7 +154,7 @@ cartData.forEach((item) => {
 
     }
     catch (error) {
-      window.alert('Something wrong: ', error);
+      window.alert('Something is wrong: ', error);
       console.log(error);
     }
 
