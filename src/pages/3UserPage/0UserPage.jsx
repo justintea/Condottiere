@@ -2,7 +2,6 @@ import { Outlet, useOutletContext } from "react-router-dom";
 import NavbarIn from "../../components/0Navbar/NavbarIn/NavbarIn";
 import { useEffect, useState } from "react";
 import { getOrders } from "../../utilities/1ordersService";
-// import { getGoals } from "../../utilities/goalsService";
 
 
 //* objective: write a new userpage, write links to a cart confirmation page, write a cart confirmation page
@@ -11,7 +10,7 @@ export default function UserPage1({ user, setUser }) {
   
   //? declare states
   const [orders, setOrders] = useState([]);
-  const [cart, setCart] = useState(null);
+  const [cart, setCart] = useState([]);
 
   //? use effect to load all data... but this is the overhang, not the page itself
   useEffect(() => {

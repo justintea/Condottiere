@@ -5,7 +5,7 @@ import { Outlet, useOutletContext } from 'react-router-dom';
 
 export default function CartconfirmationPage({ user }) {
 
-  const { orders, setOrders } = useOutletContext();
+  const { orders, setOrders, cart, setCart } = useOutletContext();
 
   
   const localStorageData = localStorage.getItem("data1Key");
@@ -39,7 +39,7 @@ export default function CartconfirmationPage({ user }) {
 
 
   //* as i recreate the array, I will add in Date & Price, at the cart-level, at the 'details' level for easy access & rendering
-  const cartData = precartData.map((item) => ({
+  let cartData = precartData.map((item) => ({
     ...item,
     details: {
       ...item.details,
@@ -51,7 +51,7 @@ export default function CartconfirmationPage({ user }) {
   }));
 
 //* For rendering
-  const renderedCartData = [];
+  let renderedCartData = [];
 //* a separation of 'proper DB data' from 'front-end rendered data'
 //* mapping the keys for more user-friendly view
 function mapNewKeys(details) {
@@ -99,12 +99,13 @@ cartData.forEach((item) => {
   console.log('this is renderedCartData: ', renderedCartData);
 });
 
-
+//?this somehow makes the above code run recursively. error message: setState in useEffect. Must be some AntD thing. 
+// setCart(renderedCartData); 
+  
 //* my useful test code
-  console.log(`this is parsedData: ${parsedData}`);
+  // console.log(`this is parsedData: ${parsedData}`);
   console.log(`this is parsedData stringed: ${JSON.stringify(parsedData)}`);
   console.log(`this is cartData: ${cartData}`);
-  console.log(`this is cartData details: ${cartData.details}`);
   console.log(`this is cartData stringed: ${JSON.stringify(cartData)}`);
 
 
@@ -160,6 +161,19 @@ cartData.forEach((item) => {
 //? P2 feature. Now easily overwritten by a new Add-to-cart item, handled by LocalStorage
   const handleDeleteCartItem = () => {
     console.log("Delete cart item requested");
+
+    const emptyCart = {
+      'Painting Services': { null: null },
+      'Masterclass Booking': { null: null },
+      'Paint Table Booking': { null: null }
+    }
+    localStorage.setItem('data1Key', JSON.stringify(emptyCart));
+
+    cartData = []; 
+    renderedCartData = [{ title: 'Your cart is empty.' }];
+    // setCart(renderedCartData);         //? need to see how to implement this in Ant D.
+    console.log('cartdata: ', cartData);
+    console.log('renderedCartData ', renderedCartData);
   };
 
   return (
@@ -224,8 +238,8 @@ cartData.forEach((item) => {
                 //! end point of List meta
               />
 
-              //* does not work yet, but will incorporate in the future
-              <Button onClick={handleDeleteCartItem}> Delete </Button>
+              {/* does not work yet, but will incorporate in the future */}
+              <Button onClick={handleDeleteCartItem} style={{margin: '0 0 32% 0'}}> Delete </Button>
             </List.Item>
           )}
         />
@@ -237,14 +251,17 @@ cartData.forEach((item) => {
           }}
           style={{ display: "flex", justifyContent: "flex-end" }}
         >
-          <Button
-            style={{ backgroundColor: "#01628f", width: "180px" }}
-            type="primary"
-            htmlType="submit"
-          >
-            {" "}
-            Proceed to Checkout{" "}
-          </Button>
+          {/* clunky way of making the Checkout button disappear if no data. should have used State, but needs research on AntD implementation */}
+          {renderedCartData.length > 0 && (                 
+            <Button
+              style={{ backgroundColor: "#01628f", width: "180px" }}
+              type="primary"
+              htmlType="submit"
+            >
+              {" "}
+              Proceed to Checkout{" "}
+            </Button>
+          )}
         </Form.Item>
       </Form>
     </>
