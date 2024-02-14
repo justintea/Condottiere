@@ -27,6 +27,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       horizontalItemHoverColor: '#478e80',
       horizontalItemSelectedColor: '#478e80',
         },
+    Descriptions: {
+      labelBg: '#9dc4bc',     // header row color
+      contentColor: 'black',  //text
+      colorSplit: '#bebebe',  //table border lines
+      extraColor: '#9dc4bc',  // ?
+
+    }
     
   }
 }}>

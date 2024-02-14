@@ -1,6 +1,7 @@
 import { Outlet, useOutletContext } from "react-router-dom";
 import { Badge, Descriptions } from 'antd';
-  
+import './3UserAddressPage.css';
+
 export default function UserAddressPage() {
 
   //? needs to have a form
@@ -10,13 +11,13 @@ export default function UserAddressPage() {
   const items = [
     {
       key: '1',
-      label: 'Product',
-      children: 'Cloud Database',
+      label: 'Full name',
+      children: 'Anthony Stark',
     },
     {
       key: '2',
-      label: 'Billing Mode',
-      children: 'Prepaid',
+      label: 'Phone Number',
+      children: '+1 999 9999',
     },
     {
       key: '3',
@@ -36,9 +37,9 @@ export default function UserAddressPage() {
     },
     {
       key: '6',
-      label: 'Status',
+      label: 'Account status',
       span: 3,
-      children: <Badge status="processing" text="Running" />,
+      children: <Badge status="processing" text="Active" />,
     },
     {
       key: '7',
@@ -81,7 +82,8 @@ export default function UserAddressPage() {
     <>
       <h2 style={{ fontFamily: "Palatino Linotype" }}> Address & Contact details </h2>
       <p> render </p>
-      <Descriptions title="User Info" layout="vertical" bordered items={items} />
-
+      <Descriptions title="User Info" layout="vertical" bordered items={items}  />
+      <br></br>
+      <br></br>
     </>);
 }
