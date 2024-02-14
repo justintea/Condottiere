@@ -5,14 +5,15 @@ export async function createAddress(addressData, user) {
   console.log(addressData);
   const body = {
     userId: user._id,
-    name: addressData.name,
-    description: addressData.description,
-    endDate: addressData.endDate,
-    targetAmount: addressData.targetAmount,
-    currentAmount: addressData.currentAmount,
-    dateUpdate: new Date(),
+    fullName: addressData.fullName,
+    phoneNumber: addressData.phoneNumber,
+    country: addressData.country,
+    postalCode: addressData.postalCode,
+    addressStreet: addressData.addressStreet,
+    addressAptUnitNum: addressData.addressAptUnitNum,
   };
 
+  console.log('createAddress body: ', body);
   const newAddress = await addressesAPI.createAddress(body);
 
   return newAddress;
@@ -20,24 +21,25 @@ export async function createAddress(addressData, user) {
 
 
 export async function getAddress() {
-  // Existing getGoals function
-  const goals = await addressesAPI.getAddress();
-  return goals;
+  const data = await addressesAPI.getAddress();
+  console.log(data);
+
+  return data;
 }
 
 
-export async function updateAddress(addressData) {
+//? wip: for Superuser. you need to add the ID too 
+export async function updateAddress(addressData, user) {
   // console.log(goal);
 
   const body = {
-    id: addressData._id,
-    userId: addressData.userId,
-    name: addressData.name,
-    description: addressData.description,
-    endDate: addressData.endDate,
-    targetAmount: addressData.targetAmount,
-    currentAmount: addressData.currentAmount,
-    dateUpdate: new Date(),
+    userId: user._id,
+    fullName: addressData.fullName,
+    phoneNumber: addressData.phoneNumber,
+    country: addressData.country,
+    postalCode: addressData.postalCode,
+    addressStreet: addressData.addressStreet,
+    addressAptUnitNum: addressData.addressAptUnitNum,
   };
 
   const updatedAddress = await addressesAPI.updateAddress(body);

@@ -5,17 +5,13 @@ export async function createOrder(cartData, user) {
   console.log('cartData at ordersService.js createOrder: ', cartData);
   
   const body = {
-    //* ========test=======
-    // id: user.id,
     userId: user._id,
-    //*====================
     dateTime: new Date(),         // probably need time, but next time
     items: cartData,
 
     // items: cartData.map((item) => ({
     //   title: item.title,
     //   details: item.details,
-
     //   // price: item.details.price,
     // })),
   };
