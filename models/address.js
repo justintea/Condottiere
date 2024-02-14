@@ -21,7 +21,11 @@ const addressSchema = new Schema(
       type: String,
       required: true,
     },
-    addressUnitNum: {
+    addressStreet: {
+      type: String,
+      required: true,
+    },
+    addressAptUnitNum: {
       type: String,
       required: true,
     },

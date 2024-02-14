@@ -34,7 +34,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       extraColor: '#9dc4bc',  // ?
 
     }
-    
   }
 }}>
         <App />
