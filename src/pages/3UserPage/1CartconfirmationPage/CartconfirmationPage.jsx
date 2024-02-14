@@ -147,6 +147,9 @@ cartData.forEach((item) => {
       const newOrder = await createOrder(cartData, user); 
 
       setOrders([...orders, newOrder]);
+      
+      localStorage.setItem('data1Key', JSON.stringify(emptyCart));
+
       Navigate('/user/orders');
 
     }
@@ -161,16 +164,16 @@ cartData.forEach((item) => {
     console.log("Cart Submission Failed:", errorInfo);
   };
 //? P2 feature. Now easily overwritten by a new Add-to-cart item, handled by LocalStorage
+  const emptyCart = {
+    'Painting Services': { null: null },
+    'Masterclass Booking': { null: null },
+    'Paint Table Booking': { null: null }
+  }
+  
   const handleDeleteCartItem = () => {
     console.log("Delete cart item requested");
 
-    const emptyCart = {
-      'Painting Services': { null: null },
-      'Masterclass Booking': { null: null },
-      'Paint Table Booking': { null: null }
-    }
     localStorage.setItem('data1Key', JSON.stringify(emptyCart));
-
     cartData = []; 
     renderedCartData = [{ title: 'Your cart is empty.' }];
     // setCart(renderedCartData);         //? need to see how to implement this in Ant D.
