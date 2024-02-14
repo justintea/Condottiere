@@ -111,7 +111,7 @@ export default function UserOrderPage() {
       {/* //? added something cool - reversed the order of Orders, now rendering the latest to the earliest */}
       <ul>
       {orders.slice(0).reverse().map((order) => (
-        <li key={order._id} style={{ margin: '1.5% 0 0 4%'}}>
+        <li key={order._id} style={{ margin: '2.5% 0 0 4%'}}>
           <h3 style={{ fontFamily: "Times New Roman" }}>{order.items[0].title}</h3>
           {renderSubDetails(order.items[0].details)}
 
