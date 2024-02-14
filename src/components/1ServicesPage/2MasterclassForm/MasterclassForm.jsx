@@ -65,30 +65,18 @@ export default function MasterclassForm({ user, setUser }) {
     console.log('this is valuesArray: ', masterclassValuesArray);
     console.log(user);
 
-    //* if this is prelogin (User=null), store in LS. 
-    //* if postlogin (User!= null), store in CartData ?
+    //! Use purely LocalStorage method. worked in PaintforHireForm...
     if (user === null) {
-    localStorage.setItem("data1Key", JSON.stringify(masterclassValuesArray));
-    console.log(localStorage);
-    //* below: store, transport, parse, access your Local Storage data like this
-    // const localStorageData = localStorage.getItem('data1Key');
-    // const parsedData = JSON.parse(localStorageData);
-    // const sizeofModelValue = parsedData?.sizeofModel;
-    // console.log(sizeofModelValue);
-    Navigate('/login');      //* pass transported data
-
-    //* postlogin 
-    } else {
-      // console.log('data state', data1PaintSvcs);        //? Lesson: why does it not pass? because AntD overwrites. use 'values' state, instead
-      console.log('this is valuesArray for postlogin users: ', masterclassValuesArray);
-      
-      //? i think logic would be...: use a state. a global state. via Outlet state. and pass it around. 
-
-
-
-    }
-    
-      
+      localStorage.setItem("data1Key", JSON.stringify(masterclassValuesArray));
+      console.log(localStorage);
+      Navigate('/login');      //* head to loginPage to login
+  
+      //* postlogin 
+      } else {
+      localStorage.setItem("data1Key", JSON.stringify(masterclassValuesArray));
+      console.log(localStorage);
+      Navigate('/user/cart');
+      }
   }
 
   // const onFinish = (values) => {

@@ -35,8 +35,6 @@ export default function CartconfirmationPage({ user }) {
     ...item,
     details: {
       ...item.details,
-      // dateTime: JSON.stringify(new Date()),
-      // dateTime: JSON.stringify(new Date()),
       dateTime: new Date().toLocaleString('en-SG', {
         timeZone: 'Asia/Singapore',
       }),
@@ -44,24 +42,6 @@ export default function CartconfirmationPage({ user }) {
     },
   }));
 
-  //? test. save pt - for testing adding time date 
-  // for (const [key, value] of Object.entries(parsedData)) {
-  //   if (!isObjectWithNull(value)) {
-  //     precartData.push({
-  //       title: key,
-  //       details: value,
-  //     });
-  //   }
-  // }
-
-  // const cartData = precartData.map((item) => ({
-  //   ...item,
-  //   details: {
-  //     ...item.details,
-  //     // price: '$20'
-  //     itemPrice: `$${pricingCalculator(item)}`,
-  //   },
-  // }));
 
   console.log(`this is parsedData: ${parsedData}`);
   console.log(`this is parsedData stringed: ${JSON.stringify(parsedData)}`);

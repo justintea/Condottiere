@@ -57,8 +57,6 @@ export default function PaintforhireForm({ user, setUser }) {
 
   const onFinish = (values) => {
     console.log("Success:", values);
-    console.log(new Date());
-    console.log(JSON.stringify(new Date()));
 
     //*state of prelogin Form is passed in 'values'
     //* write in manner that groups them in Array of arrays, by the 3 services 
@@ -73,28 +71,43 @@ export default function PaintforhireForm({ user, setUser }) {
     console.log('this is valuesArray: ', paintsvcValuesArray);
     console.log(user);
 
-    //* if this is prelogin (User=null), store in LS. 
-    //* if postlogin (User!= null), store in CartData ?
+    //! Let's see if this works. regardless of user= or != null, use LocalStorage to handle formData
+
     if (user === null) {
-    localStorage.setItem("data1Key", JSON.stringify(paintsvcValuesArray));
-    console.log(localStorage);
-    //* below: store, transport, parse, access your Local Storage data like this
-    // const localStorageData = localStorage.getItem('data1Key');
-    // const parsedData = JSON.parse(localStorageData);
-    // const sizeofModelValue = parsedData?.sizeofModel;
-    // console.log(sizeofModelValue);
-    Navigate('/login');      //* pass transported data
+      localStorage.setItem("data1Key", JSON.stringify(paintsvcValuesArray));
+      console.log(localStorage);
+      Navigate('/login');      //* head to loginPage to login
+  
+      //* postlogin 
+      } else {
+      localStorage.setItem("data1Key", JSON.stringify(paintsvcValuesArray));
+      console.log(localStorage);
+      Navigate('/user/cart');
+      }
 
-    //* postlogin 
-    } else {
-      // console.log('data state', data1PaintSvcs);        //? Lesson: why does it not pass? because AntD overwrites. use 'values' state, instead
-      console.log('this is valuesArray for postlogin users: ', paintsvcValuesArray);
+    //! Original method
+    // //* if this is prelogin (User=null), store in LS. 
+    // //* if postlogin (User!= null), store in CartData ?
+    // if (user === null) {
+    // localStorage.setItem("data1Key", JSON.stringify(paintsvcValuesArray));
+    // console.log(localStorage);
+    // //* below: store, transport, parse, access your Local Storage data like this
+    // // const localStorageData = localStorage.getItem('data1Key');
+    // // const parsedData = JSON.parse(localStorageData);
+    // // const sizeofModelValue = parsedData?.sizeofModel;
+    // // console.log(sizeofModelValue);
+    // Navigate('/login');      //* pass transported data
+
+    // //* postlogin 
+    // } else {
+    //   // console.log('data state', data1PaintSvcs);        //? Lesson: why does it not pass? because AntD overwrites. use 'values' state, instead
+    //   console.log('this is valuesArray for postlogin users: ', paintsvcValuesArray);
       
-      //? i think logic would be...: use a state. a global state. via Outlet state. and pass it around. 
+    //   //? i think logic would be...: use a state. a global state. via Outlet state. and pass it around. 
 
 
 
-    }
+    // }
     
       
   }
