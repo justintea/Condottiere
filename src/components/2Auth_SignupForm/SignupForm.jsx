@@ -46,7 +46,6 @@ export default function SignupForm({ setUser }) {
   //* Confirm-password validation code within Return
   return (
     <>
-      <h3> Sign Up - Bring your tabletop adventures to life today!</h3>
       <Form
         name="basic"
         labelCol={{
@@ -65,6 +64,9 @@ export default function SignupForm({ setUser }) {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
+      
+        <h2 style={{ fontFamily: "Palatino Linotype", margin: '5% 0 5% 9%' }}> Sign Up - Bring your tabletop adventures to life today!</h2>
+
         <Form.Item
           label="Username"
           name="username"
@@ -153,7 +155,8 @@ export default function SignupForm({ setUser }) {
             span: 16,
           }}
         >
-          <Button style={{ backgroundColor: "#01628f" }} type="primary" htmlType="submit">
+          <br></br>
+          <Button style={{ backgroundColor: "#01628f", margin: '0 0 10% 81%' }} type="primary" htmlType="submit">
             Submit
           </Button>
         </Form.Item>

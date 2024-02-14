@@ -53,7 +53,6 @@ export default function LoginForm({ setUser }) {
 
   return (
     <>
-      <h3> Login </h3>
       <Form
         name="basic"
         labelCol={{
@@ -72,6 +71,9 @@ export default function LoginForm({ setUser }) {
         // onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
+
+        <h2 style={{ fontFamily: "Palatino Linotype", margin: '5% 0 0 9%'}}> Login </h2>
+
         <Form.Item
           label="Email"
           name="email"
@@ -124,7 +126,7 @@ export default function LoginForm({ setUser }) {
             &nbsp;{error}
           </p>
         </Form.Item>
-        <p style={{ textAlign: 'center'}}>New to Condotierre?  <Link to="/signup" style={{ color: '#478e80'}}>Sign up here</Link> </p>
+        <p style={{ textAlign: 'center', margin: '0 0 12.7% 0'}}>New to Condotierre?  <Link to="/signup" style={{ color: '#478e80'}}>Sign up here</Link> </p>
 
       </Form>
 
