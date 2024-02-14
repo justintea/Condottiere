@@ -22,7 +22,7 @@ export default function UserEditAddressForm() {
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
-    console.log(values);
+    console.log('this is values: ', values);
 
   };
 
