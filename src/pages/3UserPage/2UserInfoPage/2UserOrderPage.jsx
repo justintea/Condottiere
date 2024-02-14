@@ -106,7 +106,7 @@ export default function UserOrderPage() {
   return (
     <>
       <h2 style={{ fontFamily: "Palatino Linotype" }}> Your Orders </h2>
-      <p> You have made XXX purchases with us. Thank you for your continued support! </p>
+      <p> You have made <strong>{ orders.length } purchases</strong> with us. Thank you for your continued support! </p>
       
       {/* //? start of experiment 2 */}
       <ul>
