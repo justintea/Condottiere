@@ -41,7 +41,7 @@ export default function UserEditAddressForm({ user }) {
       Navigate('/user/address');
     }
     catch (error) {
-      window.alert('Something is wrong: ', error);
+      window.alert('Something is wrong ', error);
       console.log(error);
     }
 

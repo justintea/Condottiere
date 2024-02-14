@@ -32,7 +32,7 @@ export async function getOneAddress() {
   };
 
   const response = await fetch(baseURL, options);
-  console.log('at getAddress in AddressAPI', response);
+  console.log('at getOneAddress in AddressAPI', response);
   if (!response.ok) throw new Error("Network response (inbound) was not ok.");
   const json = await response.json();
   console.log(JSON.stringify(json));
@@ -50,6 +50,7 @@ export async function updateOneAddress(body) {
   };
 
   const response = await fetch(`${baseURL}/${id}`, options);
+  console.log('at updateOneAddress in AddressAPI', response);
 
   if (!response.ok) throw new Error("Network response was not ok.");
   const json = await response.json();
