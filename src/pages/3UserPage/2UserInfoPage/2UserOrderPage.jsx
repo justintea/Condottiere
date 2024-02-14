@@ -49,33 +49,68 @@ export default function UserOrderPage() {
   //   loadMoreData();
   // }, []);
 
-  const renderSubDetails = (details) => {
-    return Object.entries(details).map(([key, value]) => (
-      <p key={key}>
-        <strong>{key}:</strong> {value}
-      </p>
-    ));
-  };
+  //? try 1
+  // const renderSubDetails = (details) => {
+  //   return Object.entries(details).map(([key, value]) => (
+  //     <p key={key}>
+  //       <strong>{key}:</strong> {value}
+  //     </p>
+  //   ));
+  // };
 
+  //? try 2
+  const renderSubDetails = (details) => {
+    return Object.entries(details).map(([key, value]) => {
+      let formattedKey = key;
+      let formattedValue = value;
+  
+      // Format keys
+      switch (key) {
+        case 'numberOfModels':
+          formattedKey = 'Number of models';
+          break;
+        case 'sizeComplexity':
+          formattedKey = 'Size & complexity';
+          break;
+        case 'urgencyRequired':
+          formattedKey = 'Urgency';
+          break;
+        case 'classType':
+          formattedKey = 'Class type';
+          break;
+        case 'itemPrice':
+          formattedKey = 'Item price';
+          break;
+        case '_id':
+          formattedKey = 'Order ID';
+          formattedValue = value.slice(-10); // Only the last 5 characters of '_id'
+          break;
+        default:
+          // Handle other keys if needed
+      }
+  
+      return (
+        <p key={formattedKey} style={{ fontFamily: "Times New Roman" }}>
+          <strong>{formattedKey}:</strong> {formattedValue}
+        </p>
+      );
+    });
+  };
   
   
   return (
     <>
       <h2 style={{ fontFamily: "Palatino Linotype" }}> Your Orders </h2>
-      <p> probably a list 'Orders', mapped into items and rendered here</p>
+      <p> You have made XXX purchases with us. Thank you for your continued support! </p>
       
       {/* //? start of experiment 2 */}
       <ul>
       {orders.map((order) => (
         <li key={order._id}>
-          <h3>{order.items[0].title}</h3>
+          <h3 style={{ fontFamily: "Times New Roman" }}>{order.items[0].title}</h3>
           {renderSubDetails(order.items[0].details)}
 
-          {/* <p>
-            <strong>Details:</strong> {order.items[0].details.numberOfModels} models,{' '}
-            {order.items[0].details.sizeComplexity} size, {order.items[0].details.urgencyRequired} urgency
-          </p> */}
-          <p>
+          <p style={{ fontFamily: "Times New Roman" }}>
             <strong>Item Price:</strong> {order.items[0].details.itemPrice}
           </p>
         </li>
