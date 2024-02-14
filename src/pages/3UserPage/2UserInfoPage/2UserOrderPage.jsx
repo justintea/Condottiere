@@ -82,6 +82,12 @@ export default function UserOrderPage() {
         case 'classType':
           formattedKey = 'Class type';
           break;
+        case 'dateTime':
+          formattedKey = 'Date';
+          formattedValue = value.toLocaleString('en-SG', {
+            timeZone: 'Asia/Singapore',
+          });
+          break;
         case 'itemPrice':
           formattedKey = 'Item price';
           break;
