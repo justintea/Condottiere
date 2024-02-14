@@ -71,10 +71,10 @@ export default function UserAddressPage() {
   ];
   
   //* navigate function 
-  const navigate = useNavigate(); 
+  const Navigate = useNavigate(); 
 
   function handleClick() {
-    navigate('/editaddress');
+    Navigate('/user/editaddress');
     
   }
 
@@ -83,7 +83,7 @@ export default function UserAddressPage() {
     <>
       <h2 style={{ fontFamily: "Palatino Linotype" }}> Address & Contact details </h2>
       <Flex gap="small" wrap="wrap" justify="flex-end">
-      <Button className='editButton' onClick={handleClick} type="text" style={{ width: '7%', margin: '0 0 0.5% 0', defaultHoverBg: '#9dc4bc' }} > Edit </Button>
+      <Button className='editButton' onClick={handleClick} type="text" style={{ width: '7%', margin: '0 0 0.5% 0' }} hoveredStyle={{ backgroundColor: '#9dc4bc' }}> Edit </Button>
       </Flex>
       <Descriptions layout="vertical" bordered items={items} />
       <br></br>

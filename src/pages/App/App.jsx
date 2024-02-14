@@ -15,9 +15,7 @@ import CartconfirmationPage from "../3UserPage/1CartconfirmationPage/Cartconfirm
 import UserOrderPage from "../3UserPage/2UserInfoPage/2UserOrderPage";
 import FAQPage from "../1ServicesPage/4FAQPage";
 import UserAddressPage from "../3UserPage/2UserInfoPage/3UserAddressPage";
-
-import { getUser } from "../../utilities/0usersService";
-
+import UserEditAddressPage from "../3UserPage/2UserInfoPage/4UserEditAddressPage";
 
 
 function App() {
@@ -29,16 +27,16 @@ function App() {
         <>
           <Routes>
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
-              <Route path="" element={<LandingPageIn user={user} />} />
-              <Route path="info" element={<UserInfoPage user={user} />} />
-              <Route path="paintservices" element={<PaintforhirePage user={user} />} />
-              <Route path="paintclasses" element={<MasterclassPage user={user} />} />
-              <Route path="painttables" element={<TablebookingPage user={user} />} />
-              <Route path="cart" element={<CartconfirmationPage user={user} />} />
-              <Route path="orders" element={<UserOrderPage user={user} />} />
-              <Route path="faqs"     element={<FAQPage user={user} />}      />
-              <Route path="address" element={<UserAddressPage user={user} />} />  
-
+                <Route path="" element={<LandingPageIn user={user} />} />
+                <Route path="info" element={<UserInfoPage user={user} />} />
+                <Route path="paintservices" element={<PaintforhirePage user={user} />} />
+                <Route path="paintclasses" element={<MasterclassPage user={user} />} />
+                <Route path="painttables" element={<TablebookingPage user={user} />} />
+                <Route path="cart" element={<CartconfirmationPage user={user} />} />
+                <Route path="orders" element={<UserOrderPage user={user} />} />
+                <Route path="faqs"     element={<FAQPage user={user} />}      />
+                <Route path="address" element={<UserAddressPage user={user} />} />  
+                <Route path="editaddress" element={<UserEditAddressPage user={user} />} />  
 
               {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
               {/* <Route index element={<DashboardPage />} /> */}

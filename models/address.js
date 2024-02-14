@@ -13,7 +13,7 @@ const addressSchema = new Schema(
       required: true,
       unique: true, 
     },
-    Country: {
+    country: {
       type: String,
       required: true,
     },
