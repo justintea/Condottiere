@@ -27,33 +27,31 @@ function App() {
     <>
       {user ? (
         <>
-          <Routes>
-            <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
-                <Route path="" element={<LandingPageIn user={user} />} />
-                <Route path="info" element={<UserInfoPage user={user} />} />
-                <Route path="paintservices" element={<PaintforhirePage user={user} />} />
-                <Route path="paintclasses" element={<MasterclassPage user={user} />} />
-                <Route path="painttables" element={<TablebookingPage user={user} />} />
-                <Route path="cart" element={<CartconfirmationPage user={user} />} />
-                <Route path="orders" element={<UserOrderPage user={user} />} />
-                <Route path="faqs"     element={<FAQPage user={user} />}      />
-                <Route path="address" element={<UserAddressPage user={user} />} />  
-                <Route path="addaddress" element={<UserAddAddressPage user={user} />} />  
-                <Route path="editaddress" element={<UserEditAddressPage user={user} />} />  
-
-                <Route path="admin" element={<AdminDashboardPage user={user} />} />  
-
-              {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
-              {/* <Route index element={<DashboardPage />} /> */}
-              {/* <Route index element={<DashboardPage />} />
-              <Route path="dashboard" element={<DashboardPage />} />
-              <Route path="tracking" element={<TrackingPage />} />
-              <Route path="edit" element={<EditPage />} />
-              <Route path="goals" element={<GoalsPage />} />
-              <Route path="goals" element={<GoalsPage />} /> */}
+        <Routes>
+          {user.admin ? (
+            // Admin user
+            <Route path="user" element={<UserPage user={user} setUser={setUser} />}>
+                <Route path="user/admin" element={<AdminDashboardPage user={user} />} />
             </Route>
-            </Routes>
-        </>
+
+          ) : (
+            // Regular user
+            <Route path="user" element={<UserPage user={user} setUser={setUser} />}>
+              <Route path="" element={<LandingPageIn user={user} />} />
+              <Route path="info" element={<UserInfoPage user={user} />} />
+              <Route path="paintservices" element={<PaintforhirePage user={user} />} />
+              <Route path="paintclasses" element={<MasterclassPage user={user} />} />
+              <Route path="painttables" element={<TablebookingPage user={user} />} />
+              <Route path="cart" element={<CartconfirmationPage user={user} />} />
+              <Route path="orders" element={<UserOrderPage user={user} />} />
+              <Route path="faqs" element={<FAQPage user={user} />} />
+              <Route path="address" element={<UserAddressPage user={user} />} />
+              <Route path="addaddress" element={<UserAddAddressPage user={user} />} />
+              <Route path="editaddress" element={<UserEditAddressPage user={user} />} />
+            </Route>
+          )}
+        </Routes>
+      </>
       ) : (
         <>
           <NavbarOut />
@@ -74,6 +72,57 @@ function App() {
 }
 
 export default App;
+
+
+//? 16/2 1220: save point, before implementing conditions for Admin:true
+// return (
+//   <>
+//     {user ? (
+//       <>
+//         <Routes>
+//           <Route path="user" element={<UserPage user={user} setUser={setUser} />}     >
+//               <Route path="" element={<LandingPageIn user={user} />} />
+//               <Route path="info" element={<UserInfoPage user={user} />} />
+//               <Route path="paintservices" element={<PaintforhirePage user={user} />} />
+//               <Route path="paintclasses" element={<MasterclassPage user={user} />} />
+//               <Route path="painttables" element={<TablebookingPage user={user} />} />
+//               <Route path="cart" element={<CartconfirmationPage user={user} />} />
+//               <Route path="orders" element={<UserOrderPage user={user} />} />
+//               <Route path="faqs"     element={<FAQPage user={user} />}      />
+//               <Route path="address" element={<UserAddressPage user={user} />} />  
+//               <Route path="addaddress" element={<UserAddAddressPage user={user} />} />  
+//               <Route path="editaddress" element={<UserEditAddressPage user={user} />} />  
+
+//               <Route path="admin" element={<AdminDashboardPage user={user} />} />  
+
+//             {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
+//             {/* <Route index element={<DashboardPage />} /> */}
+//             {/* <Route index element={<DashboardPage />} />
+//             <Route path="dashboard" element={<DashboardPage />} />
+//             <Route path="tracking" element={<TrackingPage />} />
+//             <Route path="edit" element={<EditPage />} />
+//             <Route path="goals" element={<GoalsPage />} />
+//             <Route path="goals" element={<GoalsPage />} /> */}
+//           </Route>
+//           </Routes>
+//       </>
+//     ) : (
+//       <>
+//         <NavbarOut />
+//         <Routes>
+//           <Route path="/" element={<LandingPageOut user={user} />} />
+//           <Route path="login"     element={<AuthPage user={user} setUser={setUser} />}      />
+//           <Route path="signup" element={<SignupPage setUser={setUser} />}     />
+//           <Route path="paintservices"   element={<PaintforhirePage user={user} />}      />
+//           <Route path="paintclasses"    element={<MasterclassPage user={user} />}       />
+//           <Route path="painttables"     element={<TablebookingPage user={user} />}      />
+//           <Route path="faqs" element={<FAQPage user={user} />} />  
+            
+//           </Routes>
+//       </>
+//     )}
+//   </>
+// );
 
 //? J: 11/2 17230: savepoint, i want to route to Cart confirmation page
 // {/* <Routes>

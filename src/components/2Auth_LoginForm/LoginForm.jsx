@@ -31,10 +31,12 @@ export default function LoginForm({ setUser }) {
       console.log(localStorage);          //* doesnt need to be moved as state. localStorage is a global component...
       
       //? dan logic. declare there, navigation done here. 
-      if (localStorage.data1Key !== null && localStorage.data1Key !== undefined) {//? this works. but localStorage remembers...
+      if (
+        localStorage.data1Key !== null && localStorage.data1Key !== undefined) {//? this works. but localStorage remembers...
         Navigate("/user/cart");             
       } else {
-        Navigate("/user/info");           //* no need to pass the prelogin form data into postlogin environment, localStorage is global.  
+        //* no need to pass the prelogin form data into postlogin environment, localStorage is global.  
+        Navigate("/user/info");           
       }
     
 
@@ -46,6 +48,7 @@ export default function LoginForm({ setUser }) {
       );
     }
   };
+
   // const onFinishFailed = (errorInfo) => {
   //   console.log("Failed:", errorInfo);
   //   setError("The email and password you specified are invalid. Please try again.");
