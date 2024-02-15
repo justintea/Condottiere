@@ -4,29 +4,34 @@
 //  /user/admin_useraddresses_deleteone
 import { Outlet, useOutletContext } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
-import InfiniteScroll from 'react-infinite-scroll-component';
-import { Avatar, Divider, List, Skeleton } from 'antd';
-import { getToken } from "../../../utilities/0usersService";
-
+import { getAllOrders } from "../../../../utilities/1ordersService";
 
 export default function AdminViewAllOrdersPage() {
   const { orders, setOrders } = useOutletContext();
+  console.log('test test - this is orders: ', orders);
 
-  //? probably... 
+  //? probably...
   //? 1. get the data (not 'orders')
   //? 2. via fetch async await (not 'orders')
   //? 3. then put it through your 'rendering engine'
+  //? Note: the (Get)All functions probably need more security.....
 
   
+  useEffect(() => {
+    const fetchAllOrders = async () => {
+      try {
+        const allOrders = await getAllOrders();
+        setOrders(allOrders);
+      } catch (error) {
+        console.error('Error fetching allOrders:', error);
+      }
+    };
+
+    fetchAllOrders();
+  }, []);
 
 
-
-
-
-
-
-
-  console.log('this is the Orders state :', orders);
+  console.log('this is the Orders state after API call: ', orders);
 
 
   const renderSubDetails = (details) => {

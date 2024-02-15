@@ -19,9 +19,12 @@ import UserAddAddressPage from "../3UserPage/2UserInfoPage/4UserAddAddressPage";
 import UserEditAddressPage from "../3UserPage/2UserInfoPage/4UserEditAddressPage";
 
 import AdminDashboardPage from "../3UserPage/3AdminPage/0AdminDashboardPage";
-import AdminUserOrdersPage from "../3UserPage/3AdminPage/1AdminUserOrdersPage/AdminUserOrdersPage";
+import AdminUserOrdersPage from "../3UserPage/3AdminPage/1AdminUserOrdersPage/0AdminUserOrdersPage";
 import AdminUserCredentialsPage from "../3UserPage/3AdminPage/2AdminUserCredentialsPage/AdminUserCredentialsPage";
 import AdminUserAddressesPage from "../3UserPage/3AdminPage/3AdminUserAddressesPage/AdminUserAddressesPage";
+
+//? test site 
+import AdminViewAllOrdersPage from "../3UserPage/3AdminPage/1AdminUserOrdersPage/1AdminViewAllOrdersPage";
 
 
 function App() {
@@ -40,6 +43,10 @@ function App() {
                 <Route path="admin_usercredentials" element={<AdminUserCredentialsPage user={user} />} />
                 <Route path="admin_useraddresses" element={<AdminUserAddressesPage user={user} />} />
                 <Route path="admin_faqs" element={<FAQPage user={user} />} />
+                
+                {/* test site */}
+                <Route path="admin_userorders_viewall" element={<AdminViewAllOrdersPage user={user} />} />
+
             </Route>
 
           ) : (
