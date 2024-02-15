@@ -40,7 +40,7 @@ const indexAllOrders = async (req, res) => {
   // console.log('userId at ordersCtrl', userId);
   try {
     // const orders = await Order.find({ userId });
-    const allOrders = await Order.find();
+    const allOrders = await Order.find({});
     res.json(allOrders);
     console.log('allOrders from ordersCtrl index: ', allOrders);
     

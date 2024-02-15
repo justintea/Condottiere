@@ -1,7 +1,7 @@
 //? links
-// /user/admin_useraddresses_viewall
-//  / user / admin_useraddresses_updateone
-//  /user/admin_useraddresses_deleteone
+// /user/admin_userorders_viewall
+//  / user / admin_userorders_updateone
+//  /user/admin_userorders_deleteone
 import { Outlet, useOutletContext } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
 import { getAllOrders } from "../../../../utilities/1ordersService";
@@ -21,6 +21,7 @@ export default function AdminViewAllOrdersPage() {
     const fetchAllOrders = async () => {
       try {
         const allOrders = await getAllOrders();
+        console.log('allOrders from api call: ', allOrders);
         setOrders(allOrders);
       } catch (error) {
         console.error('Error fetching allOrders:', error);
@@ -80,8 +81,8 @@ export default function AdminViewAllOrdersPage() {
   
   return (
     <>
-      <h2 style={{ fontFamily: "Palatino Linotype" , margin: '1% 0 0 5%' }}> Your Orders </h2>
-      <p style={{ margin: '1% 0 0 5%'}}> You have made <strong>{ orders.length } purchases</strong> with us. Thank you for your continued support! </p>
+      <h2 style={{ fontFamily: "Palatino Linotype" , margin: '1% 0 0 5%' }}> View All Orders </h2>
+      <p style={{ margin: '1% 0 0 5%'}}> Users have made <strong>{ orders.length } transactions </strong> with us. </p>
       
       <ul>
       {orders.slice(0).reverse().map((order) => (

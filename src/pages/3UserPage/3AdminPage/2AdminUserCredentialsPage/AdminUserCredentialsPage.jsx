@@ -12,19 +12,19 @@ export default function AdminUserCredentialsPage({ user }) {
 
   const userOrdersFunctionsList = [
     {
-      title: "View all user orders",
+      title: "View all user credentials",
       description: "Purpose: Data analytics and CRM",
       icon: <EyeOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
       route: "/user/admin_userorders_viewall", 
     },
     {
-      title: "Update details of an order",
+      title: "Update user email and username",
       description: "Purpose: Order management and incident handling",
       icon: <DiffOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
       route: "/user/admin_userorders_updateone", 
     },
     {
-      title: "Delete an order",
+      title: "Delete a user",
       description:
         "Purpose: Purge database or past data",
       icon: <DeleteOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
@@ -49,7 +49,7 @@ export default function AdminUserCredentialsPage({ user }) {
   return (
     <>
   
-      <h2 style={{ fontFamily: "Palatino Linotype" , margin: '1% 0 0.5% 5%' }}> User orders</h2>
+      <h2 style={{ fontFamily: "Palatino Linotype" , margin: '1% 0 0.5% 5%' }}> User credentials</h2>
 
       <List 
         itemLayout="horizontal"
