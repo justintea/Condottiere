@@ -70,7 +70,7 @@ const updateOne = async (req, res) => {
 
 //* SUPERUSER: DELETE ONE ORDER-------------------------------------------
 //* use case: admin clears db, or specific erroneous orders
-const deleteOneOrder = async (req, res) => {
+const deleteOne = async (req, res) => {
 
   //! must be orderId, not user id. edit later
   const userId = req.user._id;
@@ -90,6 +90,7 @@ const deleteOneOrder = async (req, res) => {
 module.exports = {
   index,
   create,
+
   indexAll,
   updateOne,
   deleteOne,

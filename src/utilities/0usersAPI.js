@@ -2,7 +2,7 @@ const BASE_URL = '/api/users';
 import { getToken } from "./0usersService";
 
 
-//* signup function
+//* SIGNUP FUNCTION
 export async function signUp(userData) {
   // console.log('usersAPI: does it sound here');
 
@@ -10,15 +10,39 @@ export async function signUp(userData) {
 }
 
 
-//* login function
+//* LOGIN FUNCTION
 export async function logIn(credentials) {
   return sendRequest(BASE_URL + '/login', 'POST', credentials);
 }
 
-//* checktoken function
+
+//* CHECKTOKEN FUNCTION
 export async function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }
+
+
+//* SUPERUSER: GET ALL USERS-------------------------------------------
+//* use case: without using a db, admin can see all users & details
+export async function indexAllUsers() {
+  return sendRequest(BASE_URL + '/', 'GET', );
+}
+
+
+//* SUPERUSER: UPDATE ONE USER-------------------------------------------
+//* use case: without using a db, admin can update User's username, email
+//! not sure if this works. test later
+export async function updateOneUser( { body, userId } ) {
+  return sendRequest(BASE_URL + '/', 'PUT', ( body, userId) );
+}
+
+
+//* SUPERUSER: DELETE ONE USER-------------------------------------------
+//* use case: without using a db, admin can delete inactive/dead accounts
+export async function deleteOneUser( userId ) {
+  return sendRequest(BASE_URL + '/', 'DELETE', userId );
+}
+
 
 
 //* template function 

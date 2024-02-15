@@ -11,6 +11,8 @@ const index = async (req, res) => {
   // res.json(user)
 };
 
+
+//*CREATE USER---------------------------------------------
 const create = async (req, res) => {
   //? initial code
   // const user = await User.create(req.body)
@@ -35,7 +37,8 @@ function createJWT(user) {
   );
 }
 
-//* Login user function
+
+//* LOGIN USER FUNCTION
 async function login(req, res) {
   try {
     const user = await User.findOne({ email: req.body.email });
@@ -48,12 +51,64 @@ async function login(req, res) {
   }
 }
 
-//* Checktoken
+//* CHECKTOKEN 
 function checkToken(req, res) {
   console.log("req.user", req.user);
   // that Date object we created for fun
   res.json(req.exp);
 }
+
+
+//* SUPERUSER: GET ALL USERS-------------------------------------------
+//* use case: without using a db, admin can see all users & details
+const indexAllUsers = async (req, res) => {
+  // const userId = req.user._id;
+  // console.log('userId at ordersCtrl', userId);
+  try {
+    // const orders = await Order.find({ userId });
+    //! check for differences with this VS 'index'. does that work already?
+    const allUsers = await User.find();
+    res.json(allUsers);
+    console.log('from UsersCtrl indexAll: ', allUsers);
+    
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+//* SUPERUSER: UPDATE ONE USER-------------------------------------------
+//* use case: without using a db, admin can update User's username, email
+const updateOneUser = async (req, res) => {
+  
+  const userId = req.user._id;
+  console.log('userId at addressesCtrl updateOneUser', userId);
+  try {
+    const updatedOneUser = await User.findOneAndUpdate({ userId }, req.body, { new: true });
+    res.json(updatedOneUser);
+    console.log('updateOneOrder from ordersCtrl: ', updatedOneUser);
+    
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+
+//* SUPERUSER: DELETE ONE USER-------------------------------------------
+//* use case: without using a db, admin can delete inactive/dead accounts
+const deleteOneUser = async (req, res) => {
+
+  const userId = req.user._id;
+  console.log('userId at UsersCtrl deleteOneUser: ', userId);
+  try {
+    const deletedOneUser = await Order.findOneAndDelete({ userId }, req.body, { new: true });
+    res.json(deletedOneUser);
+    console.log('deleteOneUser from UsersCtrl: ', deletedOneUser);
+    
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
 
 module.exports = {
   index,
@@ -61,5 +116,9 @@ module.exports = {
   login,
   createJWT,
   checkToken,
+
+  indexAllUsers,
+  updateOneUser, 
+  deleteOneUser,
 };
 //? added 'createJWT' here, in order to import to 'userprefersController' to use...
