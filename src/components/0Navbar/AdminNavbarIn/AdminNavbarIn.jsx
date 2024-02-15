@@ -5,32 +5,32 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const { Header } = Layout;
 import * as usersService from "../../../utilities/0usersService";
 
-export default function NavbarIn({ user, setUser, orders, setOrders, cart, setCart, address, setAddress }) {
+export default function AdminNavbarIn({ user, setUser, orders, setOrders, address, setAddress }) {
   let page = useLocation().pathname.split("/")[2];
   const navigate = useNavigate();
 
   const items = [
     {
-      key: "this is AdminBarIn",
+      key: "userOrders",
       label: (
         <Link to="/user/paintservices" className="link">
-          Paint-for-Hire
+          Orders
         </Link>
       ),
     },
     {
-      key: "paintclasses",
+      key: "userCredentials",
       label: (
         <Link to="/user/paintclasses" className="link">
-          Masterclasses
+          Credentials
         </Link>
       ),
     },
     {
-      key: "painttables",
+      key: "userAddresses",
       label: (
         <Link to="/user/painttables" className="link">
-          Paint tables
+          Addresses
         </Link>
       ),
     },
@@ -72,6 +72,7 @@ export default function NavbarIn({ user, setUser, orders, setOrders, cart, setCa
         theme="light"
         mode="horizontal"
         items={items}
+        style={{ margin: '0 0 0 4%'}}
       />
 
       {/* J 24/1 0330: temporary addition - logout button
@@ -83,11 +84,7 @@ export default function NavbarIn({ user, setUser, orders, setOrders, cart, setCa
           {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
         </h3>
 
-        <Link to="/user/cart">
-          <Button icon={<ShoppingCartOutlined />}></Button>
-        </Link>
-
-        <Link to="/user/info">
+        <Link to="/user/admin">
           <Button icon={<SettingOutlined />}></Button>
         </Link>
 
