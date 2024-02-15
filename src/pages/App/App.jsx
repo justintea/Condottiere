@@ -31,7 +31,7 @@ function App() {
           {user.admin ? (
             // Admin user
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}>
-                <Route path="user/admin" element={<AdminDashboardPage user={user} />} />
+                <Route path="admin" element={<AdminDashboardPage user={user} />} />
             </Route>
 
           ) : (
