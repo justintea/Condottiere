@@ -1,4 +1,3 @@
-//? try 1
 import { getToken } from "./0usersService";
 const baseURL = "/api/addresses";
 // const token = getToken();
@@ -55,6 +54,7 @@ export async function getOneAddress() {
 }
 
 //*UPDATE YOUR ONE ADDRESS-------------------------------------
+//*SUPERUSER: UPDATE ONE ADDRESS-------------------------------------
 export async function updateOneAddress(body) {
   const id = body.userId;       //! check this next time 
   console.log('body: ', body);
@@ -90,63 +90,23 @@ export async function getAllAddresses() {
   return json;
 }
 
+//*SUPERUSER: DELETE ONE ADDRESS-------------------------------------
+export async function deleteOneAddress(body) {
+  const id = body.userId;       //! check this next time 
+  console.log('body: ', body);
+  console.log('id: ', id);
 
 
+  const options = {
+    method: "DELETE",
+    headers: createHeaders(),
+    body: JSON.stringify(body),
+  };
 
+  const response = await fetch(`${baseURL}/${id}`, options);
+  console.log('at deleteOneAddress in AddressAPI', response);
 
-//? original implementation
-// import { getToken } from "./0usersService";
-// const BASE_URL = "/api/addresses";
-
-// //*CREATE ADDRESS---------------------------------------------
-// export async function createAddress(body) {
-
-//   return sendRequest(BASE_URL + '/', 'POST', body);
-// }
-
-
-
-// //*UPDATE YOUR ONE ADDRESS-------------------------------------
-// export async function updateOneAddress(userId, body) {
-//   return sendRequest(`${BASE_URL}/${userId}`, 'PUT', body);
-// }
-
-
-// //*GET YOUR ONE ADDRESS----------------------------------------
-// export async function getOneAddress(userId) {
-//   return sendRequest(`${BASE_URL}/${userId}`, 'GET');
-// }
-
-
-// //* SUPERUSER: GET ALL ADDRESSES----------------------------------------
-// export async function getAllAddresses() {
-//   return sendRequest(BASE_URL, 'GET');
-// }
-
-
-
-// //* template function 
-// export async function sendRequest(url, method = 'GET', payload = null) {
-
-//   const options = { method };
-//   if (payload) {
-//     options.headers = { "Content-Type": "application/json" };
-//     options.body = JSON.stringify(payload);
-//   }
-
-//   const token = getToken();
-//   // console.log(token);
-
-//   if (token) {
-//     options.headers ||= {};
-//     options.headers.Authorization = `Bearer ${token}`;
-//   }
-
-//   const res = await fetch(url, options);
-
-//   if (res.ok) return res.json();
-//   throw new Error("Bad Request");
-// }
-
-
-
+  if (!response.ok) throw new Error("Network response was not ok.");
+  const json = await response.json();
+  return json;
+}

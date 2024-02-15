@@ -60,3 +60,10 @@ export async function getAllAddresses() {
 
   return data;
 }
+
+//*SUPERUSER: DELETE ONE ADDRESS-------------------------------------
+export async function deleteOneAddress(id) {
+  const deletedAddress = await addressesAPI.deleteOneAddress(id);
+
+  return deletedAddress;
+}
