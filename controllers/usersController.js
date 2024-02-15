@@ -20,6 +20,10 @@ const create = async (req, res) => {
   //? J: 23/1 0130: create code, + jwt & error handling
   try {
     // Add the user to the db
+
+    //? 15/2 2330: added this line. adds 'admin' property and set as false, before it goes in
+    req.body.admin = req.body.admin || false;
+
     const user = await User.create(req.body);
     const token = createJWT(user);
     res.json(token);

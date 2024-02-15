@@ -25,9 +25,10 @@ export default function SignupForm({ setUser }) {
       username: values.username,
       email: values.email,
       password: values.password,
+      // admin: false,            //? 15/2 2330: removed. too insecure to put admin user declaration here
     };
-    // console.log(dataObject);          // maybe working...?
-    setData(dataObject); // maybe working...?
+    // console.log(dataObject);          
+    setData(dataObject); 
     // console.log(data);
 
     const user = await signUp(dataObject);
