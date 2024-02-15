@@ -1,6 +1,6 @@
 import { Avatar, List, Divider, Button, Form } from 'antd';
 import { useState } from "react";
-import { createOrder } from '../../../utilities/1ordersService';
+import { createOneOrder } from '../../../utilities/1ordersService';
 import { Outlet, useOutletContext, useNavigate } from 'react-router-dom';
 
 export default function CartconfirmationPage({ user }) {
@@ -144,7 +144,7 @@ cartData.forEach((item) => {
       console.log("Cart Submission Success:", cartData);
       // await createOrder(cartData, user); 
 
-      const newOrder = await createOrder(cartData, user); 
+      const newOrder = await createOneOrder(cartData, user); 
 
       setOrders([...orders, newOrder]);
       

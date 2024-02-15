@@ -10,7 +10,7 @@ const createOneOrder = async (req, res) => {
     return
   }
   try {
-    const newOrder = await Order.createOneOrder(data);
+    const newOrder = await Order.create(data);
     res.status(201).json(newOrder);
     console.log('createOneOrder from ordersCtrl: ', newOrder);
   } catch (error) {
