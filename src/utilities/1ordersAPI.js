@@ -47,7 +47,7 @@ export async function getOrders() {
 }
 
 
-//*GET ALL USERS' ALL ORDERS-------------------------------------------
+//* SUPERUSER: GET ALL USERS' ALL ORDERS-------------------------------------------
 //* use case: admin to export n analyse
 export async function getAllOrders() {
   const options = {
@@ -61,10 +61,9 @@ export async function getAllOrders() {
 }
 
 
-
-//* UPDATE ONE USER' ORDER-------------------------------------------
+//* SUPERUSER: UPDATE ONE ORDER-------------------------------------------
 //* use case: user made an error, calls admin to change
-export async function updateOrder(body) {
+export async function updateOneOrder(body) {
   const id = body._id;       //! check this next time 
   console.log('body: ', body);
 
@@ -84,6 +83,27 @@ export async function updateOrder(body) {
 }
 
 
+//* SUPERUSER: DELETE ONE ORDER-------------------------------------------
+//* use case: admin clears db, or specific erroneous orders
+export async function deleteOneOrder(body) {
+    //! must be orderId, not user id. edit later
+  const id = body.userId;       //! check this next time 
+  console.log('body: ', body);
+  console.log('id: ', id);
+
+  const options = {
+    method: "DELETE",
+    headers: createHeaders(),
+    body: JSON.stringify(body),
+  };
+
+  const response = await fetch(`${baseURL}/${id}`, options);
+  console.log('at deleteOneOrder in OrdersAPI', response);
+
+  if (!response.ok) throw new Error("Network response was not ok.");
+  const json = await response.json();
+  return json;
+}
 
 
 
