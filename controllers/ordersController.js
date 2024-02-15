@@ -2,7 +2,7 @@ const Order = require("../models/order");
 
 const create = async (req, res) => {
   const data = req.body;
-  console.log(req.user._id)
+  // console.log(req.user._id)
   const userId = req.user._id;
   if (data.userId !== userId) {
     res.status(401).json({ msg: "userID tak match" });

@@ -1,3 +1,4 @@
+//? try 1
 import { getToken } from "./0usersService";
 const token = getToken();
 const baseURL = "/api/addresses";
@@ -81,3 +82,64 @@ export async function getAllAddresses() {
   console.log(JSON.stringify(json));
   return json;
 }
+
+
+
+
+
+//? original implementation
+// import { getToken } from "./0usersService";
+// const BASE_URL = "/api/addresses";
+
+// //*CREATE ADDRESS---------------------------------------------
+// export async function createAddress(body) {
+
+//   return sendRequest(BASE_URL + '/', 'POST', body);
+// }
+
+
+
+// //*UPDATE YOUR ONE ADDRESS-------------------------------------
+// export async function updateOneAddress(userId, body) {
+//   return sendRequest(`${BASE_URL}/${userId}`, 'PUT', body);
+// }
+
+
+// //*GET YOUR ONE ADDRESS----------------------------------------
+// export async function getOneAddress(userId) {
+//   return sendRequest(`${BASE_URL}/${userId}`, 'GET');
+// }
+
+
+// //* SUPERUSER: GET ALL ADDRESSES----------------------------------------
+// export async function getAllAddresses() {
+//   return sendRequest(BASE_URL, 'GET');
+// }
+
+
+
+// //* template function 
+// export async function sendRequest(url, method = 'GET', payload = null) {
+
+//   const options = { method };
+//   if (payload) {
+//     options.headers = { "Content-Type": "application/json" };
+//     options.body = JSON.stringify(payload);
+//   }
+
+//   const token = getToken();
+//   // console.log(token);
+
+//   if (token) {
+//     options.headers ||= {};
+//     options.headers.Authorization = `Bearer ${token}`;
+//   }
+
+//   const res = await fetch(url, options);
+
+//   if (res.ok) return res.json();
+//   throw new Error("Bad Request");
+// }
+
+
+

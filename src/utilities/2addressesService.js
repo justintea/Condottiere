@@ -25,7 +25,7 @@ export async function createAddress(addressData, user) {
 
 //*GET YOUR ONE ADDRESS----------------------------------------
 export async function getOneAddress() {
-  const data = await addressesAPI.getAddress();
+  const data = await addressesAPI.getOneAddress();
   console.log(data);
 
   return data;

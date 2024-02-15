@@ -5,7 +5,6 @@ const create = async (req, res) => {
   const data = req.body;
   const userId = req.user._id;
   console.log('req.userId: ', req.userId)
-  console.log(data.userId !== userId);
 
 
   if (data.userId !== userId) {
@@ -40,7 +39,7 @@ const updateOwn = async (req, res) => {
   const userId = req.user._id;
   console.log('userId at addressesCtrl updateOwn', userId);
   try {
-    const address = await Address.findOneAndUpdate({ userId });
+    const address = await Address.findOneAndUpdate({ userId }, req.body, { new:true});
     res.json(address);
     console.log('from addressesCtrl updateOwn: ', address);
     

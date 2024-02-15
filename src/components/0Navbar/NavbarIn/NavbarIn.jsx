@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const { Header } = Layout;
 import * as usersService from "../../../utilities/0usersService";
 
-export default function NavbarIn({ user, setUser, orders, setOrders, cart, setCart }) {
+export default function NavbarIn({ user, setUser, orders, setOrders, cart, setCart, address, setAddress }) {
   let page = useLocation().pathname.split("/")[2];
   const navigate = useNavigate();
 
@@ -51,6 +51,7 @@ export default function NavbarIn({ user, setUser, orders, setOrders, cart, setCa
     // setGoals([]);
     usersService.logOut();
     setUser(null);
+    setAddress(null);
     navigate("/login")
   }
 

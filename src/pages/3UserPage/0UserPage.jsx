@@ -2,6 +2,7 @@ import { Outlet, useOutletContext } from "react-router-dom";
 import NavbarIn from "../../components/0Navbar/NavbarIn/NavbarIn";
 import { useEffect, useState } from "react";
 import { getOrders } from "../../utilities/1ordersService";
+import { getOneAddress } from "../../utilities/2addressesService";
 
 
 //* objective: write a new userpage, write links to a cart confirmation page, write a cart confirmation page
@@ -20,6 +21,9 @@ export default function UserPage1({ user, setUser }) {
       setOrders(data);
       console.log(data);
 
+      const addData = await getOneAddress();
+      setAddress(addData); 
+      console.log(addData);
       // const g = await getGoals();
       // setGoals(g);
       // console.log(goals)
@@ -29,7 +33,7 @@ export default function UserPage1({ user, setUser }) {
   console.log('outlet Orders: ', orders);
 
   return (<>
-    <NavbarIn user={user} setUser={setUser} orders={orders} setOrders={setOrders} cart={cart} setCart={setCart} />
+    <NavbarIn user={user} setUser={setUser} orders={orders} setOrders={setOrders} cart={cart} setCart={setCart} address={address} setAddress={setAddress} />
     {/* <Outlet context={{ orders, setOrders }} /> */}
     <Outlet context={{ orders, setOrders, cart, setCart, address, setAddress }}  />
     
