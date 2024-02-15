@@ -18,6 +18,7 @@ import UserAddressPage from "../3UserPage/2UserInfoPage/3UserAddressPage";
 import UserAddAddressPage from "../3UserPage/2UserInfoPage/4UserAddAddressPage";
 import UserEditAddressPage from "../3UserPage/2UserInfoPage/4UserEditAddressPage";
 
+import AdminDashboardPage from "../3UserPage/3AdminPage/1AdminDashboardPage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -39,6 +40,8 @@ function App() {
                 <Route path="address" element={<UserAddressPage user={user} />} />  
                 <Route path="addaddress" element={<UserAddAddressPage user={user} />} />  
                 <Route path="editaddress" element={<UserEditAddressPage user={user} />} />  
+
+                <Route path="admin" element={<AdminDashboardPage user={user} />} />  
 
               {/* //? eg. i want /user/paintservices AND /paintservices to go to same site, just that one has Outletcontext and one does */}
               {/* <Route index element={<DashboardPage />} /> */}
