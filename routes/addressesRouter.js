@@ -5,6 +5,6 @@ const addressesController = require("../controllers/addressesController");
 
 router.post("/", addressesController.create);
 router.get("/", addressesController.index);
-router.post("/:userId", addressesController.updateOwn);
+router.put("/:userId", addressesController.updateOwn);
 
 module.exports = router;

@@ -1,17 +1,24 @@
 import { getToken } from "./0usersService";
-const token = getToken();
 const baseURL = "/api/orders";
+// const token = getToken();
 
-const headers = {
-  "Content-type": "application/json",
-  Authorization: `Bearer ${token}`,
-};
+// const headers = {
+//   "Content-type": "application/json",
+//   Authorization: `Bearer ${token}`,
+// };
+
+function createHeaders() {
+
+  return {  "Content-type": "application/json",
+    Authorization: `Bearer ${getToken()}`,
+  }
+}
 
 //*CREATE ORDER---------------------------------------------
 export async function createOrder(body) {
   const options = {
     method: 'POST',
-    headers,
+    headers: createHeaders(),
     body: JSON.stringify(body),
   };
 
@@ -24,11 +31,11 @@ export async function createOrder(body) {
   return json;
 }
 
-//*GET ALL ORDERS-------------------------------------------
+//*GET ONE USER'S ALL ORDERS-------------------------------------------
 export async function getOrders() {
   const options = {
     method: 'GET',
-    headers,
+    headers: createHeaders(),
   };
 
   const response = await fetch(baseURL, options);
@@ -40,15 +47,41 @@ export async function getOrders() {
 }
 
 
+//*GET ALL USERS' ALL ORDERS-------------------------------------------
+//* use case: admin to export n analyse
+export async function getAllOrders() {
+  const options = {
+    method: "GET",
+    headers: createHeaders(),
+  };
+
+  const response = await fetch(baseURL, options);
+  if (!response.ok) throw new Error("Network response was not ok.");
+  return await response.json();
+}
 
 
 
+//* UPDATE ONE USER' ORDER-------------------------------------------
+//* use case: user made an error, calls admin to change
+export async function updateOrder(body) {
+  const id = body._id;       //! check this next time 
+  console.log('body: ', body);
 
 
+  const options = {
+    method: "PUT",
+    headers: createHeaders(),
+    body: JSON.stringify(body),
+  };
 
+  const response = await fetch(`${baseURL}/${id}`, options);
+  console.log('at updateOneAddress in AddressAPI', response);
 
-
-
+  if (!response.ok) throw new Error("Network response was not ok.");
+  const json = await response.json();
+  return json;
+}
 
 
 

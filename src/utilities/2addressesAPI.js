@@ -1,12 +1,19 @@
 //? try 1
 import { getToken } from "./0usersService";
-const token = getToken();
 const baseURL = "/api/addresses";
+// const token = getToken();
 
-const headers = {
-  "Content-type": "application/json",
-  Authorization: `Bearer ${token}`,
-};
+// const headers = {
+//   "Content-type": "application/json",
+//   Authorization: `Bearer ${token}`,
+// };
+
+function createHeaders() {
+
+  return {  "Content-type": "application/json",
+    Authorization: `Bearer ${getToken()}`,
+  }
+}
 
 //*CREATE ADDRESS---------------------------------------------
 export async function createAddress(body, user) {
@@ -14,7 +21,7 @@ export async function createAddress(body, user) {
   console.log('user is: ', user);
   const options = {
     method: 'POST',
-    headers,
+    headers: createHeaders(),
     body: JSON.stringify(body),
   };
 
@@ -36,7 +43,7 @@ export async function createAddress(body, user) {
 export async function getOneAddress() {
   const options = {
     method: 'GET',
-    headers,
+    headers: createHeaders(),
   };
 
   const response = await fetch(baseURL, options);
@@ -56,7 +63,7 @@ export async function updateOneAddress(body) {
 
   const options = {
     method: "PUT",
-    headers,
+    headers: createHeaders(),
     body: JSON.stringify(body),
   };
 
@@ -72,7 +79,7 @@ export async function updateOneAddress(body) {
 export async function getAllAddresses() {
   const options = {
     method: 'GET',
-    headers,
+    headers: createHeaders(),
   };
 
   const response = await fetch(baseURL, options);

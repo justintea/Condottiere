@@ -1,55 +1,80 @@
 import { Outlet, useOutletContext, useNavigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { Badge, Descriptions, Button, Flex } from 'antd';
-// import './3UserAddressPage.css';
+import { getOneAddress } from "../../../utilities/2addressesService";
+
 
 export default function UserAddressPage({ user }) {
 
-  const { address } = useOutletContext();
+  const { address, setAddress } = useOutletContext();
   console.log(address);
 
   //? needs to have a form
       //? onfinish - does the post request 
   //? and a place it renders this
+  
+  
+  useEffect(() => {
+    const fetchAddress = async () => {
+      try {
+        const data = await getOneAddress();
+        setAddress(data);
+      } catch (error) {
+        console.error('Error fetching address:', error);
+      }
+    };
+
+    fetchAddress();
+  }, []);
+  
+  console.log(address);
+  const renderValue = (value) => (value !== undefined ? value : '-');
 
   const items = [
     {
       key: '1',
       label: 'Full name',
-      children: 'Anthony Stark',
+      // children: address?.[0].fullName || '-',
+      children: renderValue(address?.[0]?.fullName),
     },
     {
       key: '2',
       label: 'Phone Number',
-      children: '+1 999 9999',
+      // children: address?.[0].phoneNumber || '-',
+      children: renderValue(address?.[0]?.phoneNumber),
+
     },
     {
       key: '3',
       label: 'Country',
       // span: 2,
-      children: 'United States',
+      // children: address?.[0].country || '-',
+      children: renderValue(address?.[0]?.country),
     },
-    
     {
       key: '4',
       label: 'Postal Code',
-      children: 'NY 10166',
+      // children: address?.[0].postalCode || '-',
+      children: renderValue(address?.[0]?.postalCode),
     },
     {
       key: '5',
       label: 'Street Name',
-      children: 'Stark Tower, 200 Park Avenue, Manhattan',
+      // children: address?.[0].addressStreet || '-',
+      children: renderValue(address?.[0]?.addressStreet),
     },
     {
       key: '6',
       label: 'Apartment Unit Number',
-      children: '#111-01',
+      // children: address?.[0].addressAptUnitNum || '-',
+      children: renderValue(address?.[0]?.addressAptUnitNum),
     },
     {
       key: '7',
       label: 'Account status',
       span: 3,
       children: <Badge status="success" text="Active" />,
+
     },
     // {
     //   key: '10',

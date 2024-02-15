@@ -52,6 +52,8 @@ export default function NavbarIn({ user, setUser, orders, setOrders, cart, setCa
     usersService.logOut();
     setUser(null);
     setAddress(null);
+    console.log('User state on Logout is: ', user);          
+    console.log('Address state on Logout is: ', address);     //! slow by 1 step
     navigate("/login")
   }
 

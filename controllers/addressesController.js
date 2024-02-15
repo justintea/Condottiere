@@ -39,7 +39,7 @@ const updateOwn = async (req, res) => {
   const userId = req.user._id;
   console.log('userId at addressesCtrl updateOwn', userId);
   try {
-    const address = await Address.findOneAndUpdate({ userId }, req.body, { new:true});
+    const address = await Address.findOneAndUpdate({ userId }, req.body, { new: true });
     res.json(address);
     console.log('from addressesCtrl updateOwn: ', address);
     
