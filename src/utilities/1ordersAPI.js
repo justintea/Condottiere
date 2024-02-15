@@ -15,7 +15,7 @@ function createHeaders() {
 }
 
 //*CREATE ORDER---------------------------------------------
-export async function createOrder(body) {
+export async function createOneOrder(body) {
   const options = {
     method: 'POST',
     headers: createHeaders(),
@@ -75,7 +75,7 @@ export async function updateOneOrder(body) {
   };
 
   const response = await fetch(`${baseURL}/${id}`, options);
-  console.log('at updateOneAddress in AddressAPI', response);
+  console.log('at updateOneOrder in OrdersAPI', response);
 
   if (!response.ok) throw new Error("Network response was not ok.");
   const json = await response.json();

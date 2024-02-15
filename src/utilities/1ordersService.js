@@ -1,9 +1,9 @@
 import * as ordersAPI from "./1ordersAPI";
 
 //*CREATE ORDER---------------------------------------------
-export async function createOrder(cartData, user) {
+export async function createOneOrder(cartData, user) {
   // export async function createOrder(cartData) {
-  console.log('cartData at ordersService.js createOrder: ', cartData);
+  console.log('cartData at ordersService.js createOneOrder: ', cartData);
   
   const body = {
     userId: user._id,
@@ -17,8 +17,8 @@ export async function createOrder(cartData, user) {
     // })),
   };
   
-  console.log('createOrder body: ',body);
-  const newOrder = await ordersAPI.createOrder(body);
+  console.log('createOneOrder body: ',body);
+  const newOrder = await ordersAPI.createOneOrder(body);
 
   return newOrder; 
 }
@@ -46,11 +46,11 @@ export async function getAllOrders() {
 }
 
 
-//* UPDATE ONE USER' ORDER-------------------------------------------
+//* SUPERUSER: UPDATE ONE USER' ORDER-------------------------------------------
 //* use case: user made an error, calls admin to change
-export async function updateOrder(updateData, user) {
+export async function updateOneOrder(updateData, user) {
   // export async function createOrder(cartData) {
-  console.log('updateData at ordersService.js updateOrder: ', updateData);
+  console.log('updateData at ordersService.js updateOneOrder: ', updateData);
   
   const body = {
     userId: user._id,
@@ -64,9 +64,9 @@ export async function updateOrder(updateData, user) {
     // })),
   };
   console.log('updateOrder body: ',body);
-  const updatedOrder = await ordersAPI.updateOrder(body);
+  const updatedOneOrder = await ordersAPI.updateOneOrder(body);
 
-  return updatedOrder; 
+  return updatedOneOrder; 
 }
 
 // export function formatDateFromFetch(logs) {
@@ -75,3 +75,11 @@ export async function updateOrder(updateData, user) {
 //   }
 //   return logs;
 // }
+
+//*SUPERUSER: DELETE ONE ORDER-------------------------------------
+//* use case: admin clears db, or specific erroneous orders
+export async function deleteOneOrder(id) {
+  const deletedOneOrder = await ordersAPI.deleteOneOrder(id);
+
+  return deletedOneOrder;
+}

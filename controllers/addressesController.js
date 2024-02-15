@@ -1,7 +1,7 @@
 const Address = require("../models/address");
 
 //*CREATE ADDRESS---------------------------------------------
-const create = async (req, res) => {
+const createOneAddress = async (req, res) => {
   console.log('req: ', req);
   const data = req.body;
   const userId = req.user._id;
@@ -37,13 +37,13 @@ const index = async (req, res) => {
 
 //*UPDATE YOUR ONE ADDRESS-------------------------------------
 //*SUPERUSER: UPDATE ONE ADDRESS-------------------------------------
-const updateOne = async (req, res) => {
+const updateOneAddress = async (req, res) => {
   const userId = req.user._id;
-  console.log('userId at addressesCtrl updateOne', userId);
+  console.log('userId at addressesCtrl updateOneAddress', userId);
   try {
-    const address = await Address.findOneAndUpdate({ userId }, req.body, { new: true });
-    res.json(address);
-    console.log('updateOne from addressesCtrl: ', address);
+    const updatedAddress = await Address.findOneAndUpdate({ userId }, req.body, { new: true });
+    res.json(updatedAddress);
+    console.log('updateOneAddress from addressesCtrl: ', updatedAddress);
     
   } catch (error) {
     res.status(500).json(error);
@@ -53,15 +53,15 @@ const updateOne = async (req, res) => {
 
 
 //*SUPERUSER: READ ALL ADDRESSES-------------------------------------
-const indexAll = async (req, res) => {
+const indexAllAddresses = async (req, res) => {
   // const userId = req.user._id;
   // console.log('userId at addressesCtrl index', userId);
   try {
     // const address = await Address.find({ userId });
-    const addresses = await Address.find();
+    const allAddresses = await Address.find();
 
-    res.json(addresses);
-    console.log('indexAll from addressesCtrl: ', addresses);
+    res.json(allAddresses);
+    console.log('indexAllAddresses from addressesCtrl: ', allAddresses);
     
   } catch (error) {
     res.status(500).json(error);
@@ -69,15 +69,15 @@ const indexAll = async (req, res) => {
 };
 
 //*SUPERUSER: DELETE ONE ADDRESS-------------------------------------
-const deleteOne = async (req, res) => {
+const deleteOneAddress = async (req, res) => {
 
   //? temporarily using userId as identifier. identify users by userId a bit difficult, email is unique & easier
   const userId = req.user._id;
-  console.log('userEmail at addressesCtrl updateOwn', userId);
+  console.log('userEmail at addressesCtrl deleteOneAddress', userId);
   try {
-    const deletedOne = await Address.findOneAndDelete({ userId }, req.body, { new: true });
-    res.json(deletedOne);
-    console.log('deleteOne from addressesCtrl: ', deletedOne);
+    const deletedOneAddress = await Address.findOneAndDelete({ userId }, req.body, { new: true });
+    res.json(deletedOneAddress);
+    console.log('deleteOneAddress from addressesCtrl: ', deletedOneAddress);
     
   } catch (error) {
     res.status(500).json(error);
@@ -87,9 +87,9 @@ const deleteOne = async (req, res) => {
 
 module.exports = {
   index,
-  create,
-  updateOne,
+  createOneAddress,
+  updateOneAddress,
 
-  indexAll,
-  deleteOne,
+  indexAllAddresses,
+  deleteOneAddress,
 };

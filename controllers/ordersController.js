@@ -1,7 +1,7 @@
 const Order = require("../models/order");
 
 //*CREATE ORDER---------------------------------------------
-const create = async (req, res) => {
+const createOneOrder = async (req, res) => {
   const data = req.body;
   // console.log(req.user._id)
   const userId = req.user._id;
@@ -10,9 +10,9 @@ const create = async (req, res) => {
     return
   }
   try {
-    const newOrder = await Order.create(data);
+    const newOrder = await Order.createOneOrder(data);
     res.status(201).json(newOrder);
-    console.log('from ordersCtrl create: ', newOrder);
+    console.log('createOneOrder from ordersCtrl: ', newOrder);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -35,14 +35,14 @@ const index = async (req, res) => {
 
 
 //* SUPERUSER: GET ALL USERS' ALL ORDERS-------------------------------------------
-const indexAll = async (req, res) => {
+const indexAllOrders = async (req, res) => {
   // const userId = req.user._id;
   // console.log('userId at ordersCtrl', userId);
   try {
     // const orders = await Order.find({ userId });
-    const orders = await Order.find();
-    res.json(orders);
-    console.log('from ordersCtrl index: ', orders);
+    const allOrders = await Order.find();
+    res.json(allOrders);
+    console.log('allOrders from ordersCtrl index: ', allOrders);
     
   } catch (error) {
     res.status(500).json(error);
@@ -51,16 +51,16 @@ const indexAll = async (req, res) => {
 
 //* SUPERUSER: UPDATE ONE ORDER-------------------------------------------
 //* use case: user made an error, calls admin to change
-const updateOne = async (req, res) => {
+const updateOneOrder = async (req, res) => {
   
   //! must be orderId, not user id. edit later
   const userId = req.user._id;
-  console.log('userId at addressesCtrl updateOne', userId);
+  console.log('userId at addressesCtrl updateOneOrder', userId);
   try {
       //! could therefore be a findbyIdAndUpdate
-    const updatedOrder = await Order.findOneAndUpdate({ userId }, req.body, { new: true });
-    res.json(updatedOrder);
-    console.log('updateOneOrder from ordersCtrl: ', updatedOrder);
+    const updatedOneOrder = await Order.findOneAndUpdate({ userId }, req.body, { new: true });
+    res.json(updatedOneOrder);
+    console.log('updateOneOrder from ordersCtrl: ', updatedOneOrder);
     
   } catch (error) {
     res.status(500).json(error);
@@ -70,16 +70,16 @@ const updateOne = async (req, res) => {
 
 //* SUPERUSER: DELETE ONE ORDER-------------------------------------------
 //* use case: admin clears db, or specific erroneous orders
-const deleteOne = async (req, res) => {
+const deleteOneOrder = async (req, res) => {
 
   //! must be orderId, not user id. edit later
   const userId = req.user._id;
-  console.log('userId at ordersCtrl deleteOne: ', userId);
+  console.log('userId at ordersCtrl deleteOneOrder: ', userId);
   try {
           //! could therefore be a findbyIdAndUpdate
-    const deletedOne = await Order.findOneAndDelete({ userId }, req.body, { new: true });
-    res.json(deletedOne);
-    console.log('deleteOne from ordersCtrl: ', deletedOne);
+    const deletedOneOrder = await Order.findOneAndDelete({ userId }, req.body, { new: true });
+    res.json(deletedOneOrder);
+    console.log('deleteOne from ordersCtrl: ', deletedOneOrder);
     
   } catch (error) {
     res.status(500).json(error);
@@ -89,9 +89,9 @@ const deleteOne = async (req, res) => {
 
 module.exports = {
   index,
-  create,
+  createOneOrder,
 
-  indexAll,
-  updateOne,
-  deleteOne,
+  indexAllOrders,
+  updateOneOrder,
+  deleteOneOrder,
 };

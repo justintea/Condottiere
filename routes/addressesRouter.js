@@ -3,12 +3,12 @@ const router = express.Router();
 
 const addressesController = require("../controllers/addressesController");
 
-router.post("/", addressesController.create);
+router.post("/", addressesController.createOneAddress);
 router.get("/", addressesController.index);
-router.put("/:userId", addressesController.updateOne);
+router.put("/:userId", addressesController.updateOneAddress);
 
 //* superuser functions (+ updateOwn)
-router.get("/", addressesController.indexAll);
-router.delete("/:userId", addressesController.deleteOne);
+router.get("/", addressesController.indexAllAddresses);
+router.delete("/:userId", addressesController.deleteOneAddress);
 
 module.exports = router;

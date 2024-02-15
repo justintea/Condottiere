@@ -15,7 +15,7 @@ function createHeaders() {
 }
 
 //*CREATE ADDRESS---------------------------------------------
-export async function createAddress(body, user) {
+export async function createOneAddress(body, user) {
 
   console.log('user is: ', user);
   const options = {
@@ -76,14 +76,14 @@ export async function updateOneAddress(body) {
 }
 
 //* SUPERUSER: GET ALL ADDRESSES----------------------------------------
-export async function getAllAddresses() {
+export async function indexAllAddresses() {
   const options = {
     method: 'GET',
     headers: createHeaders(),
   };
 
   const response = await fetch(baseURL, options);
-  console.log('at getAllAddresses in AddressAPI', response);
+  console.log('at indexAllAddresses in AddressAPI', response);
   if (!response.ok) throw new Error("Network response (inbound) was not ok.");
   const json = await response.json();
   console.log(JSON.stringify(json));

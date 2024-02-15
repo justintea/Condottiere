@@ -2,7 +2,7 @@ import * as addressesAPI from "./2addressesAPI";
 
 
 //*CREATE ADDRESS---------------------------------------------
-export async function createAddress(addressData, user) {
+export async function createOneAddress(addressData, user) {
   console.log('addressData is: ', addressData);
   console.log('user is: ', user);
 
@@ -17,7 +17,7 @@ export async function createAddress(addressData, user) {
   };
 
   console.log('createAddress body: ', body);
-  const newAddress = await addressesAPI.createAddress(body, user);
+  const newAddress = await addressesAPI.createOneAddress(body, user);
 
   return newAddress;
 }
@@ -54,8 +54,8 @@ export async function updateOneAddress(addressData, user) {
 
 //* SUPERUSER: GET ALL ADDRESSES----------------------------------------
 //! wip: for Superuser. you need to add the ID too 
-export async function getAllAddresses() {
-  const data = await addressesAPI.getAllAddresses();
+export async function indexAllAddresses() {
+  const data = await addressesAPI.indexAllAddresses();
   console.log(data);
 
   return data;
