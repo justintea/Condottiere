@@ -18,7 +18,11 @@ import UserAddressPage from "../3UserPage/2UserInfoPage/3UserAddressPage";
 import UserAddAddressPage from "../3UserPage/2UserInfoPage/4UserAddAddressPage";
 import UserEditAddressPage from "../3UserPage/2UserInfoPage/4UserEditAddressPage";
 
-import AdminDashboardPage from "../3UserPage/3AdminPage/1AdminDashboardPage";
+import AdminDashboardPage from "../3UserPage/3AdminPage/0AdminDashboardPage";
+import AdminUserOrdersPage from "../3UserPage/3AdminPage/1AdminUserOrdersPage/AdminUserOrdersPage";
+import AdminUserCredentialsPage from "../3UserPage/3AdminPage/2AdminUserCredentialsPage/AdminUserCredentialsPage";
+import AdminUserAddressesPage from "../3UserPage/3AdminPage/3AdminUserAddressesPage/AdminUserAddressesPage";
+
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,7 +35,12 @@ function App() {
           {user.admin ? (
             // Admin user
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}>
-                <Route path="admin" element={<AdminDashboardPage user={user} />} />
+                <Route path="admin" element={<AdminDashboardPage user={user} />} >
+                    <Route path="userorders" element={<AdminUserOrdersPage user={user} />} />
+                    <Route path="usercredentials" element={<AdminUserCredentialsPage user={user} />} />
+                    <Route path="useraddresses" element={<AdminUserAddressesPage user={user} />} />
+                </Route>
+
             </Route>
 
           ) : (
