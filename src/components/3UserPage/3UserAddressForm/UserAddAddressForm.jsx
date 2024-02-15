@@ -35,11 +35,11 @@ export default function UserAddAddressForm({ user }) {
       const newAddress = await createAddress(addressData, user); 
       // setAddress(addressData);          //? 15/2 0330: setting global state...
       setAddress(newAddress);
-      console.log(address);
+      console.log('Address response from AddForm: ',address);
       //? few options to try
       // setAddress(address);
       
-      console.log('new Address response from API: ', newAddress);
+      console.log('newAddress response from AddForm: ', newAddress);
 
       Navigate('/user/address');
     }

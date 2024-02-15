@@ -20,8 +20,11 @@ export async function createAddress(body, user) {
   console.log('options: ', options);
 
   const response = await fetch(baseURL, options);
+
   console.log('body: ', body);
+  console.log('body.userId: ', body.userId);
   console.log('response: ', response);
+  
   if (!response.ok) throw new Error("Network response (inbound) was not ok: ", Error);
   const json = await response.json();
   console.log(JSON.stringify(json));

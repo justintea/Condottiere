@@ -29,14 +29,16 @@ export default function UserEditAddressForm({ user }) {
     
     try { 
       console.log('Address Submission Success: ', addressData);
-
+      console.log(user);
       const newAddress = await updateOneAddress(addressData, user); 
-      setAddress(addressData);          //? 15/2 0330: setting global state...
-      console.log(address);
+      // setAddress(addressData);          //? 15/2 0330: setting global state...
+      setAddress(newAddress);          //? 15/2 1200: setting global state...
+
+      console.log('Address response from EditForm: ', address);
       //? few options to try
       // setAddress(address);
       
-      console.log('new Address response from API: ', newAddress);
+      console.log('newAddress response from EditForm: ', newAddress);
 
       Navigate('/user/address');
     }

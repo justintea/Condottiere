@@ -18,7 +18,6 @@ const addressesRouter = require("./routes/addressesRouter")
 const app = express();
 
 //* middleware block
-const ensureLoggedIn = require('./config/ensureLoggedIn');
 app.use(logger("dev"));
 app.use(express.json());
 //* Middleware to verify token and assign user object of payload to req.user.
@@ -27,9 +26,9 @@ app.use(require('./config/checkToken'));
 
 app.use(express.static(path.join(__dirname, "dist")));
 
-app.use("/api/users", ensureLoggedIn, usersRouter);
-app.use("/api/orders", ensureLoggedIn, ordersRouter);
-app.use("/api/addresses", ensureLoggedIn, addressesRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/orders", ordersRouter);
+app.use("/api/addresses", addressesRouter);
 
 
 // app.use("/api/goals", goalsRouter);

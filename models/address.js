@@ -6,6 +6,8 @@ const addressSchema = new Schema(
     userId: {
       type: Schema.Types.ObjectId,
       ref: "User", 
+      required: true,
+      unique: true,
     },
     fullName: {
       type: String,
@@ -15,7 +17,6 @@ const addressSchema = new Schema(
     phoneNumber: {
       type: String,
       required: true,
-      unique: true, 
     },
     country: {
       type: String,

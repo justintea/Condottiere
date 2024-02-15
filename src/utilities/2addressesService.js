@@ -45,7 +45,9 @@ export async function updateOneAddress(addressData, user) {
     addressAptUnitNum: addressData.addressAptUnitNum,
   };
 
-
+  console.log('userId in addressesService: ', body.userId); 
+  console.log('entire Body in addressesService: ', body);
+  
   const updatedAddress = await addressesAPI.updateOneAddress(body);
   return updatedAddress;
 }
