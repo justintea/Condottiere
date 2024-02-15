@@ -1,6 +1,7 @@
 import { Outlet, useOutletContext, useNavigate } from "react-router-dom";
 import { List } from 'antd';
-import { ShoppingOutlined, ShoppingCartOutlined, CalendarOutlined , HomeOutlined, LockOutlined  } from "@ant-design/icons";
+import { TeamOutlined, ShoppingOutlined, HomeOutlined } from "@ant-design/icons";
+
 
 export default function AdminDashboardPage({ user }) {
   useOutletContext();
@@ -9,33 +10,25 @@ export default function AdminDashboardPage({ user }) {
 
   const dashboardList = [
     {
-      title: "Visit our store",
-      description: "Continue shopping",
+      title: "User orders",
+      description: "Manage user orders: View all, Update, Delete",
       icon: <ShoppingOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
-      route: "/user/", 
+      route: "/user/admin/userorders", 
     },
     {
-      title: "Past purchases",
-      description: "A history of your past transactions with us",
-      icon: <CalendarOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
-      route: "/user/orders", 
+      title: "User credentials",
+      description: "Manage user login credentials: View all, Update, Delete",
+      icon: <TeamOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
+      route: "/user/admin/usercredentials", 
     },
     {
       title: "Address & contact details",
       description:
-        "For our delivery purposes",
+        "Manage user addresses & contact information: View all, Update, Delete",
       icon: <HomeOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
-      route: "/user/address", 
+      route: "/user/admin/useraddresses", 
     },
-    {
-      title: "Password",
-      description:
-        "Change your password",
-      icon: <LockOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
-      // content: xxx, //to do AJAX GET from a db
-      route: "", 
-
-    },
+ 
     // {
     //   title: '',
     //   description: '',
@@ -52,7 +45,8 @@ export default function AdminDashboardPage({ user }) {
   return (
     <>
       <h2 style={{ fontFamily: "Palatino Linotype" , margin: '1% 0 0 5%' }}> Admin Dashboard </h2>
-      <p> "You have the conn" </p>
+      <p style={{  margin: '0 0 0 11.7%', fontSize: '70%', fontStyle: 'italic' }}> "You have the conn" </p>
+      <br />
 
       <List 
         itemLayout="horizontal"
@@ -74,6 +68,7 @@ export default function AdminDashboardPage({ user }) {
         )}
         
       />
+      <br />
       <br />
 
 
