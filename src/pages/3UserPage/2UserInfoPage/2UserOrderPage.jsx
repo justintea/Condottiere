@@ -6,9 +6,10 @@ import { getToken } from "../../../utilities/0usersService";
 
 export default function UserOrderPage() {
   const { orders, setOrders } = useOutletContext();
-  const [loading, setLoading] = useState(false);
+  //? these declarations are for Ant D's Infinite scroll component. Left here for future exploration.
+  // const [loading, setLoading] = useState(false);
   // const [data, setData] = useState([]);
-  const [data, setData] = useState([]);
+  // const [data, setData] = useState([]);
 
   console.log('this is the Orders state :', orders);
   
