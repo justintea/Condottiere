@@ -22,6 +22,7 @@ const create = async (req, res) => {
     // Add the user to the db
 
     //? 15/2 2330: added this line. adds 'admin' property and set as false, before it goes in
+    //? tested as per 15/2/24 2350 commit comments
     req.body.admin = req.body.admin || false;
 
     const user = await User.create(req.body);
