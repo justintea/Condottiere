@@ -35,12 +35,11 @@ function App() {
           {user.admin ? (
             // Admin user
             <Route path="user" element={<UserPage user={user} setUser={setUser} />}>
-                <Route path="admin" element={<AdminDashboardPage user={user} />} >
-                    <Route path="userorders" element={<AdminUserOrdersPage user={user} />} />
-                    <Route path="usercredentials" element={<AdminUserCredentialsPage user={user} />} />
-                    <Route path="useraddresses" element={<AdminUserAddressesPage user={user} />} />
-                </Route>
-
+                <Route path="admin" element={<AdminDashboardPage user={user} />} />
+                <Route path="admin_userorders" element={<AdminUserOrdersPage user={user} />} />
+                <Route path="admin_usercredentials" element={<AdminUserCredentialsPage user={user} />} />
+                <Route path="admin_useraddresses" element={<AdminUserAddressesPage user={user} />} />
+                <Route path="admin_faqs" element={<FAQPage user={user} />} />
             </Route>
 
           ) : (

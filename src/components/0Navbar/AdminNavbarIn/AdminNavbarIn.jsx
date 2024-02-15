@@ -13,7 +13,7 @@ export default function AdminNavbarIn({ user, setUser, orders, setOrders, addres
     {
       key: "userOrders",
       label: (
-        <Link to="/user/paintservices" className="link">
+        <Link to="/user/admin_userorders" className="link">
           Orders
         </Link>
       ),
@@ -21,7 +21,7 @@ export default function AdminNavbarIn({ user, setUser, orders, setOrders, addres
     {
       key: "userCredentials",
       label: (
-        <Link to="/user/paintclasses" className="link">
+        <Link to="/user/admin_usercredentials" className="link">
           Credentials
         </Link>
       ),
@@ -29,7 +29,7 @@ export default function AdminNavbarIn({ user, setUser, orders, setOrders, addres
     {
       key: "userAddresses",
       label: (
-        <Link to="/user/painttables" className="link">
+        <Link to="/user/admin_useraddresses" className="link">
           Addresses
         </Link>
       ),
@@ -37,7 +37,7 @@ export default function AdminNavbarIn({ user, setUser, orders, setOrders, addres
     {
       key: "FAQs",
       label: (
-        <Link to="/user/faqs" className="link">
+        <Link to="/user/admin_faqs" className="link">
           FAQs
         </Link>
       ),

@@ -4,7 +4,6 @@ import { TeamOutlined, ShoppingOutlined, HomeOutlined } from "@ant-design/icons"
 
 
 export default function AdminDashboardPage({ user }) {
-  useOutletContext();
 
   const Navigate = useNavigate();
 
@@ -13,20 +12,20 @@ export default function AdminDashboardPage({ user }) {
       title: "User orders",
       description: "Manage user orders: View all, Update, Delete",
       icon: <ShoppingOutlined className="UserInfoIcons" style={{ fontSize: "230%" }} />,
-      route: "/user/admin/userorders", 
+      route: "/user/admin_userorders", 
     },
     {
       title: "User credentials",
       description: "Manage user login credentials: View all, Update, Delete",
       icon: <TeamOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
-      route: "/user/admin/usercredentials", 
+      route: "/user/admin_usercredentials", 
     },
     {
       title: "Address & contact details",
       description:
         "Manage user addresses & contact information: View all, Update, Delete",
       icon: <HomeOutlined className="UserInfoIcons" style={{ fontSize: "200%" }} />,
-      route: "/user/admin/useraddresses", 
+      route: "/user/admin_useraddresses", 
     },
  
     // {
