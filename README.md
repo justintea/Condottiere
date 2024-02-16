@@ -1,5 +1,7 @@
 # Project 4: Condotierre 🖌🎨📊
 
+## App introduction 📱
+With the rise in popularity in board games and war gaming in Singapore, many players may choose to elevate their gaming experience, with intricate but unpainted character models and centrepieces such as dragons and hydras. [Condottiere](https://justintea-condottiere.cyclic.app/) delivers a variety of paint-related services to players, such as painting services and masterclasses, all in one secure app. Users can explore these services, set items to cart, confirm orders, and view their order history, and Superusers are able to view all orders, user addresses & contact details, and make related updates and deletes, with up to 10+ API requests. 
 
 
 ## Requirements for Project 🏗
@@ -20,15 +22,17 @@
    - Implement additional functionality if the user is an admin.
    - Implementation of a highly dynamic UI or data visualisation.
    - Other, instructor approved, complexity/features.
-     
+
+
 ## Technologies Used 🚀
 - ReactJS
 - NodeJS
 - Express
-- MongoDB
+- MongoDB, MongoDB Compass
 - JavaScript
 - HTML
 - CSS
+- cyclic.sh for app deployment
 - Ant Design
 
 ## Screenshots 📷
