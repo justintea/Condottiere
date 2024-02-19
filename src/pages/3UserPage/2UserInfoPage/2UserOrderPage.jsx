@@ -79,6 +79,9 @@ export default function UserOrderPage() {
         case 'urgencyRequired':
           formattedKey = 'Urgency';
           break;
+        case 'qualityRequired':
+          formattedKey = 'Quality';
+          break;
         case 'classType':
           formattedKey = 'Class type';
           break;

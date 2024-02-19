@@ -54,6 +54,19 @@ export default function PaintforhireForm({ user, setUser }) {
     }
   };
 
+  const onQualityChange = (value) => {
+    switch (value) {
+      case 'Battle-ready':
+        form.setFieldsValue();
+        break;
+      case 'Artisan-ready':
+        form.setFieldsValue();
+        break;
+     
+      default:
+    }
+  };
+
   const Navigate = useNavigate();
 
   const onFinish = (values) => {
@@ -251,7 +264,7 @@ export default function PaintforhireForm({ user, setUser }) {
       >
         <Select
           placeholder="Select a option"
-          onChange={onUrgencyChange}
+          onChange={onQualityChange}
           allowClear
           style={{ width: "85%", margin: '0 0 1% 5%' }}
         >
