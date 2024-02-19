@@ -16,7 +16,7 @@ export default function UserPage({ user, setUser }) {
   useEffect(() => {
     (async function () {
       const data = await getOrders();
-      setOrders(data);
+      setOrders(data);cd
       console.log(data);
 
       const addData = await getOneAddress();

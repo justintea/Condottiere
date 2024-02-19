@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "dev:express": "set DEBUG=budgetBuddy:* & node --watch server.js",
+    "dev:express": "set DEBUG=condotierre:* & node --watch server.js",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
