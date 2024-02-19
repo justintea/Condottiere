@@ -27,10 +27,10 @@ export default function NavbarIn({ user, setUser, orders, setOrders, cart, setCa
       ),
     },
     {
-      key: "painttables",
+      key: "assemblyservices",
       label: (
-        <Link to="/user/painttables" className="link">
-          Paint tables
+        <Link to="/user/assemblyservices" className="link">
+          Assembly-for-Hire
         </Link>
       ),
     },
