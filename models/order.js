@@ -13,6 +13,7 @@ const detailSchema = new Schema({
   numberOfModels: { type: String },
   sizeComplexity: { type: String },
   urgencyRequired: { type: String },
+  
   classType: { type: String },
   dateTime: {
     type: String,

@@ -239,6 +239,28 @@ export default function PaintforhireForm({ user, setUser }) {
         </Select>
       </Form.Item>
 
+      <Form.Item
+        name="qualityRequired"
+        label="Quality"
+        rules={[
+          {
+            required: true,
+            message: "Please choose from: Battle-ready and Artisan-ready.",
+          },
+        ]}
+      >
+        <Select
+          placeholder="Select a option"
+          onChange={onUrgencyChange}
+          allowClear
+          style={{ width: "85%", margin: '0 0 1% 5%' }}
+        >
+          <Option value="Battle-ready">Battle-ready</Option>
+          <Option value="Artisan-ready">Artisan-ready</Option>
+        </Select>
+      </Form.Item>
+        
+        
       <Form.Item {...tailLayout}>
         <Space>
           <Button type="primary" style={{ backgroundColor: "#01628f" , margin: "0  0 0 183%" }} htmlType="submit">

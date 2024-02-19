@@ -134,6 +134,37 @@ const paintsvcUrgencyData = [
 
 ];
 
+//* ==============================
+const paintsvcQualityColumns = [
+  {
+    title: 'Quality',
+    dataIndex: 'Quality',
+  },
+  {
+    title: 'Description',
+    dataIndex: 'Description',
+  },
+];
+
+const paintsvcQualityData = [
+  {
+    key: '1',
+    Quality: 'Battle-ready',
+    Description: 'Main areas colored, bases finished, protective varnish applied - a decent standard to deploy an army on the tabletop.',
+  },
+  {
+    key: '2',
+    Quality: 'Artisan-ready',
+    Description: 'On top of Battle-ready, highlights and washes together with a hyper-keen eye for all details will be used - Your models will be desired and admired, keeping spectators and your opponent spellbound to their beauty.',
+  },
+
+];
+
+
+
+
+//* ==============================
+
 const classpriceColumns = [
   {
     title: 'Class type',
@@ -195,6 +226,9 @@ const items = [
       <br />
       <Divider>Urgency guidelines</Divider>
       <Table columns={paintsvcUrgencyColumns} dataSource={paintsvcUrgencyData} pagination={false} size="middle" />
+      <br />
+      <Divider>Quality guidelines</Divider>
+      <Table columns={paintsvcQualityColumns} dataSource={paintsvcQualityData} pagination={false} size="middle" />
       <br />
     </p>
  
