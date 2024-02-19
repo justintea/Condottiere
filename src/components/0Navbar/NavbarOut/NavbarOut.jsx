@@ -24,10 +24,10 @@ export default function NavbarOut() {
       ),
     },
     {
-      key: "painttables",
+      key: "assemblyservices",
       label: (
-        <Link to="/painttables" className="link">
-          Paint tables
+        <Link to="/assemblyservices" className="link">
+          Assembly-for-Hire
         </Link>
       ),
     },

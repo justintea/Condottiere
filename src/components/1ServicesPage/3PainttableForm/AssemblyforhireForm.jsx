@@ -3,7 +3,7 @@ const { Option } = Select;
 import { useState, useEffect } from "react";
 import { Route, Routes, Link, useNavigate } from "react-router-dom";
 
-export default function PaintforhireForm({ user, setUser }) {
+export default function AssemblyforhireForm({ user, setUser }) {
 
   const layout = {
     labelCol: {
@@ -54,12 +54,18 @@ export default function PaintforhireForm({ user, setUser }) {
     }
   };
 
-  const onQualityChange = (value) => {
+  const onPrimingChange = (value) => {
     switch (value) {
-      case 'Battle-ready':
+      case 'Not required':
         form.setFieldsValue();
         break;
-      case 'Artisan-ready':
+      case 'Prime black':
+        form.setFieldsValue();
+        break;
+      case 'Prime white':
+        form.setFieldsValue();
+        break;
+      case 'Prime other colors':
         form.setFieldsValue();
         break;
      
@@ -74,27 +80,27 @@ export default function PaintforhireForm({ user, setUser }) {
 
     //*state of prelogin Form is passed in 'values'
     //* write in manner that groups them in Array of arrays, by the 3 services 
-    const paintsvcValuesArray =
+    const assemblysvcValuesArray =
     {
-      'Painting Services': { ...values },
+      'Painting Services': { null: null },
       'Masterclass Booking': { null: null },
-      'Assembly Services': { null: null }
+      'Assembly Services': { ...values }
     };
   
     console.log('this is values: ', values);
-    console.log('this is valuesArray: ', paintsvcValuesArray);
+    console.log('this is valuesArray: ', assemblysvcValuesArray);
     console.log(user);
 
     //! Let's see if this works. regardless of user= or != null, use LocalStorage to handle formData
 
     if (user === null) {
-      localStorage.setItem("data1Key", JSON.stringify(paintsvcValuesArray));
+      localStorage.setItem("data1Key", JSON.stringify(assemblysvcValuesArray));
       console.log(localStorage);
       Navigate('/login');      //* head to loginPage to login
   
       //* postlogin 
       } else {
-      localStorage.setItem("data1Key", JSON.stringify(paintsvcValuesArray));
+      localStorage.setItem("data1Key", JSON.stringify(assemblysvcValuesArray));
       console.log(localStorage);
       Navigate('/user/cart');
       }
@@ -253,23 +259,25 @@ export default function PaintforhireForm({ user, setUser }) {
       </Form.Item>
 
       <Form.Item
-        name="qualityRequired"
-        label="Quality"
+        name="primingRequired"
+        label="Priming"
         rules={[
           {
             required: true,
-            message: "Please choose from: Battle-ready and Artisan-ready.",
+            message: "Please choose from: Not required, Prime black, Prime white, or Prime other colors.",
           },
         ]}
       >
         <Select
           placeholder="Select a option"
-          onChange={onQualityChange}
+          onChange={onPrimingChange}
           allowClear
           style={{ width: "85%", margin: '0 0 1% 5%' }}
         >
-          <Option value="Battle-ready">Battle-ready</Option>
-          <Option value="Artisan-ready">Artisan-ready</Option>
+          <Option value="Not required">Not required</Option>
+          <Option value="Prime black">Prime black</Option>
+          <Option value="Prime white">Prime white</Option>
+          <Option value="Prime other colors">Prime other colors</Option>
         </Select>
       </Form.Item>
         

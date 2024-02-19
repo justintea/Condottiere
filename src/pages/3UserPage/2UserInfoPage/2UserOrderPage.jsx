@@ -85,6 +85,9 @@ export default function UserOrderPage() {
         case 'classType':
           formattedKey = 'Class type';
           break;
+        case 'primingRequired':
+          formattedKey = 'Priming';
+          break;
         case 'dateTime':
           formattedKey = 'Date';
           formattedValue = value.toLocaleString('en-SG', {

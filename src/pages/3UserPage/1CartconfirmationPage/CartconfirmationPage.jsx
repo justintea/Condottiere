@@ -77,6 +77,9 @@ function mapNewKeys(details) {
       case 'classType':
         formattedKey = 'Class type';
         break;
+      case 'primingRequired':
+        formattedKey = 'Priming';
+        break;
       case 'dateTime':
         formattedKey = 'Date';
         break;

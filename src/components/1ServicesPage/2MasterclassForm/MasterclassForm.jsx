@@ -58,7 +58,7 @@ export default function MasterclassForm({ user, setUser }) {
     {
       'Painting Services': { null: null },
       'Masterclass Booking': { ...values },
-      'Paint Table Booking': { null: null }
+      'Assembly Services': { null: null }
     };
   
     console.log('this is values: ', values);

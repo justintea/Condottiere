@@ -5,7 +5,7 @@ import NavbarOut from "../../components/0Navbar/NavbarOut/NavbarOut";
 import LandingPageOut from "../0LandingPage/LandingPageOut";
 import PaintforhirePage from "../1ServicesPage/1PaintforhirePage";
 import MasterclassPage from "../1ServicesPage/2MasterclassPage";
-import TablebookingPage from "../1ServicesPage/3TablebookingPage";
+import AssemblyforhirePage from "../1ServicesPage/3AssemblyforhirePage";
 import AuthPage from "../2AuthPage/AuthPage";
 import SignupPage from "../2SignupPage/SignupPage";
 import UserPage from "../3UserPage/0UserPage";
@@ -55,7 +55,7 @@ function App() {
               <Route path="info" element={<UserInfoPage user={user} />} />
               <Route path="paintservices" element={<PaintforhirePage user={user} />} />
               <Route path="paintclasses" element={<MasterclassPage user={user} />} />
-              <Route path="painttables" element={<TablebookingPage user={user} />} />
+              <Route path="assemblyservices" element={<AssemblyforhirePage user={user} />} />
               <Route path="cart" element={<CartconfirmationPage user={user} />} />
               <Route path="orders" element={<UserOrderPage user={user} />} />
               <Route path="faqs" element={<FAQPage user={user} />} />
@@ -75,7 +75,7 @@ function App() {
             <Route path="signup" element={<SignupPage setUser={setUser} />}     />
             <Route path="paintservices"   element={<PaintforhirePage user={user} />}      />
             <Route path="paintclasses"    element={<MasterclassPage user={user} />}       />
-            <Route path="painttables"     element={<TablebookingPage user={user} />}      />
+            <Route path="assemblyservices"     element={<AssemblyforhirePage user={user} />}      />
             <Route path="faqs" element={<FAQPage user={user} />} />  
               
             </Routes>
