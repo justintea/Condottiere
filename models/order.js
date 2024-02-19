@@ -16,6 +16,9 @@ const detailSchema = new Schema({
   qualityRequired: { type: String },
 
   classType: { type: String },
+
+  // primingRequired: { type: String}, 
+
   dateTime: {
     type: String,
     required: true,
