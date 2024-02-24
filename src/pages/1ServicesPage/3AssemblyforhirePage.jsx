@@ -1,4 +1,4 @@
-import AssemblyforhireForm from "../../components/1ServicesPage/3PainttableForm/AssemblyforhireForm";
+import AssemblyforhireForm from "../../components/1ServicesPage/3AssemblyforhireForm/AssemblyforhireForm";
 import { Layout, Flex, Carousel, Divider } from "antd";
 const { Sider, Content } = Layout;
 import { Outlet, useOutletContext } from "react-router-dom";
@@ -50,30 +50,22 @@ export default function AssemblyforhirePage({ user, setUser }) {
                   {/* <h3 style={carouselcontentStyle}>1</h3> */}
                   <img
                     // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc1.png"
-                    src="/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc1.png"
+                    src="/1ServicesPageCarousel/3AssemblyforhireCarousel/assembly1.png"
 
-                    alt="paintsvc1"
+                    alt="assembly1"
                     style={{ width: "100%", height: "100%" }}
                   />
                 </div>
                 <div>
                   <img
                     // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc2.png"
-                    src="/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc2.png"
+                    src="/1ServicesPageCarousel/3AssemblyforhireCarousel/assembly2.png"
 
-                    alt="paintsvc2"
+                    alt="assembly2"
                     style={{ width: "100%", height: "100%" }}
                   />
                 </div>
-                <div>
-                  <img
-                    // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc3.png"
-                    src="/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc3.png"
-
-                    alt="paintsvc3"
-                    style={{ width: "100%", height: "100%" }}
-                  />
-                </div>
+               
               </Carousel>
             </Content>
 
