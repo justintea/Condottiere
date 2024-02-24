@@ -53,7 +53,7 @@ export default function AssemblyforhirePage({ user, setUser }) {
                     src="/1ServicesPageCarousel/3AssemblyforhireCarousel/assembly1.jpg"
 
                     alt="assembly1"
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "50%", height: "50%", margin: 'auto' }}
                   />
                 </div>
                 <div>
@@ -62,7 +62,7 @@ export default function AssemblyforhirePage({ user, setUser }) {
                     src="/1ServicesPageCarousel/3AssemblyforhireCarousel/assembly2.jpg"
 
                     alt="assembly2"
-                    style={{ width: "100%", height: "100%" }}
+                    style={{ width: "50%", height: "50%", margin: 'auto' }}
                   />
                 </div>
                
