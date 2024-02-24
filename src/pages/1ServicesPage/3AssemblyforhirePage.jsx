@@ -50,7 +50,7 @@ export default function AssemblyforhirePage({ user, setUser }) {
                   {/* <h3 style={carouselcontentStyle}>1</h3> */}
                   <img
                     // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc1.png"
-                    src="/1ServicesPageCarousel/3AssemblyforhireCarousel/assembly1.png"
+                    src="/1ServicesPageCarousel/3AssemblyforhireCarousel/assembly1.jpg"
 
                     alt="assembly1"
                     style={{ width: "100%", height: "100%" }}
@@ -59,7 +59,7 @@ export default function AssemblyforhirePage({ user, setUser }) {
                 <div>
                   <img
                     // src="../../../public/1ServicesPageCarousel/1PaintforhireCarousel/paintsvc2.png"
-                    src="/1ServicesPageCarousel/3AssemblyforhireCarousel/assembly2.png"
+                    src="/1ServicesPageCarousel/3AssemblyforhireCarousel/assembly2.jpg"
 
                     alt="assembly2"
                     style={{ width: "100%", height: "100%" }}
