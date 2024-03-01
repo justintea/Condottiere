@@ -127,12 +127,16 @@ cartData.forEach((item) => {
     //! look at first value of first key,
     //! if = 'Painting services', [nested logic ]
     //! if = 'Masterclass Booking', [nested logic ]
-    //! if = 'Paint Table Booking', [nested logic ]
+    //! if = 'Assembly services Booking', [nested logic ]
+    console.log('this is cartObject', cartObject);
+    console.log('this is cartObject title', cartObject.title);
+    // console.log('this is cartData', cartData);
+    // console.log('this is cartData title', cartData.title);
+    // console.log('this is cartData details', cartData.details);
+    if (cartObject.title === 'Assembly Services') { return "20" }
+      else if (cartObject.title === 'Painting Services') { return "30"}
+        else if (cartObject.title === 'Masterclass Booking') { return "40"}
 
-    // const prices = {
-    // }
-
-    return "20";
   }
 
 
