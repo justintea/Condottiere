@@ -155,7 +155,7 @@ const paintsvcQualityData = [
   {
     key: '2',
     Quality: 'Artisan-ready',
-    Description: 'On top of Battle-ready, highlights and washes together with a hyper-keen eye for all details will be used - Your models will be desired and admired, keeping spectators and your opponent spellbound to their beauty.',
+    Description: 'On top of Battle-ready, highlights and washes together with a hyper-keen eye for all details will be used - Your models will be desired and admired, keeping spectators and your opponent spellbound to their beauty. Current price is charged at x2 of Battle-ready rates.',
   },
 
 ];
@@ -207,6 +207,82 @@ const classpriceData = [
   },
 ];
 
+//*==============================
+
+const assemblysvcpriceColumns = [
+  {
+    title: 'Size & Complexity',
+    dataIndex: 'SizeComplexity',
+  },
+  {
+    title: 'Urgency',
+    dataIndex: 'Urgency',
+  },
+  {
+    title: 'Price per model',
+    dataIndex: 'Pricepermodel',
+  }
+];
+
+const assemblysvcpriceData = [
+  {
+    key: '1',
+    SizeComplexity: 'Small',
+    Urgency: 'Relaxed',
+    Pricepermodel: '$4',
+  },
+  {
+    key: '2',
+    SizeComplexity: 'Normal',
+    Urgency: 'Relaxed',
+    Pricepermodel: '$5',
+  },
+  {
+    key: '3',
+    SizeComplexity: 'Huge',
+    Urgency: 'Relaxed',
+    Pricepermodel: '$15',
+  },
+  {
+    key: '4',
+    SizeComplexity: 'Small',
+    Urgency: 'Normal',
+    Pricepermodel: '$6',
+  },
+  {
+    key: '5',
+    SizeComplexity: 'Normal',
+    Urgency: 'Normal',
+    Pricepermodel: '$7',
+  },
+  {
+    key: '6',
+    SizeComplexity: 'Huge',
+    Urgency: 'Normal',
+    Pricepermodel: '$18',
+  },
+  {
+    key: '7',
+    SizeComplexity: 'Small',
+    Urgency: 'Urgent',
+    Pricepermodel: '$10',
+  },
+  {
+    key: '8',
+    SizeComplexity: 'Normal',
+    Urgency: 'Urgent',
+    Pricepermodel: '$15',
+  },
+  {
+    key: '9',
+    SizeComplexity: 'Huge',
+    Urgency: 'Urgent',
+    Pricepermodel: '$30',
+  },
+];
+
+
+
 
 export default function FAQPage() {
 
@@ -244,9 +320,17 @@ const items = [
  
   },
   {
+    // key: '3',
+    // label: 'What is the pricing for Condottierre table bookings?',
+    // answer: <p>The pricing for Condottierre table bookings is <strong>$5 per hour</strong>, with all supplies and paint provided. Please check for table availability and book ahead in advance to avoid disappointment!
+    // </p>
     key: '3',
-    label: 'What is the pricing for Condottierre table bookings?',
-    answer: <p>The pricing for Condottierre table bookings is <strong>$5 per hour</strong>, with all supplies and paint provided. Please check for table availability and book ahead in advance to avoid disappointment!
+    label: 'What is the pricing for Condottierre assembly services?',
+    answer: <p>The pricing for Condottierre assembly services is shown below. Priming is charged at $1 per model, regardless of size. 
+    <br />
+    <Divider>Assembly services pricing</Divider>
+      <Table columns={assemblysvcpriceColumns} dataSource={assemblysvcpriceData} pagination={false} size="middle" />
+      <br />
     </p>
  
   },

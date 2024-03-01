@@ -118,22 +118,16 @@ cartData.forEach((item) => {
   //* depending on service and service details, returns a price. Price is then fed above to add into Cart & Order arrays
   //* now just hard code
   function pricingCalculator(cartObject) {
-    //? takes in array
-    //? looks at what service is in 'title'
-    //? looks into the 'details' object
-    //? and given the service's pricing logic
-    //? returns the price of service
-    //! for loop
-    //! look at first value of first key,
-    //! if = 'Painting services', [nested logic ]
-    //! if = 'Masterclass Booking', [nested logic ]
-    //! if = 'Assembly services Booking', [nested logic ]
+ 
     console.log('this is cartObject', cartObject);
     console.log('this is cartObject title', cartObject.title);
+ 
     //* pricing for Painting services
     if (cartObject.title === 'Painting Services') {
       let pricepermodel = 0; 
+      let artisanPriceMultiplier = 2.00; 
       console.log('inside Painting services IF condition', cartObject.details);
+
       //* Small size, Relaxed urgency, Battle-ready.
       if (cartObject.details.sizeComplexity === 'Small' & cartObject.details.urgencyRequired === 'Relaxed' & cartObject.details.qualityRequired === 'Battle-ready') {
         pricepermodel = 18; 
@@ -148,7 +142,7 @@ cartData.forEach((item) => {
       if (cartObject.details.sizeComplexity === 'Huge' & cartObject.details.urgencyRequired === 'Relaxed' & cartObject.details.qualityRequired === 'Battle-ready') {
         pricepermodel = 70; 
         return (cartObject.details.numberOfModels * pricepermodel);
-          } 
+          } else
       
        //* Small size, Normal urgency, Battle-ready.
        if (cartObject.details.sizeComplexity === 'Small' & cartObject.details.urgencyRequired === 'Normal' & cartObject.details.qualityRequired === 'Battle-ready') {
@@ -180,7 +174,57 @@ cartData.forEach((item) => {
       if (cartObject.details.sizeComplexity === 'Huge' & cartObject.details.urgencyRequired === 'Urgent' & cartObject.details.qualityRequired === 'Battle-ready') {
         pricepermodel = 120; 
         return (cartObject.details.numberOfModels * pricepermodel);
-      }  
+      } else 
+      
+      //! ARTISAN-READY
+       //* Small size, Relaxed urgency, Artisan-ready.
+      if (cartObject.details.sizeComplexity === 'Small' & cartObject.details.urgencyRequired === 'Relaxed' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 18 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+      } else
+      //* Normal size, Relaxed urgency, Artisan-ready.
+      if (cartObject.details.sizeComplexity === 'Normal' & cartObject.details.urgencyRequired === 'Relaxed' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 20 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+      } else 
+      //* Huge size, Relaxed urgency, Artisan-ready.
+      if (cartObject.details.sizeComplexity === 'Huge' & cartObject.details.urgencyRequired === 'Relaxed' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 70 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+          } else
+      
+       //* Small size, Normal urgency, Artisan-ready.
+      if (cartObject.details.sizeComplexity === 'Small' & cartObject.details.urgencyRequired === 'Normal' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 20 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+      } else
+      //* Normal size, Normal urgency, Artisan-ready.
+      if (cartObject.details.sizeComplexity === 'Normal' & cartObject.details.urgencyRequired === 'Normal' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 25 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+      } else 
+      //* Huge size, Normal urgency, Artisan-ready.
+      if (cartObject.details.sizeComplexity === 'Huge' & cartObject.details.urgencyRequired === 'Normal' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 90 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+      } else 
+      
+       //* Small size, Urgent urgency, Artisan-ready.
+       if (cartObject.details.sizeComplexity === 'Small' & cartObject.details.urgencyRequired === 'Urgent' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 30 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+      } else
+      //* Normal size, Urgent urgency, Artisan-ready.
+      if (cartObject.details.sizeComplexity === 'Normal' & cartObject.details.urgencyRequired === 'Urgent' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 45 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+      } else 
+      //* Huge size, Urgent urgency, Artisan-ready.
+      if (cartObject.details.sizeComplexity === 'Huge' & cartObject.details.urgencyRequired === 'Urgent' & cartObject.details.qualityRequired === 'Artisan-ready') {
+        pricepermodel = 120 * artisanPriceMultiplier; 
+        return (cartObject.details.numberOfModels * pricepermodel);
+      }   else 
+        
       
       return "Error"
     }
@@ -309,7 +353,7 @@ cartData.forEach((item) => {
       } else
       //* Huge size, Urgent urgency, Priming required.
       if (cartObject.details.sizeComplexity === 'Huge' & cartObject.details.urgencyRequired === 'Urgent' & cartObject.details.primingRequired !== 'Not required') {
-        pricepermodel = 30q + primingCost;
+        pricepermodel = 30 + primingCost;
         return (cartObject.details.numberOfModels * pricepermodel);
       } 
     
